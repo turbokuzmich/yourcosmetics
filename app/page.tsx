@@ -280,7 +280,135 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      
+      <section className="pt-[clamp(5rem,9rem)] pb-[clamp(5rem,9rem)]">
+        <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0">
+          <header className="mb-[clamp(3rem,4rem)]">
+            <h2 className="text-[clamp(var(--text-3xl),var(--text-6xl))] font-semibold md:text-center mb-[clamp(1rem,2rem)] leading-tight md:leading-normal">
+              Часто задаваемые вопросы
+            </h2>
+            <p className="text-[clamp(var(--text-lg),var(--text-xl))] max-w-3xl mx-auto md:text-center text-neutral-700">
+              Ответы на самые популярные вопросы о нашем производстве косметики
+            </p>
+          </header>
+
+          <div className="max-w-4xl mx-auto space-y-4">
+            <div className="collapse collapse-plus bg-base-200 rounded-2xl">
+              <input
+                type="radio"
+                name="faq-accordion"
+                aria-label="Раскрыть вопрос о минимальном объеме заказа"
+              />
+              <div className="collapse-title text-xl font-semibold">
+                Какой минимальный объем заказа?
+              </div>
+              <div className="collapse-content">
+                <p className="text-neutral-700 text-lg">
+                  Минимальный объем заказа зависит от типа продукции. Для
+                  большинства позиций минимальная партия составляет от 100 до
+                  500 единиц. Точный объем обсуждается индивидуально в
+                  зависимости от сложности рецептуры и упаковки.
+                </p>
+              </div>
+            </div>
+
+            <div className="collapse collapse-plus bg-base-200 rounded-2xl">
+              <input
+                type="radio"
+                name="faq-accordion"
+                aria-label="Раскрыть вопрос о времени разработки рецептуры"
+              />
+              <div className="collapse-title text-xl font-semibold">
+                Сколько времени занимает разработка новой рецептуры?
+              </div>
+              <div className="collapse-content">
+                <p className="text-neutral-700 text-lg">
+                  Разработка новой рецептуры занимает от 3 до 14 рабочих дней в
+                  зависимости от сложности продукта и ваших требований. Простые
+                  варианты на основе базовых формул готовы быстрее, уникальные
+                  разработки требуют больше времени.
+                </p>
+              </div>
+            </div>
+
+            <div className="collapse collapse-plus bg-base-200 rounded-2xl">
+              <input
+                type="radio"
+                name="faq-accordion"
+                aria-label="Раскрыть вопрос о сертификатах качества"
+              />
+              <div className="collapse-title text-xl font-semibold">
+                Предоставляете ли вы сертификаты качества?
+              </div>
+              <div className="collapse-content">
+                <p className="text-neutral-700 text-lg">
+                  Да, мы предоставляем все необходимые документы: сертификаты
+                  соответствия, декларации о соответствии, протоколы испытаний и
+                  другие документы согласно требованиям технического регламента
+                  Таможенного союза.
+                </p>
+              </div>
+            </div>
+
+            <div className="collapse collapse-plus bg-base-200 rounded-2xl">
+              <input
+                type="radio"
+                name="faq-accordion"
+                aria-label="Раскрыть вопрос о дизайне упаковки"
+              />
+              <div className="collapse-title text-xl font-semibold">
+                Можете ли вы помочь с дизайном упаковки?
+              </div>
+              <div className="collapse-content">
+                <p className="text-neutral-700 text-lg">
+                  Конечно! Мы предлагаем полный цикл услуг, включая разработку
+                  дизайна упаковки, этикеток и брендинга. Наша команда
+                  дизайнеров поможет создать уникальный и привлекательный образ
+                  для вашего продукта.
+                </p>
+              </div>
+            </div>
+
+            <div className="collapse collapse-plus bg-base-200 rounded-2xl">
+              <input
+                type="radio"
+                name="faq-accordion"
+                aria-label="Раскрыть вопрос о видах косметики"
+              />
+              <div className="collapse-title text-xl font-semibold">
+                Какие виды косметики вы производите?
+              </div>
+              <div className="collapse-content">
+                <p className="text-neutral-700 text-lg">
+                  Мы производим широкий спектр косметической продукции: кремы
+                  для лица и тела, маски, сыворотки, шампуни, бальзамы, скрабы,
+                  профессиональную косметику для SPA-процедур и многое другое.
+                  Работаем как с готовыми рецептурами, так и разрабатываем
+                  индивидуальные формулы.
+                </p>
+              </div>
+            </div>
+
+            <div className="collapse collapse-plus bg-base-200 rounded-2xl">
+              <input
+                type="radio"
+                name="faq-accordion"
+                aria-label="Раскрыть вопрос о процессе оплаты"
+              />
+              <div className="collapse-title text-xl font-semibold">
+                Как происходит процесс оплаты?
+              </div>
+              <div className="collapse-content">
+                <p className="text-neutral-700 text-lg">
+                  После обсуждения всех деталей заказа мы заключаем договор.
+                  Работаем по схеме предоплаты: 50% при заключении договора,
+                  оставшиеся 50% перед отгрузкой готовой продукции. Возможны
+                  индивидуальные схемы оплаты для постоянных клиентов.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
