@@ -418,8 +418,8 @@ export default function Home() {
             "var(--color-base-100) 0,var(--color-base-100) 85%,var(--color-base-300) 85%,var(--color-base-300) 100%",
         }}
       >
-        <div className="max-w-7xl bg-white md:mx-auto xl:rounded-4xl shadow-2xl shadow-gray-600/20 px-[clamp(2rem,3rem)] py-[clamp(5rem,7rem)]">
-          <div className="mb-[clamp(3rem,4rem)]">
+        <div className="max-w-7xl bg-white md:mx-auto xl:rounded-4xl shadow-2xl shadow-gray-600/20 grid md:grid-cols-2 gap-4 lg:gap-12 px-[clamp(2rem,3rem)] py-[clamp(5rem,7rem)]">
+          <div>
             <h2 className="text-[clamp(var(--text-2xl),var(--text-4xl))] leading-[clamp(2rem,3rem)] font-semibold mb-[clamp(1rem,2rem)] text-neutral-900">
               Заполните бриф
             </h2>
@@ -551,6 +551,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Footer with contacts */}
     </>
   );
 }
