@@ -1,6 +1,7 @@
 import Player from "next-video/player";
 import MediaThemeDemuxed2022 from "player.style/demuxed-2022/react";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
+import Form from "./components/form";
 
 export default function Home() {
   return (
@@ -418,7 +419,7 @@ export default function Home() {
             "var(--color-base-100) 0,var(--color-base-100) 85%,var(--color-base-300) 85%,var(--color-base-300) 100%",
         }}
       >
-        <div className="max-w-7xl bg-white md:mx-auto xl:rounded-4xl shadow-2xl shadow-gray-600/20 grid md:grid-cols-2 gap-4 lg:gap-12 px-[clamp(2rem,3rem)] py-[clamp(5rem,7rem)]">
+        <div className="max-w-7xl bg-white md:mx-auto xl:rounded-4xl shadow-2xl shadow-gray-600/20 flex flex-col gap-8 px-[clamp(2rem,3rem)] py-[clamp(5rem,7rem)]">
           <div>
             <h2 className="text-[clamp(var(--text-2xl),var(--text-4xl))] leading-[clamp(2rem,3rem)] font-semibold mb-[clamp(1rem,2rem)] text-neutral-900">
               Заполните бриф
@@ -429,125 +430,7 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-neutral-700 mb-2"
-                  >
-                    Имя *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary"
-                    placeholder="Ваше имя"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="company"
-                    className="block text-sm font-medium text-neutral-700 mb-2"
-                  >
-                    Компания
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary"
-                    placeholder="Название компании"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-neutral-700 mb-2"
-                  >
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary"
-                    placeholder="email@example.com"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium text-neutral-700 mb-2"
-                  >
-                    Телефон
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary"
-                    placeholder="+7 (999) 123-45-67"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="product-type"
-                  className="block text-sm font-medium text-neutral-700 mb-2"
-                >
-                  Тип продукции *
-                </label>
-                <select
-                  id="product-type"
-                  name="product-type"
-                  required
-                  className="select select-bordered w-full bg-white border-neutral-300 focus:border-primary"
-                >
-                  <option value="">Выберите тип продукции</option>
-                  <option value="face-care">Уход за лицом</option>
-                  <option value="body-care">Уход за телом</option>
-                  <option value="hair-care">Уход за волосами</option>
-                  <option value="spa-professional">
-                    SPA и профессиональная косметика
-                  </option>
-                  <option value="other">Другое</option>
-                </select>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="description"
-                  className="block text-sm font-medium text-neutral-700 mb-2"
-                >
-                  Описание проекта *
-                </label>
-                <textarea
-                  id="description"
-                  name="description"
-                  rows={4}
-                  required
-                  className="textarea textarea-bordered w-full bg-white border-neutral-300 focus:border-primary resize-none"
-                  placeholder="Опишите ваш проект: желаемую продукцию, объемы, сроки, особые требования..."
-                ></textarea>
-              </div>
-
-              <div>
-                <button
-                  type="submit"
-                  className="btn btn-primary btn-lg w-full sm:w-auto"
-                >
-                  Отправить бриф
-                </button>
-              </div>
-            </form>
+            <Form />
           </div>
         </div>
       </section>
