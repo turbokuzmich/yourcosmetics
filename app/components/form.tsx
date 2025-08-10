@@ -502,20 +502,11 @@ export default function Form() {
           <p className="text-red-500 text-base">{errors.products.message}</p>
         )}
 
-        {/* Duplicate add product button */}
-        <div className="flex justify-center">
-          <button
-            type="button"
-            onClick={addProduct}
-            className="btn btn-outline"
-          >
-            Добавить еще продукт
-          </button>
-        </div>
+        {/* Duplicate add product button moved to submit section for right-aligned row */}
       </div>
 
       {/* Submit section */}
-      <div className="flex flex-col items-start space-y-4">
+      <div className="flex flex-col space-y-4">
         {submitMessage && (
           <div
             className={`alert ${
@@ -526,20 +517,30 @@ export default function Form() {
           </div>
         )}
 
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="btn btn-primary btn-lg w-full sm:w-auto"
-        >
-          {isSubmitting ? (
-            <>
-              <span className="loading loading-spinner loading-sm"></span>
-              Отправка...
-            </>
-          ) : (
-            "Отправить бриф"
-          )}
-        </button>
+        <div className="w-full flex justify-end gap-3">
+          <button
+            type="button"
+            onClick={addProduct}
+            className="btn btn-outline btn-lg"
+          >
+            Добавить еще продукт
+          </button>
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="btn btn-primary btn-lg"
+          >
+            {isSubmitting ? (
+              <>
+                <span className="loading loading-spinner loading-sm"></span>
+                Отправка...
+              </>
+            ) : (
+              "Отправить бриф"
+            )}
+          </button>
+        </div>
       </div>
     </form>
   );

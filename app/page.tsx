@@ -416,7 +416,7 @@ export default function Home() {
         className="mt-[clamp(5rem,9rem)] pb-[clamp(2rem,3rem)] bg-linear-to-b"
         style={{
           "--tw-gradient-stops":
-            "var(--color-base-100) 0,var(--color-base-100) 85%,var(--color-base-300) 85%,var(--color-base-300) 100%",
+            "var(--color-base-100) 0,var(--color-base-100) 92%,var(--color-base-300) 85%,var(--color-base-300) 100%",
         }}
       >
         <div className="max-w-4xl bg-white md:mx-auto xl:rounded-4xl shadow-2xl shadow-gray-600/20 flex flex-col gap-8 px-[clamp(2rem,3rem)] py-[clamp(2rem,3rem)]">
@@ -437,75 +437,39 @@ export default function Home() {
 
       {/* Footer with contacts */}
       <footer className="bg-base-300">
-        <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] py-[clamp(3rem,5rem)]">
+        <div className="max-w-4xl mx-auto px-[clamp(2rem,3rem)] pb-[clamp(3rem,5rem)] pt-[clamp(1rem,2rem)]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Contact phones */}
             <div>
-              <h4 className="text-xl font-semibold mb-4 text-neutral-900">
-                Телефоны
+              <h4 className="text-xl mb-2 text-center text-neutral-700">
+                Телефон
               </h4>
               <div className="space-y-2">
                 <a
                   href="tel:+74951234567"
-                  className="flex items-center text-lg text-neutral-700 hover:text-primary transition-colors"
+                  className="flex items-center justify-center text-2xl font-semibold text-neutral-700 hover:text-primary transition-colors"
                 >
-                  <svg
-                    className="w-4 h-4 mr-2 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
                   +7 (495) 123-45-67
-                </a>
-                <a
-                  href="tel:+79161234567"
-                  className="flex items-center text-lg text-neutral-700 hover:text-primary transition-colors"
-                >
-                  <svg
-                    className="w-4 h-4 mr-2 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  +7 (916) 123-45-67
                 </a>
               </div>
             </div>
 
             {/* Email */}
             <div>
-              <h4 className="text-xl font-semibold mb-4 text-neutral-900">
+              <h4 className="text-xl mb-2 text-center text-neutral-700">
                 Email
               </h4>
               <a
                 href="mailto:info@demidov-lux.ru"
-                className="flex items-center text-lg text-neutral-700 hover:text-primary transition-colors"
+                className="flex items-center justify-center text-2xl font-semibold text-neutral-700 hover:text-primary transition-colors"
               >
-                <svg
-                  className="w-4 h-4 mr-2 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                  <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                </svg>
-                info@demidov-lux.ru
+                info@deluxspa.ru
               </a>
             </div>
 
             {/* Social media */}
-            <div>
-              <h4 className="text-xl font-semibold mb-4 text-neutral-900">
+            <div className="flex flex-col items-center">
+              <h4 className="text-xl mb-2 text-center text-neutral-700">
                 Мессенджеры
               </h4>
               <div className="flex space-x-4">
@@ -547,7 +511,7 @@ export default function Home() {
 
       {/* Copyright */}
       <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] py-[clamp(1rem,2rem)]">
-        <p className="text-neutral-700 text-sm">
+        <p className="text-neutral-700 text-center text-sm">
           © 2025 ООО "Демидов Люкс СПА". Все права защищены.
         </p>
       </div>
