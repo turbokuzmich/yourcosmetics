@@ -121,85 +121,87 @@ export default function Form() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
       {/* Basic Customer Information Section */}
-      <div className="bg-white p-6 rounded-lg border border-neutral-200">
-        <h2 className="text-2xl font-semibold text-neutral-800 mb-6">
-          Основная информация о клиенте
-        </h2>
+      <h2 className="text-2xl font-semibold text-neutral-800 mb-6">
+        Основная информация о клиенте
+      </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-base font-medium text-neutral-700 mb-2"
-            >
-              Имя *
-            </label>
-            <input
-              {...register("name")}
-              type="text"
-              id="name"
-              className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
-              placeholder="Ваше имя"
-            />
-            {errors.name && (
-                              <p className="text-red-500 text-base mt-1">{errors.name.message}</p>
-            )}
-          </div>
-
-          <div>
-            <label
-              htmlFor="company"
-              className="block text-base font-medium text-neutral-700 mb-2"
-            >
-              Компания
-            </label>
-            <input
-              {...register("company")}
-              type="text"
-              id="company"
-              className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
-              placeholder="Название компании"
-            />
-          </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
+        <div>
+          <label
+            htmlFor="name"
+            className="block text-xl font-medium text-neutral-500 mb-2"
+          >
+            Имя *
+          </label>
+          <input
+            {...register("name")}
+            type="text"
+            id="name"
+            className="input input-xl block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-transparent"
+            placeholder="Ваше имя"
+            autoComplete="off"
+          />
+          {errors.name && (
+            <p className="text-red-500 text-base mt-1">{errors.name.message}</p>
+          )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-base font-medium text-neutral-700 mb-2"
-            >
-              Email *
-            </label>
-            <input
-              {...register("email")}
-              type="email"
-              id="email"
-              className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
-              placeholder="email@example.com"
-            />
-            {errors.email && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.email.message}
-              </p>
-            )}
-          </div>
+        <div>
+          <label
+            htmlFor="company"
+            className="block text-xl font-medium text-neutral-500 mb-2"
+          >
+            Компания
+          </label>
+          <input
+            {...register("company")}
+            type="text"
+            id="company"
+            className="input input-xl block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-transparent"
+            placeholder="Название компании"
+            autoComplete="off"
+          />
+        </div>
+      </div>
 
-          <div>
-            <label
-              htmlFor="phone"
-              className="block text-base font-medium text-neutral-700 mb-2"
-            >
-              Телефон
-            </label>
-            <input
-              {...register("phone")}
-              type="tel"
-              id="phone"
-              className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
-              placeholder="+7 (999) 123-45-67"
-            />
-          </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+        <div>
+          <label
+            htmlFor="email"
+            className="block text-xl font-medium text-neutral-500 mb-2"
+          >
+            Email *
+          </label>
+          <input
+            {...register("email")}
+            type="email"
+            id="email"
+            className="input input-xl block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-transparent"
+            placeholder="email@example.com"
+            autoComplete="off"
+          />
+          {errors.email && (
+            <p className="text-red-500 text-base mt-1">
+              {errors.email.message}
+            </p>
+          )}
+        </div>
+
+        <div>
+          <label
+            htmlFor="phone"
+            className="block text-xl font-medium text-neutral-500 mb-2"
+          >
+            Телефон
+          </label>
+          <input
+            {...register("phone")}
+            type="tel"
+            id="phone"
+            className="input input-xl block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-transparent"
+            placeholder="+7 (999) 123-45-67"
+            autoComplete="off"
+          />
         </div>
       </div>
 
@@ -212,7 +214,7 @@ export default function Form() {
           <button
             type="button"
             onClick={addProduct}
-            className="btn btn-outline"
+            className="btn btn-outline btn-lg"
           >
             Добавить еще продукт
           </button>
@@ -221,10 +223,10 @@ export default function Form() {
         {fields.map((field: any, index: number) => (
           <div
             key={field.id}
-            className="bg-white p-6 rounded-lg border border-neutral-200"
+            className="p-6 rounded-lg border border-neutral-300"
           >
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-medium text-neutral-800">
+              <h3 className="text-3xl font-medium text-neutral-800">
                 Продукт {index + 1}
               </h3>
               {fields.length > 1 && (
@@ -239,20 +241,15 @@ export default function Form() {
             </div>
 
             <div className="space-y-6">
-              {/* Тип разработки */}
-              <h4 className="text-lg font-semibold text-neutral-700 border-b border-neutral-200 pb-2">
-                Тип разработки
-              </h4>
-
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-base font-medium text-neutral-700 mb-2">
+                  <label className="block text-lg font-medium text-neutral-500 mb-2">
                     Бренд
                   </label>
                   <input
                     {...register(`products.${index}.brand`)}
                     type="text"
-                    className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                    className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
                     placeholder="Название бренда"
                   />
                   {errors.products?.[index]?.brand && (
@@ -263,13 +260,13 @@ export default function Form() {
                 </div>
 
                 <div>
-                  <label className="block text-base font-medium text-neutral-700 mb-2">
+                  <label className="block text-lg font-medium text-neutral-500 mb-2">
                     Коллекция / Базовый ассортимент
                   </label>
                   <input
                     {...register(`products.${index}.collection`)}
                     type="text"
-                    className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                    className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
                     placeholder="Как будет называться коллекция"
                   />
                   {errors.products?.[index]?.collection && (
@@ -281,13 +278,13 @@ export default function Form() {
               </div>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Рабочее название продукта
                 </label>
                 <input
                   {...register(`products.${index}.productName`)}
                   type="text"
-                  className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
                   placeholder="Например, увлажняющий баттер для тела"
                 />
                 {errors.products?.[index]?.productName && (
@@ -298,203 +295,203 @@ export default function Form() {
               </div>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Маркетинговые клеймы (без подтверждения доп. испытаниями)
                 </label>
                 <textarea
                   {...register(`products.${index}.marketingClaims`)}
-                  rows={5}
-                  className="textarea textarea-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  rows={3}
+                  className="textarea textarea-lg textarea-bordered w-full placeholder:text-gray-300 text-neutral-900 bg-white rounded-sm"
                   placeholder="Например, компоненты в текстуре содержат витамины и масла"
                 />
               </div>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Маркетинговые клеймы и потребительские свойства
                 </label>
                 <textarea
                   {...register(`products.${index}.marketingClaimsProperties`)}
-                  rows={5}
-                  className="textarea textarea-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  rows={3}
+                  className="textarea textarea-lg textarea-bordered w-full placeholder:text-gray-300 text-neutral-900 bg-white rounded-sm"
                   placeholder="Например, чистый состав без синтетического воска и тяжелых металлов"
                 />
               </div>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Аналоги, к которым стремимся
                 </label>
                 <textarea
                   {...register(`products.${index}.analogues`)}
                   rows={3}
-                  className="textarea textarea-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  className="textarea textarea-lg textarea-bordered w-full placeholder:text-gray-300 text-neutral-900 bg-white rounded-sm"
                   placeholder="Ссылки на продукты и описание"
                 />
               </div>
 
               {/* Упаковка */}
-              <h4 className="text-lg font-semibold text-neutral-700 border-b border-neutral-200 pb-2 mt-8">
+              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200 pb-2 mt-8">
                 Упаковка
               </h4>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Описание первичной упаковки
                 </label>
                 <textarea
                   {...register(`products.${index}.primaryPackaging`)}
                   rows={3}
-                  className="textarea textarea-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  className="textarea textarea-lg textarea-bordered w-full placeholder:text-gray-300 text-neutral-900 bg-white rounded-sm"
                   placeholder="Например, банка с отсекателем, стикер 2-3 цвета"
                 />
               </div>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Аналоги упаковки
                 </label>
                 <textarea
                   {...register(`products.${index}.packagingAnalogues`)}
                   rows={3}
-                  className="textarea textarea-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  className="textarea textarea-lg textarea-bordered w-full placeholder:text-gray-300 text-neutral-900 bg-white rounded-sm"
                   placeholder="Ссылки на товары с аналогичной упаковкой"
                 />
               </div>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Объем упаковки
                 </label>
                 <input
                   {...register(`products.${index}.packagingVolume`)}
                   type="text"
-                  className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
                   placeholder="180 мл"
                 />
               </div>
 
               {/* Дизайн */}
-              <h4 className="text-lg font-semibold text-neutral-700 border-b border-neutral-200 pb-2 mt-8">
+              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200 pb-2 mt-8">
                 Дизайн
               </h4>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Идеи дизайнов для просчета
                 </label>
                 <textarea
                   {...register(`products.${index}.designIdeas`)}
                   rows={3}
-                  className="textarea textarea-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  className="textarea textarea-lg textarea-bordered w-full placeholder:text-gray-300 text-neutral-900 bg-white rounded-sm"
                   placeholder="Тип печати, количество цветов и т.д. Например, круговой стикер, 2-3 цвета"
                 />
               </div>
 
               {/* Текстура */}
-              <h4 className="text-lg font-semibold text-neutral-700 border-b border-neutral-200 pb-2 mt-8">
+              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200 pb-2 mt-8">
                 Текстура
               </h4>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Описание текстуры
                 </label>
                 <textarea
                   {...register(`products.${index}.textureDescription`)}
                   rows={3}
-                  className="textarea textarea-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  className="textarea textarea-lg textarea-bordered w-full placeholder:text-gray-300 text-neutral-900 bg-white rounded-sm"
                   placeholder="Например, увлажняет, насыщенная и т.д."
                 />
               </div>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Компоненты
                 </label>
                 <textarea
                   {...register(`products.${index}.components`)}
                   rows={3}
-                  className="textarea textarea-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  className="textarea textarea-lg textarea-bordered w-full placeholder:text-gray-300 text-neutral-900 bg-white rounded-sm"
                   placeholder="Например, витамины, минеральные масла и т.д."
                 />
               </div>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Отдушка
                 </label>
                 <textarea
                   {...register(`products.${index}.fragrance`)}
                   rows={3}
-                  className="textarea textarea-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  className="textarea textarea-lg textarea-bordered w-full placeholder:text-gray-300 text-neutral-900 bg-white rounded-sm"
                   placeholder="Например, не яркая"
                 />
               </div>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Бенч для копирования по текстуре
                 </label>
                 <input
                   {...register(`products.${index}.textureBench`)}
                   type="text"
-                  className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
                 />
               </div>
 
               {/* Тона */}
-              <h4 className="text-lg font-semibold text-neutral-700 border-b border-neutral-200 pb-2 mt-8">
+              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200 pb-2 mt-8">
                 Тона
               </h4>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Количество тонов
                 </label>
                 <input
                   {...register(`products.${index}.tonesCount`)}
                   type="text"
-                  className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
                 />
               </div>
 
               {/* Производство */}
-              <h4 className="text-lg font-semibold text-neutral-700 border-b border-neutral-200 pb-2 mt-8">
+              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200 pb-2 mt-8">
                 Производство
               </h4>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Ориентировочные объемы закупки
                 </label>
                 <input
                   {...register(`products.${index}.purchaseVolumes`)}
                   type="text"
-                  className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
                   placeholder="На месяц / квартал / год"
                 />
               </div>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Целевая себестоимость продукта с НДС
                 </label>
                 <input
                   {...register(`products.${index}.targetCost`)}
                   type="text"
-                  className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
                 />
               </div>
 
               <div>
-                <label className="block text-base font-medium text-neutral-700 mb-2">
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Планируемая дата первых отгрузок продукта
                 </label>
                 <input
                   {...register(`products.${index}.plannedDeliveryDate`)}
                   type="text"
-                  className="input input-bordered w-full bg-white border-neutral-300 focus:border-primary rounded-lg text-lg"
+                  className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
                 />
               </div>
             </div>

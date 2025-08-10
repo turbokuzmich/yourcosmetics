@@ -419,7 +419,7 @@ export default function Home() {
             "var(--color-base-100) 0,var(--color-base-100) 85%,var(--color-base-300) 85%,var(--color-base-300) 100%",
         }}
       >
-        <div className="max-w-7xl bg-white md:mx-auto xl:rounded-4xl shadow-2xl shadow-gray-600/20 flex flex-col gap-8 px-[clamp(2rem,3rem)] py-[clamp(5rem,7rem)]">
+        <div className="max-w-4xl bg-white md:mx-auto xl:rounded-4xl shadow-2xl shadow-gray-600/20 flex flex-col gap-8 px-[clamp(2rem,3rem)] py-[clamp(2rem,3rem)]">
           <div>
             <h2 className="text-[clamp(var(--text-2xl),var(--text-4xl))] leading-[clamp(2rem,3rem)] font-semibold mb-[clamp(1rem,2rem)] text-neutral-900">
               Заполните бриф
@@ -548,7 +548,7 @@ export default function Home() {
       {/* Copyright */}
       <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] py-[clamp(1rem,2rem)]">
         <p className="text-neutral-700 text-sm">
-          © 2024 ООО "Демидов Люкс СПА". Все права защищены.
+          © 2025 ООО "Демидов Люкс СПА". Все права защищены.
         </p>
       </div>
     </>
