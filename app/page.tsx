@@ -23,7 +23,7 @@ export default function Home() {
             </p>
           </header>
           <div>
-            <button className="btn btn-xl btn-primary">Оставить заявку</button>
+            <a href="#order-form" className="btn btn-xl btn-primary">Оставить заявку</a>
           </div>
         </div>
         <div className="max-w-5xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0">
@@ -34,7 +34,7 @@ export default function Home() {
       </section>
 
       {/* Наши возможности */}
-      <section className="pt-[clamp(5rem,9rem)] pb-[clamp(5rem,9rem)]">
+      <section id="capabilities" className="pt-[clamp(5rem,9rem)] pb-[clamp(5rem,9rem)]">
         <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0 flex flex-col gap-4">
           <h2 className="text-[clamp(var(--text-2xl),var(--text-5xl))] font-semibold md:text-center">
             Наши возможности
@@ -152,7 +152,7 @@ export default function Home() {
       </section>
 
       {/* Наши преимущества */}
-      <section className="2xl:px-[clamp(5rem,9rem)] px-0 mt-[clamp(5rem,9rem)] mb-[clamp(2rem,3rem)]">
+      <section id="advantages" className="2xl:px-[clamp(5rem,9rem)] px-0 mt-[clamp(5rem,9rem)] mb-[clamp(2rem,3rem)]">
         <div className="max-w-7xl bg-base-300 md:mx-auto lg:rounded-4xl md:text-center px-[clamp(2rem,3rem)] py-[clamp(5rem,7rem)]">
           <h2 className="text-[clamp(var(--text-3xl),var(--text-6xl))] leading-[clamp(2.2rem,4rem)] font-semibold mb-[clamp(1rem,2rem)]">
             Наши преимущества
@@ -231,7 +231,7 @@ export default function Home() {
       </section>
 
       {/* Кто мы? */}
-      <section className="mt-[clamp(5rem,9rem)] mb-[clamp(2rem,3rem)] text-white">
+      <section id="about" className="mt-[clamp(5rem,9rem)] mb-[clamp(2rem,3rem)] text-white">
         <div className="max-w-7xl bg-neutral md:mx-auto xl:rounded-4xl grid md:grid-cols-2 gap-4 lg:gap-12 px-[clamp(2rem,3rem)] py-[clamp(5rem,7rem)]">
           <div className="flex items-center justify-center mb-8 md:mb-0">
             <img
@@ -263,7 +263,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="pt-[clamp(2rem,3rem)]">
+      <section id="faq" className="pt-[clamp(2rem,3rem)]">
         <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0">
           <header className="mb-[clamp(3rem,4rem)]">
             <h2 className="text-[clamp(var(--text-3xl),var(--text-6xl))] font-semibold md:text-center mb-[clamp(1rem,2rem)] leading-tight md:leading-normal">
@@ -395,7 +395,8 @@ export default function Home() {
 
       {/* Order brief form */}
       <section
-        className="mt-[clamp(5rem,9rem)] pb-[clamp(2rem,3rem)] bg-linear-to-b"
+        id="order-form"
+        className="pt-[clamp(5rem,9rem)] pb-[clamp(2rem,3rem)] bg-linear-to-b"
         style={{
           "--tw-gradient-stops":
             "var(--color-base-100) 0,var(--color-base-100) 92%,var(--color-base-300) 85%,var(--color-base-300) 100%",
@@ -407,7 +408,7 @@ export default function Home() {
       </section>
 
       {/* Footer with contacts */}
-      <footer className="bg-base-300">
+      <footer id="contacts" className="bg-base-300">
         <div className="max-w-4xl mx-auto px-[clamp(2rem,3rem)] pb-[clamp(3rem,5rem)] pt-[clamp(1rem,2rem)]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Contact phones */}

@@ -35,11 +35,11 @@ export default function Header() {
           <div className="w-full flex items-center justify-end">
             <ul className="flex items-center gap-2">
               <li>
-                <a className="btn btn-link btn-lg no-underline">О нас</a>
-                <a className="btn btn-link btn-lg no-underline">Возможности</a>
-                <a className="btn btn-link btn-lg no-underline">Преимущества</a>
-                <a className="btn btn-link btn-lg no-underline">FAQ</a>
-                <a className="btn btn-link btn-lg no-underline">Контакты</a>
+                <a href="#about" className="btn btn-link btn-lg no-underline">О нас</a>
+                <a href="#capabilities" className="btn btn-link btn-lg no-underline">Возможности</a>
+                <a href="#advantages" className="btn btn-link btn-lg no-underline">Преимущества</a>
+                <a href="#faq" className="btn btn-link btn-lg no-underline">FAQ</a>
+                <a href="#contacts" className="btn btn-link btn-lg no-underline">Контакты</a>
               </li>
             </ul>
           </div>
