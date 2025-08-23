@@ -1,10 +1,10 @@
 "use client";
 
 import { Fragment } from "react";
-import { useForm, useFieldArray } from "react-hook-form";
+import { useForm, useFieldArray, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 // Zod schema for form validation
 const productSpecSchema = z.object({
@@ -54,10 +54,27 @@ function CollapsibleSection({
   defaultCollapsed = true,
 }: CollapsibleSectionProps) {
   const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   const toggleCollapsed = () => {
     setIsCollapsed(!isCollapsed);
   };
+
+  // Focus first form control when section opens
+  useEffect(() => {
+    if (!isCollapsed && sectionRef.current) {
+      // Use setTimeout to ensure the DOM has updated after state change
+      setTimeout(() => {
+        const firstFormControl = sectionRef.current?.querySelector(
+          'input[type="text"], textarea'
+        ) as HTMLInputElement | HTMLTextAreaElement;
+
+        if (firstFormControl) {
+          firstFormControl.focus();
+        }
+      }, 0);
+    }
+  }, [isCollapsed]);
 
   return (
     <div className="space-y-6">
@@ -68,7 +85,11 @@ function CollapsibleSection({
         {title}
         <span className="text-lg">{isCollapsed ? "+" : "−"}</span>
       </h4>
-      {!isCollapsed && <div className="space-y-6">{children}</div>}
+      {!isCollapsed && (
+        <div ref={sectionRef} className="space-y-6">
+          {children}
+        </div>
+      )}
     </div>
   );
 }
@@ -107,6 +128,18 @@ export default function Form() {
     control,
     name: "products",
   });
+
+  // Watch all product names to update titles dynamically
+  const watchedProducts = useWatch({
+    control,
+    name: "products",
+  });
+
+  // Function to get dynamic title for a product
+  const getProductTitle = (index: number) => {
+    const productName = watchedProducts?.[index]?.productName?.trim();
+    return productName || `Продукт ${index + 1}`;
+  };
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
@@ -258,7 +291,7 @@ export default function Form() {
           <div className="px-[clamp(2rem,3rem)] mb-6">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-3xl font-medium text-neutral-800">
-                Продукт {index + 1}
+                {getProductTitle(index)}
               </h3>
               {fields.length > 1 && (
                 <button
