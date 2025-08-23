@@ -41,6 +41,38 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
+// Collapsible Section Component
+interface CollapsibleSectionProps {
+  title: string;
+  children: React.ReactNode;
+  defaultCollapsed?: boolean;
+}
+
+function CollapsibleSection({
+  title,
+  children,
+  defaultCollapsed = true,
+}: CollapsibleSectionProps) {
+  const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed);
+
+  const toggleCollapsed = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
+  return (
+    <div className="space-y-6">
+      <h4
+        className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200 cursor-pointer hover:text-neutral-900 transition-colors flex items-center justify-between py-1"
+        onClick={toggleCollapsed}
+      >
+        {title}
+        <span className="text-lg">{isCollapsed ? "+" : "−"}</span>
+      </h4>
+      {!isCollapsed && <div className="space-y-6">{children}</div>}
+    </div>
+  );
+}
+
 export default function Form() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<{
@@ -132,7 +164,7 @@ export default function Form() {
       </div>
 
       {/* Basic Customer Information Section */}
-      <div className="px-[clamp(2rem,3rem)] my-8">
+      <div className="px-[clamp(2rem,3rem)] my-8 mb-12">
         <h2 className="text-2xl font-semibold text-neutral-800 mb-6">
           Основная информация о клиенте
         </h2>
@@ -178,7 +210,7 @@ export default function Form() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           <div>
             <label
               htmlFor="email"
@@ -297,7 +329,7 @@ export default function Form() {
           </div>
 
           <div className="px-[clamp(2rem,3rem)] mb-6">
-            <div className="space-y-6">
+            <CollapsibleSection title="Маркетинг">
               <div>
                 <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Маркетинговые клеймы (без подтверждения доп. испытаниями)
@@ -333,16 +365,11 @@ export default function Form() {
                   placeholder="Ссылки на продукты и описание"
                 />
               </div>
-            </div>
+            </CollapsibleSection>
           </div>
 
           <div className="px-[clamp(2rem,3rem)] mb-6">
-            <div className="space-y-6">
-              {/* Packaging */}
-              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200">
-                Упаковка
-              </h4>
-
+            <CollapsibleSection title="Упаковка">
               <div>
                 <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Описание первичной упаковки
@@ -378,16 +405,11 @@ export default function Form() {
                   placeholder="180 мл"
                 />
               </div>
-            </div>
+            </CollapsibleSection>
           </div>
 
           <div className="px-[clamp(2rem,3rem)] mb-6">
-            <div className="space-y-6">
-              {/* Design */}
-              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200">
-                Дизайн
-              </h4>
-
+            <CollapsibleSection title="Дизайн">
               <div>
                 <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Идеи дизайнов для просчета
@@ -399,16 +421,11 @@ export default function Form() {
                   placeholder="Тип печати, количество цветов и т.д. Например, круговой стикер, 2-3 цвета"
                 />
               </div>
-            </div>
+            </CollapsibleSection>
           </div>
 
           <div className="px-[clamp(2rem,3rem)] mb-6">
-            <div className="space-y-6">
-              {/* Texture */}
-              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200">
-                Текстура
-              </h4>
-
+            <CollapsibleSection title="Текстура">
               <div>
                 <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Описание текстуры
@@ -455,16 +472,11 @@ export default function Form() {
                   className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
                 />
               </div>
-            </div>
+            </CollapsibleSection>
           </div>
 
           <div className="px-[clamp(2rem,3rem)] mb-6">
-            <div className="space-y-6">
-              {/* Tones */}
-              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200">
-                Тона
-              </h4>
-
+            <CollapsibleSection title="Тона">
               <div>
                 <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Количество тонов
@@ -475,16 +487,11 @@ export default function Form() {
                   className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
                 />
               </div>
-            </div>
+            </CollapsibleSection>
           </div>
 
-          <div className="px-[clamp(2rem,3rem)]">
-            <div className="space-y-6">
-              {/* Production */}
-              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200">
-                Производство
-              </h4>
-
+          <div className="px-[clamp(2rem,3rem)] mb-12">
+            <CollapsibleSection title="Производство">
               <div>
                 <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Ориентировочные объемы закупки
@@ -518,7 +525,7 @@ export default function Form() {
                   className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
                 />
               </div>
-            </div>
+            </CollapsibleSection>
           </div>
         </Fragment>
       ))}
