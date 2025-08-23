@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -119,112 +120,110 @@ export default function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-      {/* Basic Customer Information Section */}
-      <h2 className="text-2xl font-semibold text-neutral-800 mb-6">
-        Основная информация о клиенте
-      </h2>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-xl font-medium text-neutral-500 mb-2"
-          >
-            Имя *
-          </label>
-          <input
-            {...register("name")}
-            type="text"
-            id="name"
-            className="input input-xl block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-transparent"
-            placeholder="Ваше имя"
-            autoComplete="off"
-          />
-          {errors.name && (
-            <p className="text-red-500 text-base mt-1">{errors.name.message}</p>
-          )}
-        </div>
-
-        <div>
-          <label
-            htmlFor="company"
-            className="block text-xl font-medium text-neutral-500 mb-2"
-          >
-            Компания
-          </label>
-          <input
-            {...register("company")}
-            type="text"
-            id="company"
-            className="input input-xl block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-transparent"
-            placeholder="Название компании"
-            autoComplete="off"
-          />
-        </div>
+    <form onSubmit={handleSubmit(onSubmit)} className="py-[clamp(2rem,3rem)]">
+      <div className="px-[clamp(2rem,3rem)] mb-8">
+        <h2 className="text-[clamp(var(--text-2xl),var(--text-4xl))] leading-[clamp(2rem,3rem)] font-semibold mb-[clamp(1rem,2rem)] text-neutral-900">
+          Заполните бриф
+        </h2>
+        <p className="text-[clamp(var(--text-lg),var(--text-xl))] font-thin max-w-4xl text-neutral-700">
+          Расскажите о вашем проекте, и мы свяжемся с вами для обсуждения
+          деталей и подготовки персонального предложения.
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
-        <div>
-          <label
-            htmlFor="email"
-            className="block text-xl font-medium text-neutral-500 mb-2"
-          >
-            Email *
-          </label>
-          <input
-            {...register("email")}
-            type="email"
-            id="email"
-            className="input input-xl block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-transparent"
-            placeholder="email@example.com"
-            autoComplete="off"
-          />
-          {errors.email && (
-            <p className="text-red-500 text-base mt-1">
-              {errors.email.message}
-            </p>
-          )}
+      {/* Basic Customer Information Section */}
+      <div className="px-[clamp(2rem,3rem)] my-8">
+        <h2 className="text-2xl font-semibold text-neutral-800 mb-6">
+          Основная информация о клиенте
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-xl font-medium text-neutral-500 mb-2"
+            >
+              Имя *
+            </label>
+            <input
+              {...register("name")}
+              type="text"
+              id="name"
+              className="input input-xl block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-transparent"
+              placeholder="Ваше имя"
+              autoComplete="off"
+            />
+            {errors.name && (
+              <p className="text-red-500 text-base mt-1">
+                {errors.name.message}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <label
+              htmlFor="company"
+              className="block text-xl font-medium text-neutral-500 mb-2"
+            >
+              Компания
+            </label>
+            <input
+              {...register("company")}
+              type="text"
+              id="company"
+              className="input input-xl block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-transparent"
+              placeholder="Название компании"
+              autoComplete="off"
+            />
+          </div>
         </div>
 
-        <div>
-          <label
-            htmlFor="phone"
-            className="block text-xl font-medium text-neutral-500 mb-2"
-          >
-            Телефон
-          </label>
-          <input
-            {...register("phone")}
-            type="tel"
-            id="phone"
-            className="input input-xl block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-transparent"
-            placeholder="+7 (999) 123-45-67"
-            autoComplete="off"
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-xl font-medium text-neutral-500 mb-2"
+            >
+              Email *
+            </label>
+            <input
+              {...register("email")}
+              type="email"
+              id="email"
+              className="input input-xl block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-transparent"
+              placeholder="email@example.com"
+              autoComplete="off"
+            />
+            {errors.email && (
+              <p className="text-red-500 text-base mt-1">
+                {errors.email.message}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <label
+              htmlFor="phone"
+              className="block text-xl font-medium text-neutral-500 mb-2"
+            >
+              Телефон
+            </label>
+            <input
+              {...register("phone")}
+              type="tel"
+              id="phone"
+              className="input input-xl block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-transparent"
+              placeholder="+7 (999) 123-45-67"
+              autoComplete="off"
+            />
+          </div>
         </div>
       </div>
 
       {/* Product Specifications Section */}
-      <div className="space-y-6">
-        <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold text-neutral-800">
-            Техническая спецификация продуктов
-          </h2>
-          <button
-            type="button"
-            onClick={addProduct}
-            className="btn btn-outline btn-lg"
-          >
-            Добавить еще продукт
-          </button>
-        </div>
-
-        {fields.map((field: any, index: number) => (
-          <div
-            key={field.id}
-            className="p-6 rounded-lg border border-neutral-300"
-          >
+      {fields.map((field: any, index: number) => (
+        <Fragment key={field.id}>
+          <div className="px-[clamp(2rem,3rem)] mb-6">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-3xl font-medium text-neutral-800">
                 Продукт {index + 1}
@@ -240,7 +239,25 @@ export default function Form() {
               )}
             </div>
 
+            {/* Product Name */}
             <div className="space-y-6">
+              <div>
+                <label className="block text-lg font-medium text-neutral-500 mb-2">
+                  Рабочее название продукта
+                </label>
+                <input
+                  {...register(`products.${index}.productName`)}
+                  type="text"
+                  className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
+                  placeholder="Например, увлажняющий баттер для тела"
+                />
+                {errors.products?.[index]?.productName && (
+                  <p className="text-red-500 text-base mt-1">
+                    {errors.products[index]?.productName?.message}
+                  </p>
+                )}
+              </div>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-lg font-medium text-neutral-500 mb-2">
@@ -276,24 +293,11 @@ export default function Form() {
                   )}
                 </div>
               </div>
+            </div>
+          </div>
 
-              <div>
-                <label className="block text-lg font-medium text-neutral-500 mb-2">
-                  Рабочее название продукта
-                </label>
-                <input
-                  {...register(`products.${index}.productName`)}
-                  type="text"
-                  className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
-                  placeholder="Например, увлажняющий баттер для тела"
-                />
-                {errors.products?.[index]?.productName && (
-                  <p className="text-red-500 text-base mt-1">
-                    {errors.products[index]?.productName?.message}
-                  </p>
-                )}
-              </div>
-
+          <div className="px-[clamp(2rem,3rem)] mb-6">
+            <div className="space-y-6">
               <div>
                 <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Маркетинговые клеймы (без подтверждения доп. испытаниями)
@@ -329,9 +333,13 @@ export default function Form() {
                   placeholder="Ссылки на продукты и описание"
                 />
               </div>
+            </div>
+          </div>
 
-              {/* Упаковка */}
-              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200 pb-2 mt-8">
+          <div className="px-[clamp(2rem,3rem)] mb-6">
+            <div className="space-y-6">
+              {/* Packaging */}
+              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200">
                 Упаковка
               </h4>
 
@@ -370,9 +378,13 @@ export default function Form() {
                   placeholder="180 мл"
                 />
               </div>
+            </div>
+          </div>
 
-              {/* Дизайн */}
-              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200 pb-2 mt-8">
+          <div className="px-[clamp(2rem,3rem)] mb-6">
+            <div className="space-y-6">
+              {/* Design */}
+              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200">
                 Дизайн
               </h4>
 
@@ -387,9 +399,13 @@ export default function Form() {
                   placeholder="Тип печати, количество цветов и т.д. Например, круговой стикер, 2-3 цвета"
                 />
               </div>
+            </div>
+          </div>
 
-              {/* Текстура */}
-              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200 pb-2 mt-8">
+          <div className="px-[clamp(2rem,3rem)] mb-6">
+            <div className="space-y-6">
+              {/* Texture */}
+              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200">
                 Текстура
               </h4>
 
@@ -439,9 +455,13 @@ export default function Form() {
                   className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
                 />
               </div>
+            </div>
+          </div>
 
-              {/* Тона */}
-              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200 pb-2 mt-8">
+          <div className="px-[clamp(2rem,3rem)] mb-6">
+            <div className="space-y-6">
+              {/* Tones */}
+              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200">
                 Тона
               </h4>
 
@@ -455,9 +475,13 @@ export default function Form() {
                   className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
                 />
               </div>
+            </div>
+          </div>
 
-              {/* Производство */}
-              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200 pb-2 mt-8">
+          <div className="px-[clamp(2rem,3rem)]">
+            <div className="space-y-6">
+              {/* Production */}
+              <h4 className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200">
                 Производство
               </h4>
 
@@ -496,50 +520,55 @@ export default function Form() {
               </div>
             </div>
           </div>
-        ))}
+        </Fragment>
+      ))}
 
-        {errors.products && (
+      {/* Errors */}
+      {errors.products && (
+        <div className="px-[clamp(2rem,3rem)]">
           <p className="text-red-500 text-base">{errors.products.message}</p>
-        )}
-
-        {/* Duplicate add product button moved to submit section for right-aligned row */}
-      </div>
+        </div>
+      )}
 
       {/* Submit section */}
-      <div className="flex flex-col space-y-4">
-        {submitMessage && (
-          <div
-            className={`alert ${
-              submitMessage.type === "success" ? "alert-success" : "alert-error"
-            }`}
-          >
-            {submitMessage.text}
+      <div className="px-[clamp(2rem,3rem)]">
+        <div className="flex flex-col space-y-4">
+          {submitMessage && (
+            <div
+              className={`alert ${
+                submitMessage.type === "success"
+                  ? "alert-success"
+                  : "alert-error"
+              }`}
+            >
+              {submitMessage.text}
+            </div>
+          )}
+
+          <div className="w-full flex justify-end gap-3">
+            <button
+              type="button"
+              onClick={addProduct}
+              className="btn btn-outline btn-lg"
+            >
+              Добавить еще продукт
+            </button>
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="btn btn-primary btn-lg"
+            >
+              {isSubmitting ? (
+                <>
+                  <span className="loading loading-spinner loading-sm"></span>
+                  Отправка...
+                </>
+              ) : (
+                "Отправить бриф"
+              )}
+            </button>
           </div>
-        )}
-
-        <div className="w-full flex justify-end gap-3">
-          <button
-            type="button"
-            onClick={addProduct}
-            className="btn btn-outline btn-lg"
-          >
-            Добавить еще продукт
-          </button>
-
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="btn btn-primary btn-lg"
-          >
-            {isSubmitting ? (
-              <>
-                <span className="loading loading-spinner loading-sm"></span>
-                Отправка...
-              </>
-            ) : (
-              "Отправить бриф"
-            )}
-          </button>
         </div>
       </div>
     </form>

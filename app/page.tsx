@@ -2,32 +2,13 @@ import Player from "next-video/player";
 import MediaThemeDemuxed2022 from "player.style/demuxed-2022/react";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import Form from "./components/form";
+import Header from "./components/header";
 
 export default function Home() {
   return (
     <>
       {/* Шапка */}
-      <header className="sticky top-0 flex flex-col justify-center backface-hidden z-30 bg-base-100">
-        <nav className="px-[clamp(2rem,3rem)] 2xl:px-0 my-auto relative z-10 h-[5rem]">
-          <div className="flex items-center justify-between max-w-7xl mx-auto h-full">
-            <a href="/">ЛОГОТИП</a>
-            <div className="w-full flex items-center justify-end">
-              <ul className="flex items-center gap-2">
-                <li>
-                  <a className="btn btn-link btn-lg no-underline">О нас</a>
-                </li>
-                <li>
-                  <a className="btn btn-link btn-lg no-underline">Услуги</a>
-                </li>
-                <li>
-                  <a className="btn btn-link btn-lg no-underline">Контакты</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
-
+      <Header />
       {/* Видео */}
       <section className="bg-base-300 relative pt-[clamp(5rem,9rem)] pb-[clamp(5rem,9rem)]">
         <div className="max-w-7xl mx-auto flex flex-col h-full justify-center items-start md:items-center lg:text-center px-[clamp(2rem,3rem)] relative z-10 mb-[clamp(3rem,3rem)]">
@@ -419,19 +400,8 @@ export default function Home() {
             "var(--color-base-100) 0,var(--color-base-100) 92%,var(--color-base-300) 85%,var(--color-base-300) 100%",
         }}
       >
-        <div className="max-w-4xl bg-white md:mx-auto xl:rounded-4xl shadow-2xl shadow-gray-600/20 flex flex-col gap-8 px-[clamp(2rem,3rem)] py-[clamp(2rem,3rem)]">
-          <div>
-            <h2 className="text-[clamp(var(--text-2xl),var(--text-4xl))] leading-[clamp(2rem,3rem)] font-semibold mb-[clamp(1rem,2rem)] text-neutral-900">
-              Заполните бриф
-            </h2>
-            <p className="text-[clamp(var(--text-lg),var(--text-xl))] font-thin max-w-4xl text-neutral-700">
-              Расскажите о вашем проекте, и мы свяжемся с вами для обсуждения
-              деталей и подготовки персонального предложения.
-            </p>
-          </div>
-          <div>
-            <Form />
-          </div>
+        <div className="max-w-4xl bg-white md:mx-auto xl:rounded-4xl shadow-2xl shadow-gray-600/20 flex flex-col gap-2">
+          <Form />
         </div>
       </section>
 
