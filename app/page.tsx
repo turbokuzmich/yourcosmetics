@@ -9,6 +9,7 @@ export default function Home() {
     <>
       {/* Шапка */}
       <Header />
+
       {/* Видео */}
       <section className="bg-base-300 relative pt-[clamp(5rem,9rem)] pb-[clamp(5rem,9rem)]">
         <div className="max-w-7xl mx-auto flex flex-col h-full justify-center items-start md:items-center lg:text-center px-[clamp(2rem,3rem)] relative z-10 mb-[clamp(3rem,3rem)]">

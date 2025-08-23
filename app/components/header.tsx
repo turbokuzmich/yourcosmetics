@@ -36,11 +36,9 @@ export default function Header() {
             <ul className="flex items-center gap-2">
               <li>
                 <a className="btn btn-link btn-lg no-underline">О нас</a>
-              </li>
-              <li>
-                <a className="btn btn-link btn-lg no-underline">Услуги</a>
-              </li>
-              <li>
+                <a className="btn btn-link btn-lg no-underline">Возможности</a>
+                <a className="btn btn-link btn-lg no-underline">Преимущества</a>
+                <a className="btn btn-link btn-lg no-underline">FAQ</a>
                 <a className="btn btn-link btn-lg no-underline">Контакты</a>
               </li>
             </ul>
