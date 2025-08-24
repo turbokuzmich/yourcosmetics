@@ -27,6 +27,10 @@ A modern, responsive single-page website for a Russian cosmetics manufacturing c
 - **Player.style 0.1.9** - Video player theming (Demuxed 2022 theme)
 - **Heroicons React 2.2.0** - Beautiful SVG icon library
 
+### Email & Communication
+- **Nodemailer** - Email sending functionality for form notifications
+- **Yandex SMTP** - Email service integration for reliable delivery
+
 ### Development Tools
 - **Turbopack** - Next-gen bundler for faster development
 - **PostCSS** - CSS processing and optimization
@@ -217,6 +221,24 @@ npm install
 npm run dev
 ```
 
+### Environment Setup
+
+Create a `.env.local` file in the root directory with the following variables for email functionality:
+
+```bash
+# Email Configuration (required for form notifications)
+EMAIL_USER=your-email@yandex.ru
+EMAIL_PASS=your-password
+
+# Optional: Site URL for CORS validation (defaults to http://localhost:3000)
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
+
+**Email Setup:**
+1. Use your Yandex email credentials (recommended: create app-specific password)
+2. The form submissions will be sent to the EMAIL_USER address
+3. Email notifications include all form data formatted for easy reading
+
 Visit `http://localhost:3000` to view the application.
 
 ### Available Scripts
@@ -237,7 +259,7 @@ npm run lint     # Run ESLint code analysis
 - [x] **Bot protection** - Honeypot fields and behavioral analysis
 
 ### 🚧 High Priority
-- [ ] **Email integration** - Automated email sending on form submission
+- [x] **Email integration** - Automated email sending on form submission (✅ completed)
 - [ ] **Database integration** - Persistent storage for submissions
 - [ ] **Company logo** - Replace "ЛОГОТИП" placeholder with actual logo
 - [ ] **Icons and favicons** - Custom icon set matching brand

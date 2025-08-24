@@ -29,6 +29,10 @@ This is a professional single-page website for **ООО "Демидов Люкс
 - **Zod 4.0.14** for TypeScript-first schema validation
 - **@hookform/resolvers 5.2.1** for validation integration
 
+**Email & Communication:**
+- **Nodemailer** - Email sending functionality for form notifications
+- **Yandex SMTP** - Email service integration for reliable delivery
+
 **Media & Components:**
 - **Next-video 2.2.1** for optimized video components
 - **Player.style 0.1.9** with Demuxed 2022 theme for video player styling
@@ -117,6 +121,7 @@ cosmetics.info/
 - **Client information capture**
 - **Robust form validation** using Zod schemas (client & server)
 - **Secure API integration** endpoint: `/api/submit-brief` (✅ implemented)
+- **Email notifications** - Automated email delivery via Nodemailer and Yandex SMTP (✅ implemented)
 
 ### 3. Header Component (app/components/header.tsx)
 - Navigation menu (assumes smooth scroll to sections)
@@ -177,9 +182,9 @@ cosmetics.info/
 - ✅ **Bot protection** - Honeypot fields and behavioral analysis
 - ✅ **Security headers** - CSP, HSTS, X-Frame-Options, and other protective measures
 - ✅ **Request validation** - Origin checks, payload limits, Content-Type validation
+- ✅ **Email integration** - Automated email sending for form submissions via Nodemailer and Yandex SMTP
 
 ### 🚧 Current High Priority TODOs
-- [ ] **Email integration** - Automated email sending for form submissions
 - [ ] **Database integration** - Persistent storage for form submissions  
 - [ ] **Company logo** - Replace "ЛОГОТИП" placeholder with actual logo
 - [ ] **Mobile optimization** - Enhanced mobile experience
@@ -213,12 +218,13 @@ npm run lint     # Run ESLint code analysis
 
 **API Endpoints:**
 - `GET /api/csrf` - CSRF token generation with session tracking
-- `POST /api/submit-brief` - Secure form submission with full validation suite
+- `POST /api/submit-brief` - Secure form submission with full validation suite and email notifications
 
 ## Important Notes
 - This is a **single-page application** - all content is in `app/page.tsx`
 - The site is primarily in **Russian** targeting Russian businesses
-- Form submission is **fully implemented** with comprehensive security measures
+- Form submission is **fully implemented** with comprehensive security measures and email notifications
+- **Email setup required** - Configure `EMAIL_USER` and `EMAIL_PASS` environment variables for Yandex SMTP
 - The project uses **bleeding-edge versions** (Tailwind 4 beta, React 19)
 - All images are **placeholder content** that needs to be replaced with actual company assets
 - The video player uses a **custom theme** for professional appearance
