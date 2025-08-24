@@ -1,0 +1,190 @@
+# cosmetics.info Project Base Prompt
+
+## Project Overview
+This is a professional single-page website for **ООО "Демидов Люкс СПА"**, a Russian cosmetics manufacturing company established in 2009. The website showcases the company's capabilities in custom cosmetics manufacturing, private labeling, and full-cycle production services, targeting businesses looking to create their own cosmetics brands.
+
+**Key Business Focus:**
+- Custom formulation and manufacturing (7-day production timeline)
+- Private label cosmetics production
+- Full-cycle service from concept to finished product
+- Target audience: Businesses and entrepreneurs wanting custom cosmetics brands
+- Industry: Professional cosmetics manufacturing in Moscow, Russia
+
+## Tech Stack & Architecture
+
+**Framework & Core:**
+- **Next.js 15.3.4** with App Router structure
+- **React 19.0.0** (latest version with new features)
+- **TypeScript 5** for type safety
+- **Turbopack** for fast development builds
+
+**Styling & UI:**
+- **Tailwind CSS 4.0** (beta version) - utility-first CSS framework
+- **DaisyUI 5.0.43** - component library with custom cosmetics-themed colors
+- **Clampwind 0.0.9** - fluid typography and spacing utilities using clamp()
+- **Custom design system** with professional cosmetics brand colors
+
+**Forms & Validation:**
+- **React Hook Form 7.62.0** for performant form handling
+- **Zod 4.0.14** for TypeScript-first schema validation
+- **@hookform/resolvers 5.2.1** for validation integration
+
+**Media & Components:**
+- **Next-video 2.2.1** for optimized video components
+- **Player.style 0.1.9** with Demuxed 2022 theme for video player styling
+- **Heroicons React 2.2.0** for SVG icons
+
+## Project Structure
+
+```
+cosmetics.info/
+├── app/                    # Next.js App Router
+│   ├── components/         # React components
+│   │   ├── form.tsx       # Complex multi-step product brief form
+│   │   └── header.tsx     # Site navigation header
+│   ├── globals.css        # Global styles and design tokens
+│   ├── layout.tsx         # Root layout with font configuration
+│   ├── page.tsx           # Main landing page (single-page app)
+│   └── favicon.ico        # Site favicon
+├── public/                # Static assets
+│   ├── images/           # Process images (consult.jpeg, contract.jpeg, etc.)
+│   └── video/            # Hero section promotional video
+├── next.config.ts        # Next.js configuration
+├── package.json          # Dependencies and scripts
+├── postcss.config.mjs    # PostCSS configuration
+├── tsconfig.json         # TypeScript configuration
+└── video.d.ts           # Video file type declarations
+```
+
+## Design System & Styling
+
+**Typography:**
+- **Font**: Roboto Flex with Cyrillic support (Russian content)
+- **Fluid Scale**: Uses `clamp()` functions for responsive typography
+  - Headers: `clamp(var(--text-2xl), var(--text-6xl))`
+  - Body: `clamp(var(--text-lg), var(--text-xl))`
+
+**Color Palette:**
+- **Primary**: `oklch(50% 0.134 242.749)` - Deep blue for CTAs
+- **Base**: Light grays for backgrounds
+- **Contextual Colors**: Section-specific colors for workflow steps
+  - Consultation: Green tones
+  - Contract: Purple tones
+  - Testing: Sky blue tones
+  - Production: Pink tones
+
+**Layout & Spacing:**
+- **Container**: `max-w-7xl` with responsive padding using `clamp(2rem, 3rem)`
+- **Sections**: Large vertical spacing `clamp(5rem, 9rem)`
+- **Borders**: `rounded-4xl` for modern, soft appearance
+
+## Key Features & Components
+
+### 1. Landing Page Sections (app/page.tsx)
+- **Hero Section**: Video player with promotional content
+- **Capabilities**: Company overview and services
+- **Workflow**: 4-step production process (consultation → contract → testing → production)
+- **Advantages**: Quality control, full-cycle service, uniqueness, fast delivery
+- **About**: Company history and credentials since 2009
+- **FAQ**: Collapsible accordion with common questions
+- **Contact Form**: Comprehensive product brief form
+- **Footer**: Contact information and social links
+
+### 2. Advanced Form Component (app/components/form.tsx)
+- **Multi-step product brief** with dynamic product addition/removal
+- **Collapsible sections** for better UX organization
+- **Comprehensive product specifications:**
+  - Brand and collection information
+  - Marketing claims and properties
+  - Packaging requirements and analogues
+  - Design specifications
+  - Texture descriptions and components
+  - Production volumes and target costs
+- **Client information capture**
+- **Form validation** using Zod schemas
+- **API integration** endpoint: `/api/submit-brief` (not yet implemented)
+
+### 3. Header Component (app/components/header.tsx)
+- Navigation menu (assumes smooth scroll to sections)
+- Company branding area
+
+## Business Information
+
+**Company Details:**
+- **Name**: ООО "Демидов Люкс СПА"
+- **Established**: 2009
+- **Location**: Moscow, Russia (two production facilities)
+- **Industry**: Custom cosmetics manufacturing and private labeling
+
+**Services:**
+- Custom formulation (7-day production timeline)
+- Full-cycle production (concept to finished product)
+- Private labeling and brand development
+- Product types: Face/body creams, masks, serums, shampoos, SPA products
+- Quality control with on-site laboratory
+- Complete certification and documentation
+
+**Contact Information:**
+- **Phone**: +7 (495) 123-45-67
+- **Email**: info@deluxspa.ru
+- **Telegram**: @demidovlux
+- **WhatsApp**: +7 (916) 123-45-67
+
+## Development Guidelines
+
+**Code Conventions:**
+- **Components**: PascalCase (Header, Form)
+- **Files**: kebab-case for assets, camelCase for configs
+- **CSS Classes**: Tailwind utilities with BEM-style custom classes
+- **Form Fields**: camelCase following React Hook Form conventions
+
+**Performance:**
+- Lazy loading for images
+- Optimized video player with custom styling
+- Fluid typography for responsive design
+- Modern React 19 features
+
+**Language:**
+- **Primary**: Russian (site content and UI)
+- **Code**: English (comments, variable names, technical documentation)
+
+## Current Status & Priorities
+
+### ✅ Completed Features
+- ✅ Responsive landing page with all sections
+- ✅ Advanced contact form with validation
+- ✅ Professional UI/UX with custom theme
+- ✅ Performance optimization and modern architecture
+
+### 🚧 High Priority TODOs
+- [ ] **Form backend integration** - Complete `/api/submit-brief` endpoint
+- [ ] **Email integration** - Automated email sending for form submissions
+- [ ] **Security improvements** - CSRF protection, CSP headers, input sanitization
+- [ ] **Company logo** - Replace "ЛОГОТИП" placeholder with actual logo
+- [ ] **Mobile optimization** - Enhanced mobile experience
+
+### 🔮 Future Enhancements
+- [ ] Multi-language support (English for international clients)
+- [ ] Admin dashboard for form submissions management
+- [ ] SEO optimization with meta tags and structured data
+- [ ] Analytics integration and performance monitoring
+- [ ] Content management system for dynamic updates
+- [ ] Product gallery and client testimonials
+
+## Development Commands
+```bash
+npm run dev      # Start development server with Turbopack
+npm run build    # Build for production
+npm run start    # Start production server  
+npm run lint     # Run ESLint code analysis
+```
+
+## Important Notes
+- This is a **single-page application** - all content is in `app/page.tsx`
+- The site is primarily in **Russian** targeting Russian businesses
+- Form submission currently **lacks backend implementation**
+- The project uses **bleeding-edge versions** (Tailwind 4 beta, React 19)
+- All images are **placeholder content** that needs to be replaced with actual company assets
+- The video player uses a **custom theme** for professional appearance
+
+This website represents a high-quality, modern web presence for a established cosmetics manufacturer, designed to convert business clients looking for custom manufacturing services.
