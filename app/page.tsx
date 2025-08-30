@@ -11,22 +11,21 @@ export default function Home() {
       <Header />
 
       {/* Видео */}
-      <section className="bg-base-300 relative pt-[clamp(5rem,9rem)] pb-[clamp(5rem,9rem)]">
+      <section className="bg-base-300 relative pt-[clamp(3rem,5rem)] pb-[clamp(5rem,9rem)]">
         <div className="max-w-7xl mx-auto flex flex-col h-full justify-center items-start md:items-center lg:text-center px-[clamp(2rem,3rem)] relative z-10 mb-[clamp(3rem,3rem)]">
           <header className="mb-8 w-full whitespace-pre-line md:text-center md:items-center mx-auto flex flex-col justify-center gap-4">
             <h1 className="text-[clamp(var(--text-3xl),var(--text-7xl))] leading-[clamp(2.2rem,5rem)] font-semibold">
               Производство твоего бренда
             </h1>
             <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-4xl">
-              Easily record and share AI-powered video messages with your
-              teammates and customers to supercharge productivity
+              Полный цикл производства косметики под вашим брендом от разработки рецептуры до готовой продукции за 7 дней
             </p>
           </header>
           <div>
             <a href="#order-form" className="btn btn-xl btn-primary">Оставить заявку</a>
           </div>
         </div>
-        <div className="max-w-5xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0">
+        <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0">
           <div className="rounded-4xl overflow-hidden shadow-2xl shadow-gray-600">
             <Player src="/video/video.mp4" theme={MediaThemeDemuxed2022} />
           </div>
@@ -484,7 +483,7 @@ export default function Home() {
       {/* Copyright */}
       <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] py-[clamp(1rem,2rem)]">
         <p className="text-neutral-700 text-center text-sm">
-          © 2025 ООО "Демидов Люкс СПА". Все права защищены.
+          © 2025 ООО «Демидов Люкс СПА». Все права защищены.
         </p>
       </div>
     </>
