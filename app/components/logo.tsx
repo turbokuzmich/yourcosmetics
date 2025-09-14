@@ -38,7 +38,7 @@ export default function Logo() {
           cy={6}
           r={6}
           style={{
-            fill: "#f679bc",
+            fill: "#6198e4",
             fillOpacity: 1,
             strokeWidth: 0.958376,
           }}
@@ -49,7 +49,7 @@ export default function Logo() {
           r={6}
           style={{
             display: "inline",
-            fill: "#ccc",
+            fill: "#a0c8ff",
             fillOpacity: 1,
             strokeWidth: 0.958376,
           }}
@@ -60,7 +60,7 @@ export default function Logo() {
           r={6}
           style={{
             display: "inline",
-            fill: "#b9f8cf",
+            fill: "#dae9fe",
             fillOpacity: 1,
             strokeWidth: 0.958376,
           }}

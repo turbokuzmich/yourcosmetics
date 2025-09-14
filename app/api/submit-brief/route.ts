@@ -39,16 +39,6 @@ const formatFormDataForEmail = (data: any, submissionId: string): string => {
     emailContent += `   🏷️ Бренд: ${product.brand}\n`;
     emailContent += `   📚 Коллекция: ${product.collection}\n`;
 
-    if (product.marketingClaims) {
-      emailContent += `   🎯 Маркетинговые клеймы: ${product.marketingClaims}\n`;
-    }
-    if (product.marketingClaimsProperties) {
-      emailContent += `   ✨ Свойства: ${product.marketingClaimsProperties}\n`;
-    }
-    if (product.analogues) {
-      emailContent += `   🔄 Аналоги: ${product.analogues}\n`;
-    }
-
     // Packaging information
     if (product.primaryPackaging) {
       emailContent += `   📦 Первичная упаковка: ${product.primaryPackaging}\n`;
@@ -61,9 +51,6 @@ const formatFormDataForEmail = (data: any, submissionId: string): string => {
     }
 
     // Design and texture
-    if (product.designIdeas) {
-      emailContent += `   🎨 Идеи дизайнов: ${product.designIdeas}\n`;
-    }
     if (product.textureDescription) {
       emailContent += `   🖐️ Описание текстуры: ${product.textureDescription}\n`;
     }
@@ -76,14 +63,8 @@ const formatFormDataForEmail = (data: any, submissionId: string): string => {
     if (product.textureBench) {
       emailContent += `   🔬 Бенч: ${product.textureBench}\n`;
     }
-    if (product.tonesCount) {
-      emailContent += `   🎨 Количество тонов: ${product.tonesCount}\n`;
-    }
 
     // Commercial information
-    if (product.purchaseVolumes) {
-      emailContent += `   📊 Объемы закупки: ${product.purchaseVolumes}\n`;
-    }
     if (product.targetCost) {
       emailContent += `   💰 Целевая стоимость: ${product.targetCost}\n`;
     }
@@ -141,15 +122,6 @@ const productSpecSchema = z.object({
     .string()
     .min(1, "Рабочее название продукта обязательно")
     .max(150, "Название продукта слишком длинное"),
-  marketingClaims: z
-    .string()
-    .max(1000, "Маркетинговые клеймы слишком длинные")
-    .optional(),
-  marketingClaimsProperties: z
-    .string()
-    .max(1000, "Свойства слишком длинные")
-    .optional(),
-  analogues: z.string().max(1000, "Аналоги слишком длинные").optional(),
   primaryPackaging: z
     .string()
     .max(1000, "Описание упаковки слишком длинное")
@@ -162,7 +134,6 @@ const productSpecSchema = z.object({
     .string()
     .max(50, "Объем упаковки слишком длинный")
     .optional(),
-  designIdeas: z.string().max(1000, "Идеи дизайнов слишком длинные").optional(),
   textureDescription: z
     .string()
     .max(1000, "Описание текстуры слишком длинное")
@@ -170,11 +141,6 @@ const productSpecSchema = z.object({
   components: z.string().max(1000, "Компоненты слишком длинные").optional(),
   fragrance: z.string().max(500, "Отдушка слишком длинная").optional(),
   textureBench: z.string().max(200, "Бенч слишком длинный").optional(),
-  tonesCount: z.string().max(50, "Количество тонов слишком длинное").optional(),
-  purchaseVolumes: z
-    .string()
-    .max(200, "Объемы закупки слишком длинные")
-    .optional(),
   targetCost: z
     .string()
     .max(100, "Целевая стоимость слишком длинная")

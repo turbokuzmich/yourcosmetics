@@ -9,24 +9,45 @@ import { useCsrf } from "../hooks/useCsrf";
 
 // Zod schema for form validation (client-side with length limits)
 const productSpecSchema = z.object({
-  brand: z.string().min(1, "Название бренда обязательно").max(100, "Название бренда слишком длинное"),
-  collection: z.string().min(1, "Название коллекции обязательно").max(100, "Название коллекции слишком длинное"),
-  productName: z.string().min(1, "Рабочее название продукта обязательно").max(150, "Название продукта слишком длинное"),
-  marketingClaims: z.string().max(1000, "Маркетинговые клеймы слишком длинные").optional(),
-  marketingClaimsProperties: z.string().max(1000, "Свойства слишком длинные").optional(),
-  analogues: z.string().max(1000, "Аналоги слишком длинные").optional(),
-  primaryPackaging: z.string().max(1000, "Описание упаковки слишком длинное").optional(),
-  packagingAnalogues: z.string().max(1000, "Аналоги упаковки слишком длинные").optional(),
-  packagingVolume: z.string().max(50, "Объем упаковки слишком длинный").optional(),
-  designIdeas: z.string().max(1000, "Идеи дизайнов слишком длинные").optional(),
-  textureDescription: z.string().max(1000, "Описание текстуры слишком длинное").optional(),
+  brand: z
+    .string()
+    .min(1, "Название бренда обязательно")
+    .max(100, "Название бренда слишком длинное"),
+  collection: z
+    .string()
+    .min(1, "Название коллекции обязательно")
+    .max(100, "Название коллекции слишком длинное"),
+  productName: z
+    .string()
+    .min(1, "Рабочее название продукта обязательно")
+    .max(150, "Название продукта слишком длинное"),
+  primaryPackaging: z
+    .string()
+    .max(1000, "Описание упаковки слишком длинное")
+    .optional(),
+  packagingAnalogues: z
+    .string()
+    .max(1000, "Аналоги упаковки слишком длинные")
+    .optional(),
+  packagingVolume: z
+    .string()
+    .max(50, "Объем упаковки слишком длинный")
+    .optional(),
+  textureDescription: z
+    .string()
+    .max(1000, "Описание текстуры слишком длинное")
+    .optional(),
   components: z.string().max(1000, "Компоненты слишком длинные").optional(),
   fragrance: z.string().max(500, "Отдушка слишком длинная").optional(),
   textureBench: z.string().max(200, "Бенч слишком длинный").optional(),
-  tonesCount: z.string().max(50, "Количество тонов слишком длинное").optional(),
-  purchaseVolumes: z.string().max(200, "Объемы закупки слишком длинные").optional(),
-  targetCost: z.string().max(100, "Целевая стоимость слишком длинная").optional(),
-  plannedDeliveryDate: z.string().max(100, "Дата доставки слишком длинная").optional(),
+  targetCost: z
+    .string()
+    .max(100, "Целевая стоимость слишком длинная")
+    .optional(),
+  plannedDeliveryDate: z
+    .string()
+    .max(100, "Дата доставки слишком длинная")
+    .optional(),
 });
 
 const formSchema = z.object({
@@ -41,7 +62,10 @@ const formSchema = z.object({
   honeypot: z.string().length(0, "Bot detected"), // Should always be empty
 
   // Product specifications (array for multiple products)
-  products: z.array(productSpecSchema).min(1, "Добавьте хотя бы один продукт").max(10, "Максимум 10 продуктов"),
+  products: z
+    .array(productSpecSchema)
+    .min(1, "Добавьте хотя бы один продукт")
+    .max(10, "Максимум 10 продуктов"),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -105,9 +129,14 @@ export default function Form() {
     type: "success" | "error";
     text: string;
   } | null>(null);
-  
+
   // CSRF token management
-  const { csrfToken, loading: csrfLoading, error: csrfError, refreshToken } = useCsrf();
+  const {
+    csrfToken,
+    loading: csrfLoading,
+    error: csrfError,
+    refreshToken,
+  } = useCsrf();
 
   const {
     register,
@@ -138,7 +167,7 @@ export default function Form() {
   // Update CSRF token when it's available
   useEffect(() => {
     if (csrfToken) {
-      setValue('csrfToken', csrfToken);
+      setValue("csrfToken", csrfToken);
     }
   }, [csrfToken, setValue]);
 
@@ -171,7 +200,7 @@ export default function Form() {
 
     // Bot detection - if honeypot is filled, it's a bot
     if (data.honeypot) {
-      console.warn('Bot detected - honeypot field filled');
+      console.warn("Bot detected - honeypot field filled");
       setSubmitMessage({
         type: "error",
         text: "Произошла ошибка при отправке брифа",
@@ -187,7 +216,7 @@ export default function Form() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify(data),
       });
@@ -195,9 +224,9 @@ export default function Form() {
       const responseData = await response.json();
 
       if (response.ok) {
-        setSubmitMessage({ 
-          type: "success", 
-          text: responseData.message || "Бриф успешно отправлен!" 
+        setSubmitMessage({
+          type: "success",
+          text: responseData.message || "Бриф успешно отправлен!",
         });
         reset();
         // Refresh CSRF token for next submission
@@ -218,14 +247,15 @@ export default function Form() {
         } else if (response.status === 400) {
           setSubmitMessage({
             type: "error",
-            text: responseData.error || "Проверьте правильность заполнения формы",
+            text:
+              responseData.error || "Проверьте правильность заполнения формы",
           });
         } else {
           throw new Error(responseData.error || "Ошибка отправки");
         }
       }
     } catch (error) {
-      console.error('Form submission error:', error);
+      console.error("Form submission error:", error);
       setSubmitMessage({
         type: "error",
         text: "Произошла ошибка при отправке брифа. Попробуйте позже.",
@@ -267,10 +297,7 @@ export default function Form() {
       <div className="py-[clamp(2rem,3rem)] px-[clamp(2rem,3rem)]">
         <div className="alert alert-error">
           <p>Ошибка загрузки формы: {csrfError}</p>
-          <button 
-            onClick={refreshToken} 
-            className="btn btn-outline btn-sm"
-          >
+          <button onClick={refreshToken} className="btn btn-outline btn-sm">
             Попробовать снова
           </button>
         </div>
@@ -281,7 +308,7 @@ export default function Form() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="py-[clamp(2rem,3rem)]">
       {/* Honeypot field - hidden from users but visible to bots */}
-      <div style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}>
+      <div style={{ position: "absolute", left: "-9999px", top: "-9999px" }}>
         <input
           {...register("honeypot")}
           type="text"
@@ -292,11 +319,7 @@ export default function Form() {
       </div>
 
       {/* Hidden CSRF token field */}
-      <input
-        {...register("csrfToken")}
-        type="hidden"
-        value={csrfToken || ''}
-      />
+      <input {...register("csrfToken")} type="hidden" value={csrfToken || ""} />
 
       <div className="px-[clamp(2rem,3rem)] mb-8">
         <h2 className="text-[clamp(var(--text-2xl),var(--text-4xl))] leading-[clamp(2rem,3rem)] font-semibold mb-[clamp(1rem,2rem)] text-neutral-900">
@@ -474,46 +497,6 @@ export default function Form() {
           </div>
 
           <div className="px-[clamp(2rem,3rem)] mb-6">
-            <CollapsibleSection title="Маркетинг">
-              <div>
-                <label className="block text-lg font-medium text-neutral-500 mb-2">
-                  Маркетинговые клеймы (без подтверждения доп. испытаниями)
-                </label>
-                <textarea
-                  {...register(`products.${index}.marketingClaims`)}
-                  rows={3}
-                  className="textarea textarea-lg textarea-bordered w-full placeholder:text-gray-300 text-neutral-900 bg-white rounded-sm"
-                  placeholder="Например, компоненты в текстуре содержат витамины и масла"
-                />
-              </div>
-
-              <div>
-                <label className="block text-lg font-medium text-neutral-500 mb-2">
-                  Маркетинговые клеймы и потребительские свойства
-                </label>
-                <textarea
-                  {...register(`products.${index}.marketingClaimsProperties`)}
-                  rows={3}
-                  className="textarea textarea-lg textarea-bordered w-full placeholder:text-gray-300 text-neutral-900 bg-white rounded-sm"
-                  placeholder="Например, чистый состав без синтетического воска и тяжелых металлов"
-                />
-              </div>
-
-              <div>
-                <label className="block text-lg font-medium text-neutral-500 mb-2">
-                  Аналоги, к которым стремимся
-                </label>
-                <textarea
-                  {...register(`products.${index}.analogues`)}
-                  rows={3}
-                  className="textarea textarea-lg textarea-bordered w-full placeholder:text-gray-300 text-neutral-900 bg-white rounded-sm"
-                  placeholder="Ссылки на продукты и описание"
-                />
-              </div>
-            </CollapsibleSection>
-          </div>
-
-          <div className="px-[clamp(2rem,3rem)] mb-6">
             <CollapsibleSection title="Упаковка">
               <div>
                 <label className="block text-lg font-medium text-neutral-500 mb-2">
@@ -554,23 +537,7 @@ export default function Form() {
           </div>
 
           <div className="px-[clamp(2rem,3rem)] mb-6">
-            <CollapsibleSection title="Дизайн">
-              <div>
-                <label className="block text-lg font-medium text-neutral-500 mb-2">
-                  Идеи дизайнов для просчета
-                </label>
-                <textarea
-                  {...register(`products.${index}.designIdeas`)}
-                  rows={3}
-                  className="textarea textarea-lg textarea-bordered w-full placeholder:text-gray-300 text-neutral-900 bg-white rounded-sm"
-                  placeholder="Тип печати, количество цветов и т.д. Например, круговой стикер, 2-3 цвета"
-                />
-              </div>
-            </CollapsibleSection>
-          </div>
-
-          <div className="px-[clamp(2rem,3rem)] mb-6">
-            <CollapsibleSection title="Текстура">
+            <CollapsibleSection title="Органолептические свойства">
               <div>
                 <label className="block text-lg font-medium text-neutral-500 mb-2">
                   Описание текстуры
@@ -591,7 +558,7 @@ export default function Form() {
                   {...register(`products.${index}.components`)}
                   rows={3}
                   className="textarea textarea-lg textarea-bordered w-full placeholder:text-gray-300 text-neutral-900 bg-white rounded-sm"
-                  placeholder="Например, витамины, минеральные масла и т.д."
+                  placeholder="Что должно быть и чего не должно быть в продукте. Например, витамины, минеральные масла и т.д."
                 />
               </div>
 
@@ -609,27 +576,13 @@ export default function Form() {
 
               <div>
                 <label className="block text-lg font-medium text-neutral-500 mb-2">
-                  Бенч для копирования по текстуре
+                  Примеры конкурентов
                 </label>
-                <input
+                <textarea
                   {...register(`products.${index}.textureBench`)}
-                  type="text"
-                  className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
-                />
-              </div>
-            </CollapsibleSection>
-          </div>
-
-          <div className="px-[clamp(2rem,3rem)] mb-6">
-            <CollapsibleSection title="Тона">
-              <div>
-                <label className="block text-lg font-medium text-neutral-500 mb-2">
-                  Количество тонов
-                </label>
-                <input
-                  {...register(`products.${index}.tonesCount`)}
-                  type="text"
-                  className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
+                  rows={3}
+                  placeholder="Ссылки на продукты и описание конкурентов"
+                  className="textarea textarea-lg textarea-bordered w-full placeholder:text-gray-300 text-neutral-900 bg-white rounded-sm"
                 />
               </div>
             </CollapsibleSection>
@@ -639,23 +592,12 @@ export default function Form() {
             <CollapsibleSection title="Производство">
               <div>
                 <label className="block text-lg font-medium text-neutral-500 mb-2">
-                  Ориентировочные объемы закупки
-                </label>
-                <input
-                  {...register(`products.${index}.purchaseVolumes`)}
-                  type="text"
-                  className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
-                  placeholder="На месяц / квартал / год"
-                />
-              </div>
-
-              <div>
-                <label className="block text-lg font-medium text-neutral-500 mb-2">
-                  Целевая себестоимость продукта с НДС
+                  Себестоимость
                 </label>
                 <input
                   {...register(`products.${index}.targetCost`)}
                   type="text"
+                  placeholder="Стоимость за 1 единицу товара (мл) или 1 кг готового продукта"
                   className="input input-lg block w-full placeholder:text-gray-300 text-neutral-900 rounded-sm bg-white"
                 />
               </div>

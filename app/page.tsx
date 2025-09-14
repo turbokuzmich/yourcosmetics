@@ -18,11 +18,14 @@ export default function Home() {
               Производство твоего бренда
             </h1>
             <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-4xl">
-              Полный цикл производства косметики под вашим брендом от разработки рецептуры до готовой продукции за 7 дней
+              Полный цикл производства косметики под вашим брендом от разработки
+              рецептуры до готовой продукции за 7 дней
             </p>
           </header>
           <div>
-            <a href="#order-form" className="btn btn-xl btn-primary">Оставить заявку</a>
+            <a href="#order-form" className="btn btn-xl btn-primary">
+              Оставить заявку
+            </a>
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0">
@@ -33,7 +36,10 @@ export default function Home() {
       </section>
 
       {/* Наши возможности */}
-      <section id="capabilities" className="pt-[clamp(5rem,9rem)] pb-[clamp(5rem,9rem)]">
+      <section
+        id="capabilities"
+        className="pt-[clamp(5rem,9rem)] pb-[clamp(5rem,9rem)]"
+      >
         <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0 flex flex-col gap-4">
           <h2 className="text-[clamp(var(--text-2xl),var(--text-5xl))] font-semibold md:text-center">
             Наши возможности
@@ -151,7 +157,10 @@ export default function Home() {
       </section>
 
       {/* Наши преимущества */}
-      <section id="advantages" className="2xl:px-[clamp(5rem,9rem)] px-0 mt-[clamp(5rem,9rem)] mb-[clamp(2rem,3rem)]">
+      <section
+        id="advantages"
+        className="2xl:px-[clamp(5rem,9rem)] px-0 mt-[clamp(5rem,9rem)] mb-[clamp(2rem,3rem)]"
+      >
         <div className="max-w-7xl bg-base-300 md:mx-auto lg:rounded-4xl md:text-center px-[clamp(2rem,3rem)] py-[clamp(5rem,7rem)]">
           <h2 className="text-[clamp(var(--text-3xl),var(--text-6xl))] leading-[clamp(2.2rem,4rem)] font-semibold mb-[clamp(1rem,2rem)]">
             Наши преимущества
@@ -230,7 +239,10 @@ export default function Home() {
       </section>
 
       {/* Кто мы? */}
-      <section id="about" className="mt-[clamp(5rem,9rem)] mb-[clamp(2rem,3rem)] text-white">
+      <section
+        id="about"
+        className="mt-[clamp(5rem,9rem)] mb-[clamp(2rem,3rem)] text-white"
+      >
         <div className="max-w-7xl bg-neutral md:mx-auto xl:rounded-4xl grid md:grid-cols-2 gap-4 lg:gap-12 px-[clamp(2rem,3rem)] py-[clamp(5rem,7rem)]">
           <div className="flex items-center justify-center mb-8 md:mb-0">
             <img
@@ -248,7 +260,7 @@ export default function Home() {
               ООО &laquo;Демидов Люкс СПА&raquo; перспективный российский
               производитель уходовой и&nbsp;профессиональной косметики для лица,
               тела и&nbsp;волос, в&nbsp;том числе, для SPA-процедур
-              с&nbsp;2009&nbsp;года, многократный участник Российских
+              с&nbsp;2014&nbsp;года, многократный участник Российских
               и&nbsp;Международных выставок производителей косметики,
               действующий член Московского Экспортного и&nbsp;Российского
               Экспортного центров. В&nbsp;компании работают опытные
@@ -285,10 +297,28 @@ export default function Home() {
               </div>
               <div className="collapse-content">
                 <p className="text-neutral-700 text-lg">
-                  Минимальный объем заказа зависит от типа продукции. Для
-                  большинства позиций минимальная партия составляет от 100 до
-                  500 единиц. Точный объем обсуждается индивидуально в
-                  зависимости от сложности рецептуры и упаковки.
+                  Минимальный заказ — от 100 единиц товара. Окончательный размер
+                  и стоимость партии обсуждаются с уполномоченным сотрудником
+                  производства.
+                </p>
+              </div>
+            </div>
+
+            <div className="collapse collapse-plus bg-base-200 rounded-2xl">
+              <input
+                type="radio"
+                name="faq-accordion"
+                aria-label="Раскрыть вопрос о готовых решениях"
+              />
+              <div className="collapse-title text-xl font-semibold">
+                Есть ли у вас готовые «рамочные» решения?
+              </div>
+              <div className="collapse-content">
+                <p className="text-neutral-700 text-lg">
+                  Заказчик может по своему усмотрению выбрать уже разработанные
+                  и проверенные рецептуры из нашего ассортимента, ознакомиться с
+                  продуктом, обсудить возможные модификации или заказать партию
+                  по уже отработанному рецепту.
                 </p>
               </div>
             </div>
@@ -304,10 +334,12 @@ export default function Home() {
               </div>
               <div className="collapse-content">
                 <p className="text-neutral-700 text-lg">
-                  Разработка новой рецептуры занимает от 3 до 14 рабочих дней в
-                  зависимости от сложности продукта и ваших требований. Простые
-                  варианты на основе базовых формул готовы быстрее, уникальные
-                  разработки требуют больше времени.
+                  Наша компания уделяет особое внимание разработке и воплощению
+                  ваших идей в качественные продукты, строго соблюдая стандарты.
+                  Процесс создания новой формулы занимает от 30 дней, так как
+                  требуется проведение лабораторных исследований на
+                  стабильность, оценка органолептических свойств со временем, а
+                  также анализы на микробиологическую безопасность.
                 </p>
               </div>
             </div>
@@ -323,29 +355,9 @@ export default function Home() {
               </div>
               <div className="collapse-content">
                 <p className="text-neutral-700 text-lg">
-                  Да, мы предоставляем все необходимые документы: сертификаты
-                  соответствия, декларации о соответствии, протоколы испытаний и
-                  другие документы согласно требованиям технического регламента
-                  Таможенного союза.
-                </p>
-              </div>
-            </div>
-
-            <div className="collapse collapse-plus bg-base-200 rounded-2xl">
-              <input
-                type="radio"
-                name="faq-accordion"
-                aria-label="Раскрыть вопрос о дизайне упаковки"
-              />
-              <div className="collapse-title text-xl font-semibold">
-                Можете ли вы помочь с дизайном упаковки?
-              </div>
-              <div className="collapse-content">
-                <p className="text-neutral-700 text-lg">
-                  Конечно! Мы предлагаем полный цикл услуг, включая разработку
-                  дизайна упаковки, этикеток и брендинга. Наша команда
-                  дизайнеров поможет создать уникальный и привлекательный образ
-                  для вашего продукта.
+                  Мы обеспечиваем сертификацию вашей продукции, а также
+                  оформляем маркировку «Честный Знак» и присваиваем штрихкоды
+                  товарам.
                 </p>
               </div>
             </div>
@@ -361,11 +373,27 @@ export default function Home() {
               </div>
               <div className="collapse-content">
                 <p className="text-neutral-700 text-lg">
-                  Мы производим широкий спектр косметической продукции: кремы
-                  для лица и тела, маски, сыворотки, шампуни, бальзамы, скрабы,
-                  профессиональную косметику для SPA-процедур и многое другое.
-                  Работаем как с готовыми рецептурами, так и разрабатываем
-                  индивидуальные формулы.
+                  Мы выпускаем все виды косметической продукции, за исключением
+                  спиртовой парфюмерии и декоративной косметики.
+                </p>
+              </div>
+            </div>
+
+            <div className="collapse collapse-plus bg-base-200 rounded-2xl">
+              <input
+                type="radio"
+                name="faq-accordion"
+                aria-label="Раскрыть вопрос о дизайне упаковки"
+              />
+              <div className="collapse-title text-xl font-semibold">
+                Можете ли вы помочь с дизайном упаковки?
+              </div>
+              <div className="collapse-content">
+                <p className="text-neutral-700 text-lg">
+                  По желанию клиента компания может взять на себя полный цикл
+                  производства — от разработки идеи и концепции бренда до
+                  визуализации и выпуска готовой партии. Все опции обсуждаются
+                  индивидуально.
                 </p>
               </div>
             </div>
@@ -381,10 +409,15 @@ export default function Home() {
               </div>
               <div className="collapse-content">
                 <p className="text-neutral-700 text-lg">
-                  После обсуждения всех деталей заказа мы заключаем договор.
-                  Работаем по схеме предоплаты: 50% при заключении договора,
-                  оставшиеся 50% перед отгрузкой готовой продукции. Возможны
-                  индивидуальные схемы оплаты для постоянных клиентов.
+                  На первом этапе, после согласования брифа и достижения
+                  договорённости, заказчик вносит предоплату в размере 50% от
+                  суммы заказа до начала работ. Следующие 20% оплачиваются после
+                  утверждения рецептуры и образцов, непосредственно перед
+                  запуском партии в производство. Оставшиеся 30% заказчик
+                  оплачивает после изготовления партии, но до отгрузки товара.
+                  Готовая продукция может храниться на складе до 7 календарных
+                  дней с момента изготовления, в течение которых заказчик должен
+                  принять товар.
                 </p>
               </div>
             </div>
