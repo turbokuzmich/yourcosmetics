@@ -241,9 +241,9 @@ export default function Home() {
       {/* Кто мы? */}
       <section
         id="about"
-        className="mt-[clamp(5rem,9rem)] mb-[clamp(2rem,3rem)] text-white"
+        className="mt-[clamp(5rem,9rem)] mb-[clamp(2rem,3rem)]"
       >
-        <div className="max-w-7xl bg-neutral md:mx-auto xl:rounded-4xl grid md:grid-cols-2 gap-4 lg:gap-12 px-[clamp(2rem,3rem)] py-[clamp(5rem,7rem)]">
+        <div className="max-w-7xl bg-base-300 md:mx-auto xl:rounded-4xl grid md:grid-cols-2 gap-4 lg:gap-12 px-[clamp(2rem,3rem)] py-[clamp(5rem,7rem)]">
           <div className="flex items-center justify-center mb-8 md:mb-0">
             <img
               src="/images/we.jpeg"
@@ -451,7 +451,7 @@ export default function Home() {
               <div className="space-y-2">
                 <a
                   href="tel:+74956659015"
-                  className="flex items-center justify-center text-2xl font-semibold text-neutral-700 hover:text-primary transition-colors"
+                  className="flex items-center justify-center text-xl font-semibold text-neutral-700 hover:text-primary transition-colors"
                 >
                   +7 (495) 665-90-15
                 </a>
@@ -465,7 +465,7 @@ export default function Home() {
               </h4>
               <a
                 href="mailto:office@твоякосметика.online"
-                className="flex items-center justify-center text-2xl font-semibold text-neutral-700 hover:text-primary transition-colors"
+                className="flex items-center justify-center text-xl font-semibold text-neutral-700 hover:text-primary transition-colors"
               >
                 office@твоякосметика.online
               </a>
@@ -481,11 +481,11 @@ export default function Home() {
                   href="https://t.me/neon_beard"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
+                  className="flex items-center justify-center w-8 h-8 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
                   aria-label="Telegram"
                 >
                   <svg
-                    className="w-5 h-5"
+                    className="w-4 h-4"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -496,11 +496,11 @@ export default function Home() {
                   href="https://wa.me/79263853751"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors"
+                  className="flex items-center justify-center w-8 h-8 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors"
                   aria-label="WhatsApp"
                 >
                   <svg
-                    className="w-5 h-5"
+                    className="w-4 h-4"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
