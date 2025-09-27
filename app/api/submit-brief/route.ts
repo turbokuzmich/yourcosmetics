@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { headers } from "next/headers";
-import { verifyCsrfToken } from "../csrf/route";
+import { verifyCsrfToken, createSessionId } from "../utils/csrf";
 import nodemailer from "nodemailer";
 
 // Email configuration
@@ -301,7 +301,7 @@ export async function POST(request: NextRequest) {
     }
 
     // 7. CSRF token validation
-    const sessionId = Buffer.from(`${ip}-${userAgent}`).toString("base64");
+    const sessionId = createSessionId(ip, userAgent);
     if (!body.csrfToken || !verifyCsrfToken(sessionId, body.csrfToken)) {
       return NextResponse.json(
         { error: "Invalid CSRF token" },
