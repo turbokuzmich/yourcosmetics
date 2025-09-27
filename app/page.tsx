@@ -450,10 +450,10 @@ export default function Home() {
               </h4>
               <div className="space-y-2">
                 <a
-                  href="tel:+74951234567"
+                  href="tel:+74956659015"
                   className="flex items-center justify-center text-2xl font-semibold text-neutral-700 hover:text-primary transition-colors"
                 >
-                  +7 (495) 123-45-67
+                  +7 (495) 665-90-15
                 </a>
               </div>
             </div>
@@ -464,10 +464,10 @@ export default function Home() {
                 Email
               </h4>
               <a
-                href="mailto:info@demidov-lux.ru"
+                href="mailto:office@твоякосметика.online"
                 className="flex items-center justify-center text-2xl font-semibold text-neutral-700 hover:text-primary transition-colors"
               >
-                info@deluxspa.ru
+                office@твоякосметика.online
               </a>
             </div>
 
@@ -478,7 +478,7 @@ export default function Home() {
               </h4>
               <div className="flex space-x-4">
                 <a
-                  href="https://t.me/demidovlux"
+                  href="https://t.me/neon_beard"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-10 h-10 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
@@ -493,7 +493,7 @@ export default function Home() {
                   </svg>
                 </a>
                 <a
-                  href="https://wa.me/79161234567"
+                  href="https://wa.me/79263853751"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-10 h-10 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors"
