@@ -639,7 +639,7 @@ export default function Form() {
             </div>
           )}
 
-          <div className="w-full flex justify-end gap-3">
+          <div className="w-full flex flex-col md:flex-row md:justify-end gap-3">
             <button
               type="button"
               onClick={addProduct}
@@ -647,7 +647,6 @@ export default function Form() {
             >
               Добавить еще продукт
             </button>
-
             <button
               type="submit"
               disabled={isSubmitting || !csrfToken}

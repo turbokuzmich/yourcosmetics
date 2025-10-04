@@ -176,7 +176,7 @@ export default function Home() {
       {/* Список преимуществ */}
       <section className="max-w-5xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0">
         <div className="grid lg:grid-cols-2 gap-3">
-          <div className="p-6 flex items-start">
+          <div className="lg:p-6 flex items-start">
             <CheckBadgeIcon className="w-7 h-7 text-green-500 flex-shrink-0 mr-4" />
             <div>
               <h4 className="font-semibold text-xl mb-1 text-neutral-900">
@@ -191,7 +191,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="p-6 flex items-start">
+          <div className="lg:p-6 flex items-start">
             <CheckBadgeIcon className="w-7 h-7 text-green-500 flex-shrink-0 mr-4" />
             <div>
               <h4 className="font-semibold text-xl mb-1 text-neutral-900">
@@ -205,7 +205,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="p-6 flex items-start">
+          <div className="lg:p-6 flex items-start">
             <CheckBadgeIcon className="w-7 h-7 text-green-500 flex-shrink-0 mr-4" />
             <div>
               <h4 className="font-semibold text-xl mb-1 text-neutral-900">
@@ -220,7 +220,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="p-6 flex items-start">
+          <div className="lg:p-6 flex items-start">
             <CheckBadgeIcon className="w-7 h-7 text-green-500 flex-shrink-0 mr-4" />
             <div>
               <h4 className="font-semibold text-xl mb-1 text-neutral-900">
@@ -481,11 +481,11 @@ export default function Home() {
                   href="https://t.me/neon_beard"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-8 h-8 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
+                  className="flex items-center justify-center md:w-8 md:h-8 w-16 h-16 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
                   aria-label="Telegram"
                 >
                   <svg
-                    className="w-4 h-4"
+                    className="md:w-4 md:h-4 w-8 h-8"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -496,11 +496,11 @@ export default function Home() {
                   href="https://wa.me/79263853751"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-8 h-8 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors"
+                  className="flex items-center justify-center md:w-8 md:h-8 w-16 h-16 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors"
                   aria-label="WhatsApp"
                 >
                   <svg
-                    className="w-4 h-4"
+                    className="md:w-4 md:h-4 w-8 h-8"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
