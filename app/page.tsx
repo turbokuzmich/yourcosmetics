@@ -11,7 +11,7 @@ export default function Home() {
       <Header />
 
       {/* Видео */}
-      <section className="bg-base-300 relative pt-[clamp(3rem,5rem)] pb-[clamp(5rem,9rem)]">
+      <section className="bg-base-300 relative pt-[clamp(3rem,5rem)] md:pb-[clamp(5rem,9rem)]">
         <div className="max-w-7xl mx-auto flex flex-col h-full justify-center items-start md:items-center lg:text-center px-[clamp(2rem,3rem)] relative z-10 mb-[clamp(3rem,3rem)]">
           <header className="mb-8 w-full whitespace-pre-line md:text-center md:items-center mx-auto flex flex-col justify-center gap-4">
             <h1 className="text-[clamp(var(--text-3xl),var(--text-7xl))] leading-[clamp(2.2rem,5rem)] font-semibold">
@@ -22,14 +22,14 @@ export default function Home() {
               рецептуры до готовой продукции за 7 дней
             </p>
           </header>
-          <div>
-            <a href="#order-form" className="btn btn-xl btn-primary">
+          <div className="w-full">
+            <a href="#order-form" className="btn btn-xl btn-primary w-full md:w-auto">
               Оставить заявку
             </a>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0">
-          <div className="rounded-4xl overflow-hidden shadow-2xl shadow-gray-600">
+        <div className="max-w-7xl mx-auto md:px-[clamp(2rem,3rem)] 2xl:px-0">
+          <div className="md:rounded-4xl overflow-hidden md:shadow-2xl shadow-gray-600">
             <Player src="/video/video.mp4" theme={MediaThemeDemuxed2022} />
           </div>
         </div>
