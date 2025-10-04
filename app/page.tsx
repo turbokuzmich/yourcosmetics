@@ -66,13 +66,13 @@ export default function Home() {
         </header>
         <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0">
           <ul className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[clamp(1rem,2rem)]">
-            <li className="flex flex-col items-center transition-shadow duration-300 hover:shadow-2xl rounded-4xl overflow-hidden">
-              <div className="grow grid grid-cols-2 gap-2 items-center lg:grid-cols-1 lg:block lg:grow 2xl:max-w-none w-full bg-green-200 p-[clamp(1rem,2rem)]">
+            <li className="flex flex-col items-center transition-shadow duration-300 hover:shadow-2xl md:rounded-4xl overflow-hidden">
+              <div className="grow grid gap-2 items-center grid-cols-1 2xl:max-w-none w-full bg-green-200 p-[2rem]">
                 <div className="col-span-1 flex justify-center items-center lg:mb-4">
                   <img
                     src="/images/consult.jpeg"
                     alt="Консультация"
-                    className="w-full h-auto max-w-[180px] max-h-[120px] object-cover"
+                    className="w-full h-auto object-cover"
                     sizes="(max-width: 1024px) 120px, 180px"
                     loading="lazy"
                   />
@@ -87,13 +87,13 @@ export default function Home() {
                 </header>
               </div>
             </li>
-            <li className="flex flex-col items-center transition-shadow duration-300 hover:shadow-2xl rounded-4xl overflow-hidden">
-              <div className="grow grid grid-cols-2 gap-2 items-center lg:grid-cols-1 lg:block lg:grow 2xl:max-w-none w-full bg-violet-200 p-[clamp(1rem,2rem)]">
+            <li className="flex flex-col items-center transition-shadow duration-300 hover:shadow-2xl md:rounded-4xl overflow-hidden">
+              <div className="grow grid gap-2 items-center grid-cols-1 2xl:max-w-none w-full bg-violet-200 p-[2rem]">
                 <div className="col-span-1 flex justify-center items-center lg:mb-4">
                   <img
                     src="/images/contract.jpeg"
                     alt="Консультация"
-                    className="w-full h-auto max-w-[180px] max-h-[120px] object-cover"
+                    className="w-full h-auto object-cover"
                     sizes="(max-width: 1024px) 120px, 180px"
                     loading="lazy"
                   />
@@ -109,13 +109,13 @@ export default function Home() {
                 </header>
               </div>
             </li>
-            <li className="flex flex-col items-center transition-shadow duration-300 hover:shadow-2xl rounded-4xl overflow-hidden">
-              <div className="grow grid grid-cols-2 gap-2 items-center lg:grid-cols-1 lg:block lg:grow 2xl:max-w-none w-full bg-sky-200 p-[clamp(1rem,2rem)]">
+            <li className="flex flex-col items-center transition-shadow duration-300 hover:shadow-2xl md:rounded-4xl overflow-hidden">
+              <div className="grow grid gap-2 items-center grid-cols-1 2xl:max-w-none w-full bg-sky-200 p-[2rem]">
                 <div className="col-span-1 flex justify-center items-center lg:mb-4">
                   <img
                     src="/images/test.jpeg"
                     alt="Консультация"
-                    className="w-full h-auto max-w-[180px] max-h-[120px] object-cover"
+                    className="w-full h-auto object-cover"
                     sizes="(max-width: 1024px) 120px, 180px"
                     loading="lazy"
                   />
@@ -130,13 +130,13 @@ export default function Home() {
                 </header>
               </div>
             </li>
-            <li className="flex flex-col items-center transition-shadow duration-300 hover:shadow-2xl rounded-4xl overflow-hidden">
-              <div className="grow grid grid-cols-2 gap-2 items-center lg:grid-cols-1 lg:block lg:grow 2xl:max-w-none w-full bg-pink-200 p-[clamp(1rem,2rem)]">
+            <li className="flex flex-col items-center transition-shadow duration-300 hover:shadow-2xl md:rounded-4xl overflow-hidden">
+              <div className="grow grid gap-2 items-center grid-cols-1 2xl:max-w-none w-full bg-pink-200 p-[2rem]">
                 <div className="col-span-1 flex justify-center items-center lg:mb-4">
                   <img
                     src="/images/production.jpeg"
                     alt="Консультация"
-                    className="w-full h-auto max-w-[180px] max-h-[120px] object-cover"
+                    className="w-full h-auto object-cover"
                     sizes="(max-width: 1024px) 120px, 180px"
                     loading="lazy"
                   />
