@@ -38,7 +38,7 @@ export default function Logo() {
           cy={6}
           r={6}
           style={{
-            fill: "oklch(66% 0.179 58.318)",
+            fill: "#f679bc",
             fillOpacity: 1,
             strokeWidth: 0.958376,
           }}
@@ -49,7 +49,7 @@ export default function Logo() {
           r={6}
           style={{
             display: "inline",
-            fill: "oklch(85% 0.179 58.318)",
+            fill: "#ccc",
             fillOpacity: 1,
             strokeWidth: 0.958376,
           }}
@@ -60,7 +60,7 @@ export default function Logo() {
           r={6}
           style={{
             display: "inline",
-            fill: "oklch(92% 0.179 58.318)",
+            fill: "#b9f8cf",
             fillOpacity: 1,
             strokeWidth: 0.958376,
           }}
