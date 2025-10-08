@@ -67,29 +67,29 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0">
           <ul className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[clamp(1rem,2rem)]">
             <li className="flex flex-col items-center transition-shadow duration-300 hover:shadow-2xl md:rounded-4xl overflow-hidden">
-              <div className="grow grid gap-2 items-center grid-cols-1 2xl:max-w-none w-full bg-green-200 p-[2rem]">
-                <div className="col-span-1 flex justify-center items-center lg:mb-4">
+              <div className="grow flex-col gap-2 items-center 2xl:max-w-none w-full bg-base-300 p-[2rem]">
+                <div className="flex justify-center items-center lg:mb-4">
                   <img
                     src="/images/consult.jpeg"
                     alt="Консультация"
-                    className="w-full h-auto object-cover"
+                    className="w-full h-155px object-cover"
                     sizes="(max-width: 1024px) 120px, 180px"
                     loading="lazy"
                   />
                 </div>
                 <header>
-                  <h3 className="lg:text-center text-xl leading-12 font-semibold text-green-900">
+                  <h3 className="lg:text-center text-xl leading-12 font-semibold">
                     Консультация
                   </h3>
-                  <p className="text-green-800 text-sm lg:text-center">
+                  <p className="text-sm lg:text-center">
                     Обсуждаем заказ, предлагаем рецептуры
                   </p>
                 </header>
               </div>
             </li>
             <li className="flex flex-col items-center transition-shadow duration-300 hover:shadow-2xl md:rounded-4xl overflow-hidden">
-              <div className="grow grid gap-2 items-center grid-cols-1 2xl:max-w-none w-full bg-violet-200 p-[2rem]">
-                <div className="col-span-1 flex justify-center items-center lg:mb-4">
+              <div className="grow flex-col gap-2 items-center 2xl:max-w-none w-full bg-base-300 p-[2rem]">
+                <div className="flex justify-center items-center lg:mb-4">
                   <img
                     src="/images/contract.jpeg"
                     alt="Консультация"
@@ -99,10 +99,10 @@ export default function Home() {
                   />
                 </div>
                 <header>
-                  <h3 className="lg:text-center text-xl leading-12 font-semibold text-violet-900">
+                  <h3 className="lg:text-center text-xl leading-12 font-semibold">
                     Договор
                   </h3>
-                  <p className="text-violet-800 text-sm lg:text-center">
+                  <p className="text-sm lg:text-center">
                     Заключаем договор, получаем предоплату, изготавливаем
                     образцы
                   </p>
@@ -110,8 +110,8 @@ export default function Home() {
               </div>
             </li>
             <li className="flex flex-col items-center transition-shadow duration-300 hover:shadow-2xl md:rounded-4xl overflow-hidden">
-              <div className="grow grid gap-2 items-center grid-cols-1 2xl:max-w-none w-full bg-sky-200 p-[2rem]">
-                <div className="col-span-1 flex justify-center items-center lg:mb-4">
+              <div className="grow flex-col gap-2 items-center 2xl:max-w-none w-full bg-base-300 p-[2rem]">
+                <div className="flex justify-center items-center lg:mb-4">
                   <img
                     src="/images/test.jpeg"
                     alt="Консультация"
@@ -121,18 +121,18 @@ export default function Home() {
                   />
                 </div>
                 <header>
-                  <h3 className="lg:text-center text-xl leading-12 font-semibold text-sky-900">
+                  <h3 className="lg:text-center text-xl leading-12 font-semibold">
                     Тестирование
                   </h3>
-                  <p className="text-sky-800 text-sm lg:text-center">
+                  <p className="text-sm lg:text-center">
                     Передаём Вам для тестирования и утверждения образцы.
                   </p>
                 </header>
               </div>
             </li>
             <li className="flex flex-col items-center transition-shadow duration-300 hover:shadow-2xl md:rounded-4xl overflow-hidden">
-              <div className="grow grid gap-2 items-center grid-cols-1 2xl:max-w-none w-full bg-pink-200 p-[2rem]">
-                <div className="col-span-1 flex justify-center items-center lg:mb-4">
+              <div className="grow flex-col gap-2 items-center 2xl:max-w-none w-full bg-base-300 p-[2rem]">
+                <div className="flex justify-center items-center lg:mb-4">
                   <img
                     src="/images/production.jpeg"
                     alt="Консультация"
@@ -142,10 +142,10 @@ export default function Home() {
                   />
                 </div>
                 <header>
-                  <h3 className="lg:text-center text-xl leading-12 font-semibold text-pink-900">
+                  <h3 className="lg:text-center text-xl leading-12 font-semibold">
                     Производство
                   </h3>
-                  <p className="text-pink-800 text-sm lg:text-center">
+                  <p className="text-sm lg:text-center">
                     Запускаем производство продукции на основе утверждённых
                     образцов.
                   </p>
