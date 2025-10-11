@@ -23,7 +23,10 @@ export default function Home() {
             </p>
           </header>
           <div className="w-full">
-            <a href="#order-form" className="btn btn-xl btn-primary w-full md:w-auto">
+            <a
+              href="#order-form"
+              className="btn btn-xl btn-primary w-full md:w-auto"
+            >
               Оставить заявку
             </a>
           </div>
@@ -45,14 +48,27 @@ export default function Home() {
             Наши возможности
           </h2>
           <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
-            Изготовление косметической продукции для вашего бренда
-            от&nbsp;7&nbsp;дней с&nbsp;момента обращения, а&nbsp;также
-            индивидуальные разработки продукции с&nbsp;уникальными рецептурами,
-            дизайном и&nbsp;упаковкой &laquo;под ключ&raquo;.
+            Изготовление косметики для вашего бренда — от 7 дней с момента
+            обращения. Предлагаем индивидуальные разработки продукции с
+            уникальными рецептурами, дизайном и упаковкой «под ключ».
           </p>
           <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
-            Разработаем бренд, концепцию, дизайн, упаковку, рецептуры
-            и&nbsp;выпустим продукцию под вашей торговой маркой.
+            В ассортименте — уходовая и профессиональная косметика для лица,
+            тела и волос: кремы, гели, сыворотки, шампуни, масла, бальзамы,
+            патчи, BB- и СС-кремы и многое другое. Ассортимент формируется с
+            учётом пожеланий заказчика.
+          </p>
+          <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
+            Осуществляется сертификация продукции и присвоение маркировки
+            «Честный знак».
+          </p>
+          <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
+            Возможны заказы как небольших, так и крупных партий. Каждому клиенту
+            — индивидуальный подход.
+          </p>
+          <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
+            Разработка бренда, концепции, дизайна, упаковки, рецептур и выпуск
+            продукции под вашей торговой маркой.
           </p>
         </div>
       </section>
