@@ -450,7 +450,7 @@ export default function Home() {
             "var(--color-base-100) 0,var(--color-base-100) 92%,var(--color-base-300) 85%,var(--color-base-300) 100%",
         }}
       >
-        <div className="max-w-4xl bg-white md:mx-auto xl:rounded-4xl shadow-2xl shadow-gray-600/20 flex flex-col gap-2">
+        <div className="max-w-4xl bg-white md:mx-auto xl:rounded-4xl md:shadow-2xl md:shadow-gray-600/20 flex flex-col gap-2">
           <Form />
         </div>
       </section>
