@@ -3,6 +3,7 @@ import MediaThemeDemuxed2022 from "player.style/demuxed-2022/react";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import Form from "./components/form";
 import Header from "./components/header";
+import poster from "./poster.jpg";
 
 export default function Home() {
   return (
@@ -33,7 +34,12 @@ export default function Home() {
         </div>
         <div className="max-w-7xl mx-auto md:px-[clamp(2rem,3rem)] 2xl:px-0">
           <div className="md:rounded-4xl overflow-hidden md:shadow-2xl shadow-gray-600">
-            <Player src="/video/video.mp4" theme={MediaThemeDemuxed2022} />
+            <Player
+              src="/video/video.mp4"
+              poster={poster.src}
+              blurDataURL={poster.blurDataURL}
+              theme={MediaThemeDemuxed2022}
+            />
           </div>
         </div>
       </section>
