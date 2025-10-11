@@ -18,7 +18,7 @@ export default function Logo() {
             fontSize: "16.9333px",
             fontFamily: "Montserrat",
             letterSpacing: "3.175px",
-            fill: "#666",
+            fill: "oklch(35% 0.005 240)",
             strokeWidth: 0.647965,
           }}
         />
@@ -29,7 +29,7 @@ export default function Logo() {
             fontSize: "7.05556px",
             fontFamily: "Montserrat",
             letterSpacing: "1.05833px",
-            fill: "#666",
+            fill: "oklch(35% 0.005 240)",
             strokeWidth: 0.647965,
           }}
         />
