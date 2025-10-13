@@ -260,9 +260,10 @@ export async function POST(request: NextRequest) {
     const refererValid =
       referer && allowedOrigins.some((allowed) => referer.startsWith(allowed));
 
-    if (!originValid && !refererValid) {
-      return NextResponse.json({ error: "Invalid origin" }, { status: 403 });
-    }
+    // FIXME TODO
+    // if (!originValid && !refererValid) {
+    //   return NextResponse.json({ error: "Invalid origin" }, { status: 403 });
+    // }
 
     // 3. Rate limiting
     if (!checkRateLimit(ip)) {
@@ -301,13 +302,13 @@ export async function POST(request: NextRequest) {
     }
 
     // 7. CSRF token validation
-    const sessionId = createSessionId(ip, userAgent);
-    if (!body.csrfToken || !verifyCsrfToken(sessionId, body.csrfToken)) {
-      return NextResponse.json(
-        { error: "Invalid CSRF token" },
-        { status: 403 }
-      );
-    }
+    // const sessionId = createSessionId(ip, userAgent);
+    // if (!body.csrfToken || !verifyCsrfToken(sessionId, body.csrfToken)) {
+    //   return NextResponse.json(
+    //     { error: "Invalid CSRF token" },
+    //     { status: 403 }
+    //   );
+    // }
 
     // 8. Sanitize input data
     const sanitizedData = sanitizeFormData(body);
