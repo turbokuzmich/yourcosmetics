@@ -51,18 +51,17 @@ export default function Header() {
 
           {/* Desktop Menu - Hidden on mobile, visible from md breakpoint */}
           <div className="hidden md:flex w-full items-center justify-end">
-            <ul className="flex items-center gap-2">
-              <li>
-                {menuItems.map((item) => (
+            <ul className="flex flex-row items-center gap-2">
+              {menuItems.map((item) => (
+                <li key={item.href}>
                   <a
-                    key={item.href}
                     href={item.href}
-                    className="btn btn-link btn-lg no-underline"
+                    className="menu-link relative px-4 py-2 text-lg font-medium text-base-content hover:text-primary transition-colors duration-200"
                   >
                     {item.label}
                   </a>
-                ))}
-              </li>
+                </li>
+              ))}
             </ul>
           </div>
 
