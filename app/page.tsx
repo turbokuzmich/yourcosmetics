@@ -15,10 +15,10 @@ export default function Home() {
       <section className="bg-base-300 relative pt-[clamp(3rem,5rem)] md:pb-[clamp(5rem,9rem)]">
         <div className="max-w-7xl mx-auto flex flex-col h-full justify-center items-start md:items-center lg:text-center px-[clamp(2rem,3rem)] relative z-10 mb-[clamp(3rem,3rem)]">
           <header className="mb-8 w-full whitespace-pre-line md:text-center md:items-center mx-auto flex flex-col justify-center gap-4">
-            <h1 className="text-[clamp(var(--text-3xl),var(--text-7xl))] leading-[clamp(2.2rem,5rem)] font-semibold">
+            <h1 className="text-[clamp(var(--text-3xl),var(--text-7xl))] leading-[clamp(2.2rem,5rem)]">
               Производство твоего бренда
             </h1>
-            <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-4xl">
+            <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-4xl font-thin">
               Полный цикл производства косметики под вашим брендом от разработки
               рецептуры до готовой продукции за 7 дней
             </p>
@@ -26,7 +26,7 @@ export default function Home() {
           <div className="w-full">
             <a
               href="#order-form"
-              className="btn btn-xl btn-primary w-full md:w-auto"
+              className="btn btn-xl btn-primary btn-outline w-full md:w-auto"
             >
               Оставить заявку
             </a>
@@ -54,27 +54,23 @@ export default function Home() {
             Наши возможности
           </h2>
           <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
-            Изготовление косметики для вашего бренда — от 7 дней с момента
-            обращения. Предлагаем индивидуальные разработки продукции с
-            уникальными рецептурами, дизайном и упаковкой «под ключ».
+            Изготовим косметику для вашего бренда от 7 дней с момента обращения,
+            а также индивидуальные разработки продукции с уникальными
+            рецептурами, дизайном и упаковкой «под ключ». Уходовая и
+            профессиональная косметика для лица, тела, волос. Кремы, гели,
+            сыворотки, шампуни, масла, бальзамы, патчи, BB, СС и многое другое.
+            Всё зависит от пожеланий заказчика.
           </p>
           <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
-            В ассортименте — уходовая и профессиональная косметика для лица,
-            тела и волос: кремы, гели, сыворотки, шампуни, масла, бальзамы,
-            патчи, BB- и СС-кремы и многое другое. Ассортимент формируется с
-            учётом пожеланий заказчика.
+            Сертифицируем, а также присвоим марку честный знак.
           </p>
           <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
-            Осуществляется сертификация продукции и присвоение маркировки
-            «Честный знак».
+            Работаем с небольшими и крупными партиями, индивидуальный подход к
+            каждому клиенту.
           </p>
           <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
-            Возможны заказы как небольших, так и крупных партий. Каждому клиенту
-            — индивидуальный подход.
-          </p>
-          <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
-            Разработка бренда, концепции, дизайна, упаковки, рецептур и выпуск
-            продукции под вашей торговой маркой.
+            Разработаем бренд, концепцию, дизайн, упаковку, рецептуры и выпустим
+            продукцию под вашей торговой маркой.
           </p>
         </div>
       </section>
