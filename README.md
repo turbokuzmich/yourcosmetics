@@ -257,10 +257,13 @@ npm run lint     # Run ESLint code analysis
 - [x] **Security improvements** - Full security suite implemented (CSRF, CSP, rate limiting, etc.)
 - [x] **Input sanitization** - XSS protection and content filtering
 - [x] **Bot protection** - Honeypot fields and behavioral analysis
+- [x] **Email integration** - Automated email sending on form submission
+- [x] **GDPR Cookie Consent** - Comprehensive cookie consent banner with preferences management
 
 ### 🚧 High Priority
-- [x] **Email integration** - Automated email sending on form submission (✅ completed)
 - [ ] **Database integration** - Persistent storage for submissions
+- [ ] **Privacy Policy page** - Detailed privacy policy and data processing information
+- [ ] **Cookie preferences management** - Allow users to modify cookie settings after initial consent
 - [ ] **Company logo** - Replace "ЛОГОТИП" placeholder with actual logo
 - [ ] **Icons and favicons** - Custom icon set matching brand
 - [ ] **Mobile version optimization** - Enhanced mobile experience
@@ -269,9 +272,12 @@ npm run lint     # Run ESLint code analysis
 - [ ] **Multi-language support** - English version for international clients
 - [ ] **Admin dashboard** - Form submissions management
 - [ ] **SEO optimization** - Meta tags, structured data, sitemap
-- [ ] **Analytics integration** - Google Analytics or similar
+- [ ] **Analytics integration** - Google Analytics with GDPR-compliant tracking
 - [ ] **Performance monitoring** - Core Web Vitals tracking
 - [ ] **Content Management** - Dynamic content updates
+- [ ] **Data retention policies** - Automated data cleanup and user data export
+- [ ] **Cookie audit system** - Regular cookie scanning and compliance monitoring
+- [ ] **User data dashboard** - Allow users to view, edit, and delete their data
 - [ ] **Blog section** - Industry insights and company news
 - [ ] **Product gallery** - Showcase of manufactured products
 - [ ] **Client testimonials** - Success stories and reviews

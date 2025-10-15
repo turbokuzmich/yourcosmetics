@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto_Flex } from "next/font/google";
 import "./globals.css";
+import CookieConsent from "./components/cookie-consent";
 
 const roboto = Roboto_Flex({
   subsets: ["cyrillic-ext", "latin"],
@@ -18,8 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${roboto.variable} antialiased`}>{children}</body>
+    <html lang="ru">
+      <body className={`${roboto.variable} antialiased`}>
+        {children}
+        <CookieConsent />
+      </body>
     </html>
   );
 }

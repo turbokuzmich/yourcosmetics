@@ -127,6 +127,19 @@ cosmetics.info/
 - Navigation menu (assumes smooth scroll to sections)
 - Company branding area
 
+### 4. GDPR Cookie Consent System (app/components/cookie-consent.tsx)
+- **Comprehensive cookie consent banner** with Russian language support
+- **Granular cookie preferences** - Necessary, Analytics, Marketing, Functional categories
+- **Persistent consent storage** - LocalStorage with expiration tracking (1 year)
+- **User preference management** - Modal for detailed cookie settings
+- **GDPR compliance features:**
+  - Clear consent withdrawal mechanism
+  - Detailed cookie category descriptions
+  - Consent expiration and renewal prompts
+  - Integration ready for analytics/marketing scripts
+- **Custom hook integration** (useCookieConsent.ts) for consent state management
+- **Professional UI** - Modal design with toggle switches and clear descriptions
+
 ## Business Information
 
 **Company Details:**
@@ -183,9 +196,12 @@ cosmetics.info/
 - ✅ **Security headers** - CSP, HSTS, X-Frame-Options, and other protective measures
 - ✅ **Request validation** - Origin checks, payload limits, Content-Type validation
 - ✅ **Email integration** - Automated email sending for form submissions via Nodemailer and Yandex SMTP
+- ✅ **GDPR Cookie Consent** - Comprehensive cookie consent banner with granular preferences management
 
 ### 🚧 Current High Priority TODOs
 - [ ] **Database integration** - Persistent storage for form submissions  
+- [ ] **Privacy Policy page** - Detailed privacy policy and data processing information
+- [ ] **Cookie preferences management** - Allow users to modify cookie settings after initial consent
 - [ ] **Company logo** - Replace "ЛОГОТИП" placeholder with actual logo
 - [ ] **Mobile optimization** - Enhanced mobile experience
 
