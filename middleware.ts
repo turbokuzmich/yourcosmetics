@@ -50,8 +50,8 @@ export function middleware(request: NextRequest) {
     'geolocation=(), microphone=(), camera=(), payment=(), usb=(), bluetooth=()'
   );
   
-  // Cross-Origin Embedder Policy
-  response.headers.set('Cross-Origin-Embedder-Policy', 'require-corp');
+  // // Cross-Origin Embedder Policy
+  // response.headers.set('Cross-Origin-Embedder-Policy', 'require-corp');
   
   // Cross-Origin Opener Policy
   response.headers.set('Cross-Origin-Opener-Policy', 'same-origin');
