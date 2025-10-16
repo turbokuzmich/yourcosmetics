@@ -5,10 +5,13 @@ import Form from "./components/form";
 import Header from "./components/header";
 import WorkflowCards from "./components/workflow-cards";
 import poster from "./poster.jpg";
+import Metrika from "./components/metrika";
 
 export default function Home() {
   return (
     <>
+      <Metrika />
+
       {/* Шапка */}
       <Header />
 
