@@ -9,13 +9,13 @@ export function middleware(request: NextRequest) {
   
   // Content Security Policy - adjust as needed for your specific resources
   const csp = [
-    "default-src 'self'",
+    "default-src 'self' https://mc.yandex.ru",
     "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://mc.yandex.ru", // Note: Consider removing unsafe-* in production
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     "font-src 'self' https://fonts.gstatic.com",
     "img-src 'self' data: https:",
     "media-src 'self' data:",
-    "connect-src 'self'",
+    "connect-src 'self' https://mc.yandex.ru",
     "frame-ancestors 'none'",
     "base-uri 'self'",
     "form-action 'self'",
