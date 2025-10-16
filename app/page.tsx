@@ -3,6 +3,7 @@ import MediaThemeDemuxed2022 from "player.style/demuxed-2022/react";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import Form from "./components/form";
 import Header from "./components/header";
+import WorkflowCards from "./components/workflow-cards";
 import poster from "./poster.jpg";
 
 export default function Home() {
@@ -83,94 +84,7 @@ export default function Home() {
           </h2>
         </header>
         <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0">
-          <ul className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[clamp(1rem,2rem)]">
-            <li className="flex flex-col items-center transition-all duration-300 hover:shadow-2xl md:rounded-4xl overflow-hidden group">
-              <div className="grow flex-col gap-2 items-center 2xl:max-w-none w-full bg-base-300 p-[2rem]">
-                <div className="flex justify-center items-center lg:mb-4">
-                  <img
-                    src="/images/consult.jpeg"
-                    alt="Консультация"
-                    className="w-full h-155px object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                    sizes="(max-width: 1024px) 120px, 180px"
-                    loading="lazy"
-                  />
-                </div>
-                <header>
-                  <h3 className="lg:text-center text-xl leading-12 font-semibold">
-                    Консультация
-                  </h3>
-                  <p className="text-sm lg:text-center">
-                    Обсуждаем заказ, предлагаем рецептуры
-                  </p>
-                </header>
-              </div>
-            </li>
-            <li className="flex flex-col items-center transition-all duration-300 hover:shadow-2xl md:rounded-4xl overflow-hidden group">
-              <div className="grow flex-col gap-2 items-center 2xl:max-w-none w-full bg-base-300 p-[2rem]">
-                <div className="flex justify-center items-center lg:mb-4">
-                  <img
-                    src="/images/contract.jpeg"
-                    alt="Консультация"
-                    className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                    sizes="(max-width: 1024px) 120px, 180px"
-                    loading="lazy"
-                  />
-                </div>
-                <header>
-                  <h3 className="lg:text-center text-xl leading-12 font-semibold">
-                    Договор
-                  </h3>
-                  <p className="text-sm lg:text-center">
-                    Заключаем договор, получаем предоплату, изготавливаем
-                    образцы
-                  </p>
-                </header>
-              </div>
-            </li>
-            <li className="flex flex-col items-center transition-all duration-300 hover:shadow-2xl md:rounded-4xl overflow-hidden group">
-              <div className="grow flex-col gap-2 items-center 2xl:max-w-none w-full bg-base-300 p-[2rem]">
-                <div className="flex justify-center items-center lg:mb-4">
-                  <img
-                    src="/images/test.jpeg"
-                    alt="Консультация"
-                    className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                    sizes="(max-width: 1024px) 120px, 180px"
-                    loading="lazy"
-                  />
-                </div>
-                <header>
-                  <h3 className="lg:text-center text-xl leading-12 font-semibold">
-                    Тестирование
-                  </h3>
-                  <p className="text-sm lg:text-center">
-                    Передаём Вам для тестирования и утверждения образцы.
-                  </p>
-                </header>
-              </div>
-            </li>
-            <li className="flex flex-col items-center transition-all duration-300 hover:shadow-2xl md:rounded-4xl overflow-hidden group">
-              <div className="grow flex-col gap-2 items-center 2xl:max-w-none w-full bg-base-300 p-[2rem]">
-                <div className="flex justify-center items-center lg:mb-4">
-                  <img
-                    src="/images/production.jpeg"
-                    alt="Консультация"
-                    className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                    sizes="(max-width: 1024px) 120px, 180px"
-                    loading="lazy"
-                  />
-                </div>
-                <header>
-                  <h3 className="lg:text-center text-xl leading-12 font-semibold">
-                    Производство
-                  </h3>
-                  <p className="text-sm lg:text-center">
-                    Запускаем производство продукции на основе утверждённых
-                    образцов.
-                  </p>
-                </header>
-              </div>
-            </li>
-          </ul>
+          <WorkflowCards />
         </div>
       </section>
 
