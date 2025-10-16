@@ -10,7 +10,7 @@ export function middleware(request: NextRequest) {
   // Content Security Policy - adjust as needed for your specific resources
   const csp = [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // Note: Consider removing unsafe-* in production
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://mc.yandex.ru", // Note: Consider removing unsafe-* in production
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     "font-src 'self' https://fonts.gstatic.com",
     "img-src 'self' data: https:",
