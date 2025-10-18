@@ -260,10 +260,9 @@ export async function POST(request: NextRequest) {
     const refererValid =
       referer && allowedOrigins.some((allowed) => referer.startsWith(allowed));
 
-    // FIXME TODO
-    // if (!originValid && !refererValid) {
-    //   return NextResponse.json({ error: "Invalid origin" }, { status: 403 });
-    // }
+    if (!originValid && !refererValid) {
+      return NextResponse.json({ error: "Invalid origin" }, { status: 403 });
+    }
 
     // 3. Rate limiting
     if (!checkRateLimit(ip)) {
