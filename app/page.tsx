@@ -1,11 +1,11 @@
 import Player from "next-video/player";
-import MediaThemeDemuxed2022 from "player.style/demuxed-2022/react";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import Form from "./components/form";
 import Header from "./components/header";
 import WorkflowCards from "./components/workflow-cards";
-import poster from "./poster.jpg";
 import Metrika from "./components/metrika";
+import Chrome from "./components/player";
+import { type FC } from "react";
 
 export default function Home() {
   return (
@@ -16,8 +16,8 @@ export default function Home() {
       <Header />
 
       {/* Видео */}
-      <section className="bg-base-100 relative pt-[clamp(3rem,5rem)] md:pb-[clamp(5rem,9rem)]">
-        <div className="max-w-7xl mx-auto flex flex-col h-full justify-center items-start md:items-center lg:text-center px-[clamp(2rem,3rem)] relative z-10 mb-[clamp(3rem,3rem)]">
+      <section className="bg-base-100 relative pt-[clamp(3rem,5rem)] md:pb-[clamp(5rem,9rem)] pb-[3rem]">
+        <div className="max-w-7xl mx-auto flex flex-col h-full justify-center items-start md:items-center lg:text-center px-[clamp(2rem,3rem)] relative z-10 mb-[3rem]">
           <header className="mb-8 w-full whitespace-pre-line md:text-center md:items-center mx-auto flex flex-col justify-center gap-4">
             <h1 className="text-[clamp(var(--text-3xl),var(--text-7xl))] leading-[clamp(2.2rem,5rem)]">
               Производство твоего бренда
@@ -37,22 +37,14 @@ export default function Home() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto md:px-[clamp(2rem,3rem)] 2xl:px-0">
-          <div className="md:rounded-4xl overflow-hidden md:shadow-2xl shadow-gray-600">
-            <Player
-              src="/video/video.mp4"
-              poster={poster.src}
-              blurDataURL={poster.blurDataURL}
-              theme={MediaThemeDemuxed2022}
-            />
+          <div className="md:rounded-4xl overflow-hidden md:shadow-2xl shadow-gray-400">
+            <Player src="/video/video.mp4" theme={Chrome as FC} muted />
           </div>
         </div>
       </section>
 
       {/* Наши возможности */}
-      <section
-        id="capabilities"
-        className="pt-[clamp(5rem,9rem)] pb-[clamp(5rem,9rem)]"
-      >
+      <section id="capabilities" className="pb-[clamp(5rem,9rem)]">
         <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0 flex flex-col gap-4">
           <h2 className="text-[clamp(var(--text-2xl),var(--text-5xl))] font-semibold md:text-center">
             Наши возможности
