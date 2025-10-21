@@ -1,3 +1,5 @@
+"use client";
+
 import reachGoal from "../helpers/metrika";
 
 export default function BriefButton() {
