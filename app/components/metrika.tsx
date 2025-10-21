@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { METRIKA_ID } from "../constants";
 
 type MetrikaFn = (id: number, method: string, url?: string) => void;
 
@@ -11,7 +12,7 @@ export default function Metrika() {
   useEffect(() => {
     if ("ym" in window) {
       (window.ym as MetrikaFn)(
-        104665911,
+        METRIKA_ID,
         "hit",
         `https://твоякосметика.online${pathname}`
       );

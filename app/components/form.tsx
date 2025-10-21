@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState, useRef, useEffect } from "react";
 import { useCsrf } from "../hooks/useCsrf";
+import reachGoal from "../helpers/metrika";
 
 // Zod schema for form validation (client-side with length limits)
 const productSpecSchema = z.object({
@@ -228,6 +229,7 @@ export default function Form() {
           type: "success",
           text: responseData.message || "Бриф успешно отправлен!",
         });
+        reachGoal("submit_brief_form");
         reset();
         // Refresh CSRF token for next submission
         refreshToken();

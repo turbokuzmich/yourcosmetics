@@ -6,6 +6,7 @@ import WorkflowCards from "./components/workflow-cards";
 import Metrika from "./components/metrika";
 import Chrome from "./components/player";
 import { type FC } from "react";
+import reachGoal from "./helpers/metrika";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
             <a
               href="#order-form"
               className="btn btn-xl btn-primary btn-outline w-full md:w-auto"
+              onClick={() => reachGoal("click_brief_form_button")}
             >
               Оставить заявку
             </a>
