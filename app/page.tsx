@@ -6,7 +6,7 @@ import WorkflowCards from "./components/workflow-cards";
 import Metrika from "./components/metrika";
 import Chrome from "./components/player";
 import { type FC } from "react";
-import reachGoal from "./helpers/metrika";
+import BriefButton from "./components/brief-button";
 
 export default function Home() {
   return (
@@ -29,13 +29,7 @@ export default function Home() {
             </p>
           </header>
           <div className="w-full">
-            <a
-              href="#order-form"
-              className="btn btn-xl btn-primary btn-outline w-full md:w-auto"
-              onClick={() => reachGoal("click_brief_form_button")}
-            >
-              Оставить заявку
-            </a>
+            <BriefButton />
           </div>
         </div>
         <div className="max-w-7xl mx-auto md:px-[clamp(2rem,3rem)] 2xl:px-0">
