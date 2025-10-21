@@ -15,7 +15,7 @@ export function middleware(request: NextRequest) {
     "font-src 'self' https://fonts.gstatic.com",
     "img-src 'self' data: https:",
     "media-src 'self' data:",
-    "connect-src 'self' https://mc.yandex.ru",
+    "connect-src 'self' https://mc.yandex.ru wss://mc.yandex.ru",
     "frame-ancestors 'none'",
     "base-uri 'self'",
     "form-action 'self'",
