@@ -51,20 +51,20 @@ const Player: FC<Props> = ({ children }) => {
         slot="centered-chrome"
         className="hidden group-[[mediahasplayed]]/controller:block"
       >
-        <MediaPlayButton className="relative flex flex-none h-[96px] w-[96px] items-center justify-items-center rounded-[9999px] bg-[rgb(0_0_0_/_0.8)] hover:shadow-[0_0_0_2px_#7596CC]">
+        <MediaPlayButton className="relative flex flex-none md:h-[96px] md:w-[96px] h-[64px] w-[64px] items-center justify-items-center rounded-[9999px] bg-[rgb(0_0_0_/_0.8)] hover:shadow-[0_0_0_2px_#7596CC]">
           <div slot="play">
-            <svg viewBox="0 0 16 16" width="64" height="64" fill="#fff">
+            <svg viewBox="0 0 16 16" className="fill-white w-[32px] h-[32px] md:w-[64px] md:h-[64px]">
               <path d="M13.6 7.2 5.1 3c-.6-.3-1.2.1-1.2.7v8.5c0 .6.7 1 1.2.7l8.5-4.2c.6-.3.6-1.1 0-1.5z" />
             </svg>
           </div>
           <div slot="pause">
-            <svg viewBox="0 0 16 16" width="64" height="64" fill="#fff">
+            <svg viewBox="0 0 16 16" className="fill-white w-[32px] h-[32px] md:w-[64px] md:h-[64px]">
               <path d="M11.8 14c-.5 0-.9-.4-.9-.9V2.9c0-.5.4-.9.9-.9s.9.4.9.9v10.2c0 .5-.4.9-.9.9zM4.1 14c-.5 0-.9-.4-.9-.9V2.9c0-.5.4-.9.9-.9s.9.4.9.9v10.2c-.1.5-.5.9-.9.9z" />
             </svg>
           </div>
         </MediaPlayButton>
       </div>
-      <MediaControlBar className="relative m-[30px] py-[10px] px-[14px] rounded-[9999px] bg-[rgb(0_0_0_/_0.2)] hidden group-[[mediahasplayed]]/controller:flex">
+      <MediaControlBar className="relative md:m-[30px] py-[10px] px-[14px] md:rounded-[9999px] bg-[rgb(0_0_0_/_0.2)] hidden group-[[mediahasplayed]]/controller:flex">
         <MediaPlayButton className="relative flex-none mr-[5px] flex items-center justify-items-center h-[32px] w-[32px] bg-white rounded-[9999px]">
           <div slot="play">
             <svg viewBox="0 0 16 16" width="20" height="20">
@@ -134,11 +134,9 @@ const Player: FC<Props> = ({ children }) => {
       </MediaControlBar>
       <MediaPlayButton className="cursor-pointer bg-transparent opacity-80 hover:opacity-100 absolute top-0 left-0 flex items-center justify-center text-center w-full h-full group-[[mediahasplayed]]/controller:hidden">
         <div className="flex flex-col gap-4 items-center" slot="play">
-          <PlayIcon className="w-[30px] md:w-[50px] stroke-[var(--color-base-content)]" />
-          <span className="font-normal text-xl md:font-medium md:text-2xl text-base-content ">
-            Нажмите, чтобы заглянуть за кулисы
-            <br />
-            нашего производства
+          <PlayIcon className="w-[50px] stroke-[var(--color-base-content)]" />
+          <span className="text-xl font-medium md:text-2xl text-base-content ">
+            Производство вашей косметики
           </span>
         </div>
       </MediaPlayButton>
