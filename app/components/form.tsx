@@ -109,7 +109,7 @@ function CollapsibleSection({
   return (
     <div className="space-y-6">
       <h4
-        className="text-2xl font-semibold text-neutral-700 border-b border-neutral-200 cursor-pointer hover:text-neutral-900 transition-colors flex items-center justify-between py-1"
+        className="text-2xl font-normal text-neutral-700 border-b border-neutral-200 cursor-pointer hover:text-neutral-900 transition-colors flex items-center justify-between py-1"
         onClick={toggleCollapsed}
       >
         {title}

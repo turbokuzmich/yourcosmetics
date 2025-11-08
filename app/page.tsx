@@ -16,8 +16,8 @@ export default function Home() {
       {/* Шапка */}
       <Header />
 
-      {/* Видео */}
-      <section className="bg-base-100 relative pt-[clamp(3rem,5rem)] md:pb-[clamp(5rem,9rem)] pb-[3rem]">
+      {/* Hero Section */}
+      <section className="bg-base-100 relative pt-[clamp(3rem,5rem)]">
         <div className="max-w-7xl mx-auto flex flex-col h-full justify-center items-start md:items-center lg:text-center px-[clamp(2rem,3rem)] relative z-10 mb-[3rem]">
           <header className="mb-8 w-full whitespace-pre-line md:text-center md:items-center mx-auto flex flex-col justify-center gap-4">
             <h1 className="text-[clamp(var(--text-3xl),var(--text-7xl))] leading-[clamp(2.2rem,5rem)]">
@@ -32,15 +32,20 @@ export default function Home() {
             <BriefButton />
           </div>
         </div>
-        <div className="max-w-7xl mx-auto md:px-[clamp(2rem,3rem)] 2xl:px-0">
-          <div className="md:rounded-4xl overflow-hidden md:shadow-2xl shadow-gray-400">
-            <Player src="/video/video.mp4" theme={Chrome as FC} muted />
-          </div>
+      </section>
+
+      {/* Order brief form */}
+      <section
+        id="order-form"
+        className="pt-[clamp(2rem,3rem)] pb-[clamp(3rem,5rem)]"
+      >
+        <div className="max-w-4xl bg-white md:mx-auto xl:rounded-4xl md:shadow-2xl md:shadow-gray-400 flex flex-col gap-2">
+          <Form />
         </div>
       </section>
 
       {/* Наши возможности */}
-      <section id="capabilities" className="pb-[clamp(5rem,9rem)]">
+      <section id="capabilities" className="pt-[1rem]">
         <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0 flex flex-col gap-4">
           <h2 className="text-[clamp(var(--text-2xl),var(--text-5xl))] font-semibold md:text-center">
             Наши возможности
@@ -67,8 +72,17 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="bg-base-100 relative pt-[clamp(3rem,5rem)]">
+        <div className="max-w-7xl mx-auto md:px-[clamp(2rem,3rem)] 2xl:px-0">
+          <div className="md:rounded-4xl overflow-hidden md:shadow-2xl shadow-gray-400">
+            <Player src="/video/video.mp4" theme={Chrome as FC} muted />
+          </div>
+        </div>
+      </section>
+
       {/* Как мы работаем */}
-      <section>
+      <section className="pt-[clamp(5rem,7rem)]">
         <header className="px-[clamp(2rem,3rem)] mb-[clamp(2rem,3rem)]">
           <h2 className="text-[clamp(var(--text-3xl),var(--text-6xl))] font-semibold md:text-center">
             Как мы работаем
@@ -197,7 +211,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="pt-[clamp(2rem,3rem)]">
+      <section id="faq" className="pt-[clamp(2rem,3rem)] pb-[clamp(3rem,5rem)]">
         <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0">
           <header className="mb-[clamp(3rem,4rem)]">
             <h2 className="text-[clamp(var(--text-3xl),var(--text-6xl))] font-semibold md:text-center mb-[clamp(1rem,2rem)] leading-tight md:leading-normal">
@@ -348,23 +362,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Order brief form */}
-      <section
-        id="order-form"
-        className="pt-[clamp(5rem,9rem)] pb-[clamp(2rem,3rem)] bg-linear-to-b"
-        style={{
-          "--tw-gradient-stops":
-            "var(--color-base-100) 0,var(--color-base-100) 92%,var(--color-base-300) 85%,var(--color-base-300) 100%",
-        }}
-      >
-        <div className="max-w-4xl bg-white md:mx-auto xl:rounded-4xl md:shadow-2xl md:shadow-gray-600/20 flex flex-col gap-2">
-          <Form />
-        </div>
-      </section>
-
       {/* Footer with contacts */}
       <footer id="contacts" className="bg-base-300">
-        <div className="max-w-4xl mx-auto px-[clamp(2rem,3rem)] pb-[clamp(3rem,5rem)] pt-[clamp(1rem,2rem)]">
+        <div className="max-w-4xl mx-auto px-[clamp(2rem,3rem)] pb-[clamp(3rem,5rem)] pt-[clamp(3rem,5rem)]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Contact phones */}
             <div>
