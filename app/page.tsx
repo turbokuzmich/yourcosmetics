@@ -1,12 +1,11 @@
-import Player from "next-video/player";
+import PlayerComponent from "./components/player";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import Form from "./components/form";
 import Header from "./components/header";
 import WorkflowCards from "./components/workflow-cards";
 import Metrika from "./components/metrika";
-import Chrome from "./components/player";
-import { type FC } from "react";
 import BriefButton from "./components/brief-button";
+import CapabilitiesButton from "./components/capabilities-button";
 
 export default function Home() {
   return (
@@ -18,7 +17,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="bg-base-100 relative pt-[clamp(3rem,5rem)]">
-        <div className="max-w-7xl mx-auto flex flex-col h-full justify-center items-start md:items-center lg:text-center px-[clamp(2rem,3rem)] relative z-10 mb-[3rem]">
+        <div className="max-w-7xl mx-auto flex flex-col h-full justify-center items-start md:items-center lg:text-center px-[clamp(2rem,3rem)] relative z-10">
           <header className="mb-8 w-full whitespace-pre-line md:text-center md:items-center mx-auto flex flex-col justify-center gap-4">
             <h1 className="text-[clamp(var(--text-3xl),var(--text-7xl))] leading-[clamp(2.2rem,5rem)]">
               Производство твоего бренда
@@ -28,7 +27,8 @@ export default function Home() {
               рецептуры до готовой продукции за 7 дней
             </p>
           </header>
-          <div className="w-full">
+          <div className="w-full flex flex-col justify-center items-center gap-4 md:flex-row">
+            <CapabilitiesButton />
             <BriefButton />
           </div>
         </div>
@@ -37,9 +37,9 @@ export default function Home() {
       {/* Order brief form */}
       <section
         id="order-form"
-        className="pt-[clamp(2rem,3rem)] pb-[clamp(3rem,5rem)]"
+        className="pt-10 md:pt-[clamp(2rem,3rem)] pb-[clamp(3rem,5rem)]"
       >
-        <div className="max-w-4xl bg-white md:mx-auto xl:rounded-4xl md:shadow-2xl md:shadow-gray-400 flex flex-col gap-2">
+        <div className="max-w-4xl bg-base-300 md:bg-white md:mx-auto xl:rounded-4xl md:shadow-2xl md:shadow-gray-400 flex flex-col gap-2">
           <Form />
         </div>
       </section>
@@ -76,7 +76,7 @@ export default function Home() {
       <section className="bg-base-100 relative pt-[clamp(3rem,5rem)]">
         <div className="max-w-7xl mx-auto md:px-[clamp(2rem,3rem)] 2xl:px-0">
           <div className="md:rounded-4xl overflow-hidden md:shadow-2xl shadow-gray-400">
-            <Player src="/video/video.mp4" theme={Chrome as FC} muted />
+            <PlayerComponent />
           </div>
         </div>
       </section>
