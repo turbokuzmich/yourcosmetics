@@ -6,6 +6,7 @@ import WorkflowCards from "./components/workflow-cards";
 import Metrika from "./components/metrika";
 import BriefButton from "./components/brief-button";
 import CapabilitiesButton from "./components/capabilities-button";
+import FloatingBriefButton from "./components/floating-brief-button";
 
 export default function Home() {
   return (
@@ -194,18 +195,21 @@ export default function Home() {
             <h2 className="text-[clamp(var(--text-2xl),var(--text-4xl))] leading-[clamp(2rem,3rem)] font-semibold mb-[clamp(1rem,2rem)]">
               Кем мы являемся?
             </h2>
+            <p className="text-[clamp(var(--text-lg),var(--text-xl))] font-thin max-w-4xl mb-3">
+              ООО &laquo;Демидов Люкс СПА&raquo;&nbsp;&mdash; перспективный
+              российский производитель уходовой и&nbsp;профессиональной
+              косметики для лица, тела и&nbsp;волос, в&nbsp;том числе для
+              SPA‑процедур, с&nbsp;2014&nbsp;года. Компания является
+              многократным участником российских и&nbsp;международных выставок
+              производителей косметики, а&nbsp;также действующим членом
+              Московского Экспортного и&nbsp;Российского Экспортного центров.
+            </p>
             <p className="text-[clamp(var(--text-lg),var(--text-xl))] font-thin max-w-4xl">
-              ООО &laquo;Демидов Люкс СПА&raquo; перспективный российский
-              производитель уходовой и&nbsp;профессиональной косметики для лица,
-              тела и&nbsp;волос, в&nbsp;том числе, для SPA-процедур
-              с&nbsp;2014&nbsp;года, многократный участник Российских
-              и&nbsp;Международных выставок производителей косметики,
-              действующий член Московского Экспортного и&nbsp;Российского
-              Экспортного центров. В&nbsp;компании работают опытные
-              профессионалы. Разработка продукции в&nbsp;собственной Московской
-              лаборатории. Два производства на&nbsp;территории&nbsp;г. Москвы
-              и&nbsp;ближнего Подмосковья. Полный цикл производства от&nbsp;идеи
-              до&nbsp;выпуска продукции в&nbsp;короткие сроки.
+              В&nbsp;компании работают опытные профессионалы. Разработка
+              продукции ведётся в&nbsp;собственной московской лаборатории. Есть
+              два производства на&nbsp;территории&nbsp;г. Москвы и&nbsp;ближнего
+              Подмосковья. Обеспечивается полный цикл производства&nbsp;&mdash;
+              от&nbsp;идеи до&nbsp;выпуска продукции в&nbsp;короткие сроки.
             </p>
           </div>
         </div>
@@ -447,6 +451,9 @@ export default function Home() {
           Все права защищены
         </p>
       </div>
+
+      {/* Floating Brief Button */}
+      <FloatingBriefButton />
     </>
   );
 }
