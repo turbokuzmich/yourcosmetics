@@ -324,10 +324,10 @@ export default function Form() {
       <input {...register("csrfToken")} type="hidden" value={csrfToken || ""} />
 
       <div className="px-[clamp(2rem,3rem)] mb-8">
-        <h2 className="text-[clamp(var(--text-2xl),var(--text-4xl))] leading-[clamp(2rem,3rem)] font-semibold mb-[clamp(1rem,2rem)] text-neutral-900">
-          Заполните бриф
+        <h2 className="text-[clamp(var(--text-2xl),var(--text-4xl))] leading-[clamp(2rem,3rem)] font-medium mb-[clamp(1rem,2rem)] text-neutral-900">
+          Заявка на производство
         </h2>
-        <p className="text-[clamp(var(--text-lg),var(--text-xl))] font-thin max-w-4xl text-neutral-700">
+        <p className="text-[clamp(var(--text-lg),var(--text-xl))] font-light max-w-4xl text-neutral-700">
           Расскажите о вашем проекте, и мы свяжемся с вами для обсуждения
           деталей и подготовки персонального предложения.
         </p>
@@ -335,7 +335,7 @@ export default function Form() {
 
       {/* Basic Customer Information Section */}
       <div className="px-[clamp(2rem,3rem)] my-8 mb-12">
-        <h2 className="text-2xl font-semibold text-neutral-800 mb-6">
+        <h2 className="text-2xl font-medium text-neutral-800 mb-6">
           Основная информация о клиенте
         </h2>
 

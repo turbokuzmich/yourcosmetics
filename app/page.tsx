@@ -440,7 +440,11 @@ export default function Home() {
       {/* Copyright */}
       <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] py-[clamp(1rem,2rem)]">
         <p className="text-neutral-700 text-center text-sm">
-          © 2025 ООО «Демидов Люкс СПА». Все права защищены.
+          © 2025 ООО «Демидов Люкс СПА»
+          <br />
+          ИНН 7751525117, КПП 775001001, ОКПО 42943661, ОГРН 5147746230297
+          <br />
+          Все права защищены
         </p>
       </div>
     </>
