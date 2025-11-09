@@ -47,26 +47,26 @@ export default function Home() {
           <h2 className="text-[clamp(var(--text-2xl),var(--text-5xl))] font-semibold md:text-center">
             Наши возможности
           </h2>
-          <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
+          <p className="text-[clamp(var(--text-2xl),var(--text-3xl))] font-thin max-w-4xl mx-auto md:text-center">
             Изготовим косметику для вашего бренда от&nbsp;7&nbsp;дней
             с&nbsp;момента обращения, а&nbsp;также выполним индивидуальные
             разработки продукции с&nbsp;уникальными рецептурами, дизайном
             и&nbsp;упаковкой &laquo;под&nbsp;ключ&raquo;.
           </p>
-          <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
+          <p className="text-[clamp(var(--text-base),var(--text-xl))] font-light max-w-3xl mx-auto md:text-center">
             Уходовая и&nbsp;профессиональная косметика для лица, тела, волос,
             кремы, гели, сыворотки, шампуни, масла, бальзамы, патчи, BB,
             СС&nbsp;и&nbsp;многое другое&nbsp;&mdash; всё зависит
             от&nbsp;пожеланий заказчика.
           </p>
-          <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
+          <p className="text-[clamp(var(--text-base),var(--text-xl))] font-light max-w-3xl mx-auto md:text-center">
             Сертифицируем, а также присвоим марку честный знак.
           </p>
-          <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
+          <p className="text-[clamp(var(--text-base),var(--text-xl))] font-light max-w-3xl mx-auto md:text-center">
             Работаем с небольшими и крупными партиями, индивидуальный подход к
             каждому клиенту.
           </p>
-          <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
+          <p className="text-[clamp(var(--text-base),var(--text-xl))] font-light max-w-3xl mx-auto md:text-center">
             Создадим бренд, концепцию, дизайн, упаковку, рецептуры и выпустим
             продукцию под вашей торговой маркой.
           </p>
