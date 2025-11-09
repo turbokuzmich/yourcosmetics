@@ -35,28 +35,29 @@ export default function Home() {
       </section>
 
       {/* Order brief form */}
-      <section
-        id="order-form"
-        className="pt-10 md:pt-[clamp(2rem,3rem)] pb-[clamp(3rem,5rem)]"
-      >
+      <section id="order-form" className="pt-10 md:pt-[clamp(2rem,3rem)]">
         <div className="max-w-4xl bg-base-300 md:bg-white md:mx-auto xl:rounded-4xl md:shadow-2xl md:shadow-gray-400 flex flex-col gap-2">
           <Form />
         </div>
       </section>
 
       {/* Наши возможности */}
-      <section id="capabilities" className="pt-[1rem]">
+      <section id="capabilities" className="pt-[clamp(3rem,5rem)]">
         <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0 flex flex-col gap-4">
           <h2 className="text-[clamp(var(--text-2xl),var(--text-5xl))] font-semibold md:text-center">
             Наши возможности
           </h2>
           <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
-            Изготовим косметику для вашего бренда от 7 дней с момента обращения,
-            а также индивидуальные разработки продукции с уникальными
-            рецептурами, дизайном и упаковкой «под ключ». Уходовая и
-            профессиональная косметика для лица, тела, волос. Кремы, гели,
-            сыворотки, шампуни, масла, бальзамы, патчи, BB, СС и многое другое.
-            Всё зависит от пожеланий заказчика.
+            Изготовим косметику для вашего бренда от&nbsp;7&nbsp;дней
+            с&nbsp;момента обращения, а&nbsp;также выполним индивидуальные
+            разработки продукции с&nbsp;уникальными рецептурами, дизайном
+            и&nbsp;упаковкой &laquo;под&nbsp;ключ&raquo;.
+          </p>
+          <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
+            Уходовая и&nbsp;профессиональная косметика для лица, тела, волос,
+            кремы, гели, сыворотки, шампуни, масла, бальзамы, патчи, BB,
+            СС&nbsp;и&nbsp;многое другое&nbsp;&mdash; всё зависит
+            от&nbsp;пожеланий заказчика.
           </p>
           <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
             Сертифицируем, а также присвоим марку честный знак.
@@ -66,7 +67,7 @@ export default function Home() {
             каждому клиенту.
           </p>
           <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-3xl mx-auto md:text-center">
-            Разработаем бренд, концепцию, дизайн, упаковку, рецептуры и выпустим
+            Создадим бренд, концепцию, дизайн, упаковку, рецептуры и выпустим
             продукцию под вашей торговой маркой.
           </p>
         </div>
