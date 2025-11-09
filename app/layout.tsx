@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Roboto_Flex } from "next/font/google";
-import "./globals.css";
 import CookieConsent from "./components/cookie-consent";
+import PrivacyPolicyProvider from "./components/privacy-policy-provider";
 import Script from "next/script";
 import { METRIKA_ID } from "./constants";
+
+import "./globals.css";
 
 const roboto = Roboto_Flex({
   subsets: ["cyrillic-ext", "latin"],
@@ -33,8 +35,10 @@ export default function RootLayout({
     ym(${METRIKA_ID}, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});`}
       </Script>
       <body className={`${roboto.variable} antialiased`}>
-        {children}
-        <CookieConsent />
+        <PrivacyPolicyProvider>
+          {children}
+          <CookieConsent />
+        </PrivacyPolicyProvider>
       </body>
     </html>
   );

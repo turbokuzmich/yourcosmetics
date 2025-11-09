@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { XMarkIcon, CogIcon } from '@heroicons/react/24/outline';
-import PrivacyPolicy from './privacy-policy';
+import { useState, useEffect } from "react";
+import { XMarkIcon, CogIcon } from "@heroicons/react/24/outline";
+import { usePrivacyPolicy } from "./privacy-policy-provider";
 
 interface CookiePreferences {
   necessary: boolean;
@@ -21,12 +21,13 @@ const defaultPreferences: CookiePreferences = {
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
-  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
-  const [preferences, setPreferences] = useState<CookiePreferences>(defaultPreferences);
+  const [preferences, setPreferences] =
+    useState<CookiePreferences>(defaultPreferences);
+  const { openPrivacyPolicy } = usePrivacyPolicy();
 
   useEffect(() => {
     // Check if user has already made a choice
-    const consent = localStorage.getItem('cookie-consent');
+    const consent = localStorage.getItem("cookie-consent");
     if (!consent) {
       // Show banner after a short delay for better UX
       const timer = setTimeout(() => setShowBanner(true), 1000);
@@ -37,7 +38,7 @@ export default function CookieConsent() {
         const savedPreferences = JSON.parse(consent);
         setPreferences(savedPreferences);
       } catch (error) {
-        console.error('Error parsing cookie preferences:', error);
+        console.error("Error parsing cookie preferences:", error);
       }
     }
   }, []);
@@ -62,29 +63,33 @@ export default function CookieConsent() {
   };
 
   const savePreferences = (prefs: CookiePreferences) => {
-    localStorage.setItem('cookie-consent', JSON.stringify(prefs));
-    localStorage.setItem('cookie-consent-date', new Date().toISOString());
+    localStorage.setItem("cookie-consent", JSON.stringify(prefs));
+    localStorage.setItem("cookie-consent-date", new Date().toISOString());
+
     setPreferences(prefs);
     setShowBanner(false);
-    
+
     // Here you would typically initialize analytics/marketing scripts based on preferences
     if (prefs.analytics) {
       // Initialize analytics (e.g., Google Analytics)
-      console.log('Analytics cookies accepted');
+      console.log("Analytics cookies accepted");
     }
     if (prefs.marketing) {
       // Initialize marketing cookies (e.g., Facebook Pixel, Google Ads)
-      console.log('Marketing cookies accepted');
+      console.log("Marketing cookies accepted");
     }
     if (prefs.functional) {
       // Initialize functional cookies (e.g., chat widgets, preferences)
-      console.log('Functional cookies accepted');
+      console.log("Functional cookies accepted");
     }
   };
 
-  const handlePreferenceChange = (type: keyof CookiePreferences, value: boolean) => {
-    if (type === 'necessary') return; // Necessary cookies cannot be disabled
-    setPreferences(prev => ({ ...prev, [type]: value }));
+  const handlePreferenceChange = (
+    type: keyof CookiePreferences,
+    value: boolean
+  ) => {
+    if (type === "necessary") return; // Necessary cookies cannot be disabled
+    setPreferences((prev) => ({ ...prev, [type]: value }));
   };
 
   if (!showBanner) return null;
@@ -96,19 +101,23 @@ export default function CookieConsent() {
         <div className="container mx-auto px-4 py-6 max-w-7xl">
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4">
             <div className="flex-1">
-              <h3 className="text-lg font-semibold mb-2">Использование файлов cookie</h3>
+              <h3 className="text-lg font-semibold mb-2">
+                Использование файлов cookie
+              </h3>
               <p className="text-sm text-base-content/80 leading-relaxed">
-                Мы используем файлы cookie для улучшения работы сайта, анализа трафика и персонализации контента. 
-                Продолжая использовать наш сайт, вы соглашаетесь с нашей{' '}
-                <button 
-                  onClick={() => setShowPrivacyPolicy(true)}
+                Мы используем файлы cookie для улучшения работы сайта, анализа
+                трафика и персонализации контента. Продолжая использовать наш
+                сайт, вы соглашаетесь с нашей{" "}
+                <button
+                  onClick={openPrivacyPolicy}
                   className="link link-primary"
                 >
                   политикой конфиденциальности
-                </button>.
+                </button>
+                .
               </p>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
               <button
                 onClick={() => setShowPreferences(true)}
@@ -154,8 +163,9 @@ export default function CookieConsent() {
               <div className="space-y-6">
                 <div className="prose prose-sm max-w-none">
                   <p>
-                    Мы используем различные типы файлов cookie для обеспечения наилучшего опыта использования нашего сайта. 
-                    Вы можете выбрать, какие категории cookie разрешить.
+                    Мы используем различные типы файлов cookie для обеспечения
+                    наилучшего опыта использования нашего сайта. Вы можете
+                    выбрать, какие категории cookie разрешить.
                   </p>
                 </div>
 
@@ -178,8 +188,9 @@ export default function CookieConsent() {
                     />
                   </div>
                   <p className="text-xs text-base-content/60">
-                    Эти файлы cookie необходимы для работы сайта и не могут быть отключены. 
-                    Они обычно устанавливаются в ответ на ваши действия.
+                    Эти файлы cookie необходимы для работы сайта и не могут быть
+                    отключены. Они обычно устанавливаются в ответ на ваши
+                    действия.
                   </p>
                 </div>
 
@@ -195,15 +206,18 @@ export default function CookieConsent() {
                     <input
                       type="checkbox"
                       checked={preferences.analytics}
-                      onChange={(e) => handlePreferenceChange('analytics', e.target.checked)}
+                      onChange={(e) =>
+                        handlePreferenceChange("analytics", e.target.checked)
+                      }
                       className="toggle toggle-primary"
                       aria-label="Аналитические cookie"
                       title="Включить/выключить аналитические cookie"
                     />
                   </div>
                   <p className="text-xs text-base-content/60">
-                    Эти файлы cookie позволяют нам подсчитывать посещения и источники трафика, 
-                    чтобы измерять и улучшать производительность нашего сайта.
+                    Эти файлы cookie позволяют нам подсчитывать посещения и
+                    источники трафика, чтобы измерять и улучшать
+                    производительность нашего сайта.
                   </p>
                 </div>
 
@@ -219,15 +233,18 @@ export default function CookieConsent() {
                     <input
                       type="checkbox"
                       checked={preferences.marketing}
-                      onChange={(e) => handlePreferenceChange('marketing', e.target.checked)}
+                      onChange={(e) =>
+                        handlePreferenceChange("marketing", e.target.checked)
+                      }
                       className="toggle toggle-primary"
                       aria-label="Маркетинговые cookie"
                       title="Включить/выключить маркетинговые cookie"
                     />
                   </div>
                   <p className="text-xs text-base-content/60">
-                    Эти файлы cookie могут быть установлены через наш сайт нашими рекламными партнерами 
-                    для создания профиля ваших интересов.
+                    Эти файлы cookie могут быть установлены через наш сайт
+                    нашими рекламными партнерами для создания профиля ваших
+                    интересов.
                   </p>
                 </div>
 
@@ -237,21 +254,24 @@ export default function CookieConsent() {
                     <div>
                       <h3 className="font-semibold">Функциональные cookie</h3>
                       <p className="text-sm text-base-content/70">
-                        Обеспечивают расширенную функциональность и персонализацию
+                        Обеспечивают расширенную функциональность и
+                        персонализацию
                       </p>
                     </div>
                     <input
                       type="checkbox"
                       checked={preferences.functional}
-                      onChange={(e) => handlePreferenceChange('functional', e.target.checked)}
+                      onChange={(e) =>
+                        handlePreferenceChange("functional", e.target.checked)
+                      }
                       className="toggle toggle-primary"
                       aria-label="Функциональные cookie"
                       title="Включить/выключить функциональные cookie"
                     />
                   </div>
                   <p className="text-xs text-base-content/60">
-                    Эти файлы cookie обеспечивают расширенную функциональность и персонализацию, 
-                    такую как видео и чат в реальном времени.
+                    Эти файлы cookie обеспечивают расширенную функциональность и
+                    персонализацию, такую как видео и чат в реальном времени.
                   </p>
                 </div>
               </div>
@@ -280,12 +300,6 @@ export default function CookieConsent() {
           </div>
         </div>
       )}
-
-      {/* Privacy Policy Modal */}
-      <PrivacyPolicy 
-        isOpen={showPrivacyPolicy} 
-        onClose={() => setShowPrivacyPolicy(false)} 
-      />
     </>
   );
 }

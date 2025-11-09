@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState, useRef, useEffect } from "react";
 import { useCsrf } from "../hooks/useCsrf";
+import { usePrivacyPolicy } from "./privacy-policy-provider";
 import reachGoal from "../helpers/metrika";
 
 // Zod schema for form validation (client-side with length limits)
@@ -138,6 +139,9 @@ export default function Form() {
     error: csrfError,
     refreshToken,
   } = useCsrf();
+
+  // Privacy Policy modal
+  const { openPrivacyPolicy } = usePrivacyPolicy();
 
   const {
     register,
@@ -641,30 +645,42 @@ export default function Form() {
             </div>
           )}
 
-          <div className="w-full flex flex-col md:flex-row md:justify-end gap-3">
-            <button
-              type="button"
-              onClick={addProduct}
-              className="btn btn-outline btn-lg"
-            >
-              Добавить еще продукт
-            </button>
-            <button
-              type="submit"
-              disabled={isSubmitting || !csrfToken}
-              className="btn btn-primary btn-lg"
-            >
-              {isSubmitting ? (
-                <>
-                  <span className="loading loading-spinner loading-sm"></span>
-                  Отправка...
-                </>
-              ) : !csrfToken ? (
-                "Загрузка..."
-              ) : (
-                "Отправить бриф"
-              )}
-            </button>
+          <div className="w-full space-y-4">
+            <p className="text-sm text-neutral-600 text-right">
+              Отправляя форму, вы соглашаетесь с{" "}
+              <button
+                type="button"
+                onClick={openPrivacyPolicy}
+                className="link link-primary hover:no-underline focus:no-underline"
+              >
+                политикой конфиденциальности
+              </button>
+            </p>
+            <div className="w-full flex flex-col md:flex-row md:justify-end gap-3">
+              <button
+                type="button"
+                onClick={addProduct}
+                className="btn btn-outline btn-lg"
+              >
+                Добавить еще продукт
+              </button>
+              <button
+                type="submit"
+                disabled={isSubmitting || !csrfToken}
+                className="btn btn-primary btn-lg"
+              >
+                {isSubmitting ? (
+                  <>
+                    <span className="loading loading-spinner loading-sm"></span>
+                    Отправка...
+                  </>
+                ) : !csrfToken ? (
+                  "Загрузка..."
+                ) : (
+                  "Отправить бриф"
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </div>
