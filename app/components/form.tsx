@@ -646,16 +646,6 @@ export default function Form() {
           )}
 
           <div className="w-full space-y-4">
-            <p className="text-sm text-neutral-600 text-right">
-              Отправляя форму, вы соглашаетесь с{" "}
-              <button
-                type="button"
-                onClick={openPrivacyPolicy}
-                className="link link-primary hover:no-underline focus:no-underline"
-              >
-                политикой конфиденциальности
-              </button>
-            </p>
             <div className="w-full flex flex-col md:flex-row md:justify-end gap-3">
               <button
                 type="button"
@@ -681,6 +671,16 @@ export default function Form() {
                 )}
               </button>
             </div>
+            <p className="text-sm text-neutral-600 text-center md:text-right">
+              Отправляя форму, вы соглашаетесь с{" "}
+              <button
+                type="button"
+                onClick={openPrivacyPolicy}
+                className="link link-primary hover:no-underline focus:no-underline"
+              >
+                политикой конфиденциальности
+              </button>
+            </p>
           </div>
         </div>
       </div>
