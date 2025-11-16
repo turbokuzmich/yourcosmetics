@@ -38,7 +38,7 @@ export default function Home() {
             </h1>
             <p className="text-[clamp(var(--text-lg),var(--text-2xl))] max-w-4xl font-thin">
               Полный цикл производства косметики под вашим брендом от разработки
-              рецептуры до готовой продукции за 7 дней
+              рецептуры до готовой продукции от 7 дней
             </p>
             <div className="md:hidden">
               <ConsultationButton />
