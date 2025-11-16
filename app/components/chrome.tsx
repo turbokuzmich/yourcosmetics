@@ -40,17 +40,10 @@ const Player: FC<Props> = ({ children }) => {
       }}
     >
       <div slot="poster" className="bg-white">
-        <img
-          src={poster.src}
-          title="Твоя Косметика"
-          className="group-[[mediahasplayed]]/controller:blur-none md:rounded-4xl blur-[2px] opacity-70"
-        />
+        <img src={poster.src} title="Твоя Косметика" />
       </div>
       {children}
-      <div
-        slot="centered-chrome"
-        className="hidden group-[[mediahasplayed]]/controller:block"
-      >
+      <div slot="centered-chrome">
         <MediaPlayButton className="relative flex flex-none md:h-[96px] md:w-[96px] h-[64px] w-[64px] items-center justify-items-center rounded-[9999px] bg-[rgb(0_0_0_/_0.8)] hover:shadow-[0_0_0_2px_#7596CC]">
           <div slot="play" key="play">
             <svg
@@ -138,12 +131,12 @@ const Player: FC<Props> = ({ children }) => {
           </div>
         </MediaFullscreenButton>
       </MediaControlBar>
-      <MediaPlayButton className="cursor-pointer bg-transparent opacity-80 hover:opacity-100 absolute top-0 left-0 flex items-center justify-center text-center w-full h-full group-[[mediahasplayed]]/controller:hidden">
-        <div className="flex flex-col gap-4 items-center" slot="play">
-          <PlayIcon className="w-[50px] stroke-[var(--color-base-content)]" />
-          <span className="text-xl font-medium md:text-2xl text-base-content ">
-            Производство вашей косметики
-          </span>
+      <MediaPlayButton className="cursor-pointer bg-transparent botton-0 left-0 w-full group-[[mediahasplayed]]/controller:hidden">
+        <div
+          className="text-white text-center text-xl font-normal md:text-2xl py-8 bg-gradient-to-b from-black/0 to-black/80 w-full"
+          slot="play"
+        >
+          Производство вашей косметики
         </div>
       </MediaPlayButton>
     </MediaController>

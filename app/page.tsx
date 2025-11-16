@@ -108,15 +108,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Video Section */}
-      <section className="bg-base-100 relative pt-[clamp(3rem,5rem)]">
-        <div className="max-w-7xl mx-auto md:px-[clamp(2rem,3rem)] 2xl:px-0">
-          <div className="md:rounded-4xl overflow-hidden md:shadow-2xl shadow-gray-400">
-            <PlayerComponent />
-          </div>
-        </div>
-      </section>
-
       {/* Этапы разработки */}
       <section className="pt-[clamp(5rem,7rem)]" id="workflow">
         <header className="px-[clamp(2rem,3rem)] mb-[clamp(2rem,3rem)]">
@@ -138,10 +129,13 @@ export default function Home() {
           <h2 className="text-[clamp(var(--text-3xl),var(--text-6xl))] leading-[clamp(2.2rem,4rem)] font-semibold mb-[clamp(1rem,2rem)]">
             Наше производство
           </h2>
-          <p className="text-[clamp(var(--text-lg),var(--text-2xl))] font-thin max-w-4xl lg:mx-auto">
+          <p className="text-[clamp(var(--text-lg),var(--text-2xl))] font-thin max-w-4xl lg:mx-auto mb-[clamp(2rem,3rem)]">
             Современное, профессиональное оборудование позволяет выпускать
             продукцию высокого качества, соответствуя пожеланиям заказчика.
           </p>
+          <div className="md:rounded-4xl overflow-hidden md:shadow-2xl shadow-gray-400">
+            <PlayerComponent />
+          </div>
         </div>
       </section>
 
