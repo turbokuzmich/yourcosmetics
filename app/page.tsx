@@ -259,7 +259,7 @@ export default function Home() {
       </section>
 
       {/* Order brief form */}
-      <section className="pt-10 md:pt-[clamp(2rem,3rem)]" id="order-form">
+      <section className="pt-10 md:pt-[clamp(2rem,3rem)] bg-[linear-gradient(to_bottom,white_0%,white_80%,oklch(96%_0_0)_80%,oklch(96%_0_0)_100%)] md:pb-20" id="order-form">
         <div className="max-w-4xl bg-base-300 md:bg-white md:mx-auto xl:rounded-4xl md:shadow-2xl md:shadow-gray-400 flex flex-col gap-2">
           <Form />
         </div>
@@ -267,7 +267,7 @@ export default function Home() {
 
       {/* Footer with contacts */}
       <footer id="contacts" className="bg-base-300">
-        <div className="max-w-4xl mx-auto px-[clamp(2rem,3rem)] pb-[clamp(3rem,5rem)] pt-[clamp(3rem,5rem)]">
+        <div className="max-w-4xl mx-auto px-[clamp(2rem,3rem)] pb-[clamp(3rem,5rem)] md:pt-0 pt-[clamp(3rem,5rem)]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Contact phones */}
             <div>
