@@ -259,7 +259,10 @@ export default function Home() {
       </section>
 
       {/* Order brief form */}
-      <section className="pt-10 md:pt-[clamp(2rem,3rem)] bg-[linear-gradient(to_bottom,white_0%,white_80%,oklch(96%_0_0)_80%,oklch(96%_0_0)_100%)] md:pb-20" id="order-form">
+      <section
+        className="pt-10 md:pt-[clamp(2rem,3rem)] bg-[linear-gradient(to_bottom,white_0%,white_80%,oklch(96%_0_0)_80%,oklch(96%_0_0)_100%)] md:pb-20"
+        id="order-form"
+      >
         <div className="max-w-4xl bg-base-300 md:bg-white md:mx-auto xl:rounded-4xl md:shadow-2xl md:shadow-gray-400 flex flex-col gap-2">
           <Form />
         </div>

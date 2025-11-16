@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Logo from "./logo";
 import type { Goal } from "../helpers/metrika";
 import reachGoal from "../helpers/metrika";
+import { PhoneIcon, Bars3Icon } from "@heroicons/react/24/outline";
+import { ChatBubbleLeftRightIcon } from "@heroicons/react/24/solid";
 
 type MenuItem = {
   href: string;
@@ -89,7 +91,33 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu Button - Visible on mobile, hidden from md breakpoint */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={() => {
+                document
+                  .getElementById("consultation-form")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="btn btn-ghost p-2 text-secondary"
+              aria-label="Консультация"
+              title="Консультация"
+            >
+              <ChatBubbleLeftRightIcon className="w-7 h-7" />
+            </button>
+
+            <button
+              onClick={() => {
+                document
+                  .getElementById("contacts")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="btn btn-ghost p-2"
+              aria-label="Контакты"
+              title="Контакты"
+            >
+              <PhoneIcon className="w-6 h-6" />
+            </button>
+
             <div className="dropdown dropdown-end">
               <div
                 tabIndex={0}
@@ -97,20 +125,7 @@ export default function Header() {
                 title="Menu"
                 className="btn btn-ghost p-0"
               >
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
+                <Bars3Icon className="w-8 h-8" />
               </div>
               <ul
                 tabIndex={0}
