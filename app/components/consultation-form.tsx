@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState, useEffect } from "react";
 import { useCsrf } from "../hooks/useCsrf";
+import { usePrivacyPolicy } from "./privacy-policy-provider";
 
 // Zod schema for consultation form validation
 const consultationFormSchema = z.object({
@@ -37,6 +38,9 @@ export default function ConsultationForm() {
     type: "success" | "error";
     text: string;
   } | null>(null);
+
+  // Privacy Policy modal
+  const { openPrivacyPolicy } = usePrivacyPolicy();
 
   // CSRF token management
   const {
@@ -175,7 +179,7 @@ export default function ConsultationForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       {/* Honeypot field - hidden from users but visible to bots */}
       <div style={{ position: "absolute", left: "-9999px", top: "-9999px" }}>
         <input
@@ -285,22 +289,34 @@ export default function ConsultationForm() {
       )}
 
       {/* Submit Button */}
-      <button
-        type="submit"
-        disabled={isSubmitting || !csrfToken}
-        className="btn btn-primary btn-lg w-full"
-      >
-        {isSubmitting ? (
-          <>
-            <span className="loading loading-spinner loading-sm"></span>
-            Отправка...
-          </>
-        ) : !csrfToken ? (
-          "Загрузка..."
-        ) : (
-          "Получить консультацию"
-        )}
-      </button>
+      <div className="flex flex-col gap-2">
+        <button
+          type="submit"
+          disabled={isSubmitting || !csrfToken}
+          className="btn btn-primary btn-lg w-full"
+        >
+          {isSubmitting ? (
+            <>
+              <span className="loading loading-spinner loading-sm"></span>
+              Отправка...
+            </>
+          ) : !csrfToken ? (
+            "Загрузка..."
+          ) : (
+            "Получить консультацию"
+          )}
+        </button>
+        <p className="text-sm text-neutral-600 text-center">
+          Отправляя форму, вы соглашаетесь с{" "}
+          <button
+            type="button"
+            onClick={openPrivacyPolicy}
+            className="link link-primary hover:no-underline focus:no-underline"
+          >
+            политикой конфиденциальности
+          </button>
+        </p>
+      </div>
     </form>
   );
 }
