@@ -15,12 +15,12 @@ const menuItems: MenuItem[] = [
   { href: "#about", label: "О нас", metrika: "click_menu_about" },
   {
     href: "#workflow",
-    label: "Этапы производства",
+    label: "Этапы разработки",
     metrika: "click_menu_workflow",
   },
   {
     href: "#advantages",
-    label: "Преимущества",
+    label: "Производство",
     metrika: "click_menu_advantages",
   },
   { href: "#faq", label: "FAQ", metrika: "click_menu_faq" },

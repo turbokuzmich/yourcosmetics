@@ -15,6 +15,7 @@ import {
 import { Faq } from "./components/faq";
 import ConsultationForm from "./components/consultation-form";
 import ConsultationButton from "./components/consultation-button";
+import AdvantagesButton from "./components/advantages-button";
 
 export default function Home() {
   return (
@@ -87,7 +88,10 @@ export default function Home() {
                   </span>
                 </li>
               </ul>
-              <BriefButton />
+              <div className="flex gap-4 items-center">
+                <BriefButton />
+                <AdvantagesButton />
+              </div>
             </div>
 
             {/* Right column: Consultation form */}
@@ -113,11 +117,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Этапы производства */}
+      {/* Этапы разработки */}
       <section className="pt-[clamp(5rem,7rem)]" id="workflow">
         <header className="px-[clamp(2rem,3rem)] mb-[clamp(2rem,3rem)]">
           <h2 className="text-[clamp(var(--text-3xl),var(--text-6xl))] font-semibold md:text-center">
-            Этапы производства
+            Этапы разработки
           </h2>
         </header>
         <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0">
@@ -125,19 +129,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Наши преимущества */}
+      {/* Наше производство */}
       <section
         id="advantages"
         className="2xl:px-[clamp(5rem,9rem)] px-0 mt-[clamp(5rem,9rem)] mb-[clamp(2rem,3rem)]"
       >
         <div className="max-w-7xl bg-base-300 md:mx-auto lg:rounded-4xl md:text-center px-[clamp(2rem,3rem)] py-[clamp(5rem,7rem)]">
           <h2 className="text-[clamp(var(--text-3xl),var(--text-6xl))] leading-[clamp(2.2rem,4rem)] font-semibold mb-[clamp(1rem,2rem)]">
-            Наши преимущества
+            Наше производство
           </h2>
           <p className="text-[clamp(var(--text-lg),var(--text-2xl))] font-thin max-w-4xl lg:mx-auto">
-            Наши производства оснащены современным, профессиональным
-            оборудованием, что позволяет выпускать продукцию высокого качества
-            соответствуя пожеланиям заказчика.
+            Современное, профессиональное оборудование позволяет выпускать
+            продукцию высокого качества, соответствуя пожеланиям заказчика.
           </p>
         </div>
       </section>

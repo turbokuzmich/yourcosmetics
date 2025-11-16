@@ -10,6 +10,7 @@ export type Goal =
   | "submit_brief_form" // успешная отправка формы заявки
   | "play_video" // просмотр видео
   | "click_consultation_form_button" // клик по кнопке «Получить консультацию»
+  | "click_advantages_button" // клик по кнопке «Наше производство»
   | "click_phone" // клик по телефону
   | "click_email" // клик по электронной почте
   | "click_telegram" // клик по Telegram
