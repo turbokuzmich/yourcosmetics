@@ -198,6 +198,7 @@ export default function Form() {
 
     // Security pre-checks
     if (!csrfToken) {
+      reachGoal("error_submit_brief_form");
       setSubmitMessage({
         type: "error",
         text: "Ошибка безопасности. Перезагрузите страницу и попробуйте снова.",
@@ -207,6 +208,7 @@ export default function Form() {
 
     // Bot detection - if honeypot is filled, it's a bot
     if (data.honeypot) {
+      reachGoal("error_submit_brief_form");
       console.warn("Bot detected - honeypot field filled");
       setSubmitMessage({
         type: "error",
@@ -240,6 +242,7 @@ export default function Form() {
         // Refresh CSRF token for next submission
         refreshToken();
       } else {
+        reachGoal("error_submit_brief_form");
         // Handle specific error cases
         if (response.status === 429) {
           setSubmitMessage({
@@ -263,6 +266,7 @@ export default function Form() {
         }
       }
     } catch (error) {
+      reachGoal("error_submit_brief_form");
       console.error("Form submission error:", error);
       setSubmitMessage({
         type: "error",
