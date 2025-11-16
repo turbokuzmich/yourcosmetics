@@ -94,6 +94,7 @@ export default function Header() {
           <div className="md:hidden flex items-center gap-2">
             <button
               onClick={() => {
+                reachGoal("click_mobile_header_consultation_button");
                 document
                   .getElementById("consultation-form")
                   ?.scrollIntoView({ behavior: "smooth" });
@@ -107,6 +108,7 @@ export default function Header() {
 
             <button
               onClick={() => {
+                reachGoal("click_mobile_header_contacts_button");
                 document
                   .getElementById("contacts")
                   ?.scrollIntoView({ behavior: "smooth" });

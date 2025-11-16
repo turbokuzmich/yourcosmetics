@@ -6,6 +6,7 @@ import { z } from "zod";
 import { useState, useEffect } from "react";
 import { useCsrf } from "../hooks/useCsrf";
 import { usePrivacyPolicy } from "./privacy-policy-provider";
+import reachGoal from "../helpers/metrika";
 
 // Zod schema for consultation form validation
 const consultationFormSchema = z.object({
@@ -76,8 +77,11 @@ export default function ConsultationForm() {
   }, [csrfToken, setValue]);
 
   const onSubmit = async (data: ConsultationFormData) => {
+    reachGoal("click_send_consultation_button");
+
     // Security pre-checks
     if (!csrfToken) {
+      reachGoal("error_submit_consultation_form");
       setSubmitMessage({
         type: "error",
         text: "Ошибка безопасности. Перезагрузите страницу и попробуйте снова.",
@@ -87,7 +91,7 @@ export default function ConsultationForm() {
 
     // Bot detection - if honeypot is filled, it's a bot
     if (data.honeypot) {
-      console.warn("Bot detected - honeypot field filled");
+      reachGoal("error_submit_consultation_form");
       setSubmitMessage({
         type: "error",
         text: "Произошла ошибка при отправке формы",
@@ -111,6 +115,7 @@ export default function ConsultationForm() {
       const responseData = await response.json();
 
       if (response.ok) {
+        reachGoal("submit_consultation_form");
         setSubmitMessage({
           type: "success",
           text: responseData.message || "Заявка успешно отправлена!",
@@ -119,6 +124,7 @@ export default function ConsultationForm() {
         // Refresh CSRF token for next submission
         refreshToken();
       } else {
+        reachGoal("error_submit_consultation_form");
         // Handle specific error cases
         if (response.status === 429) {
           setSubmitMessage({
@@ -142,6 +148,7 @@ export default function ConsultationForm() {
         }
       }
     } catch (error) {
+      reachGoal("error_submit_consultation_form");
       console.error("Form submission error:", error);
       setSubmitMessage({
         type: "error",
