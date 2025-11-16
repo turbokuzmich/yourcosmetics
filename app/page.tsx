@@ -5,7 +5,6 @@ import Header from "./components/header";
 import WorkflowCards from "./components/workflow-cards";
 import Metrika from "./components/metrika";
 import BriefButton from "./components/brief-button";
-import CapabilitiesButton from "./components/capabilities-button";
 import FloatingBriefButton from "./components/floating-button";
 import {
   EmailButton,
@@ -24,7 +23,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-base-100 relative pt-[clamp(3rem,5rem)]">
+      <section className="bg-base-300 relative pt-[clamp(3rem,5rem)]">
         <div className="max-w-7xl mx-auto flex flex-col h-full justify-center items-start md:items-center lg:text-center px-[clamp(2rem,3rem)] relative z-10">
           <header className="mb-8 w-full whitespace-pre-line md:text-center md:items-center mx-auto flex flex-col justify-center gap-4">
             <h1 className="text-[clamp(var(--text-3xl),var(--text-7xl))] leading-[clamp(2.2rem,5rem)]">
@@ -35,17 +34,11 @@ export default function Home() {
               рецептуры до готовой продукции за 7 дней
             </p>
           </header>
+          {/* Hero text */}
           <div className="w-full flex flex-col justify-center items-center gap-4 md:flex-row">
-            <CapabilitiesButton />
             <BriefButton />
           </div>
-        </div>
-      </section>
-
-      {/* Order brief form */}
-      <section id="order-form" className="pt-10 md:pt-[clamp(2rem,3rem)]">
-        <div className="max-w-4xl bg-base-300 md:bg-white md:mx-auto xl:rounded-4xl md:shadow-2xl md:shadow-gray-400 flex flex-col gap-2">
-          <Form />
+          <div className="bg-base-100 rounded-4xl p-4">asdasdasd</div>
         </div>
       </section>
 
@@ -235,6 +228,13 @@ export default function Home() {
           </header>
 
           <Faq />
+        </div>
+      </section>
+
+      {/* Order brief form */}
+      <section id="order-form" className="pt-10 md:pt-[clamp(2rem,3rem)]">
+        <div className="max-w-4xl bg-base-300 md:bg-white md:mx-auto xl:rounded-4xl md:shadow-2xl md:shadow-gray-400 flex flex-col gap-2">
+          <Form />
         </div>
       </section>
 

@@ -8,7 +8,6 @@ import { METRIKA_ID } from "../constants";
 export type Goal =
   | "click_brief_form_button" // клик по кнопке «Оставить заявку»
   | "submit_brief_form" // успешная отправка формы заявки
-  | "click_capabilities_button" // клик по кнопке «Наши возможности»
   | "play_video" // просмотр видео
   | "click_phone" // клик по телефону
   | "click_email" // клик по электронной почте
