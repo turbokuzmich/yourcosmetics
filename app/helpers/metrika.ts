@@ -9,13 +9,14 @@ export type Goal =
   | "click_brief_form_button" // клик по кнопке «Оставить заявку»
   | "submit_brief_form" // успешная отправка формы заявки
   | "play_video" // просмотр видео
+  | "click_consultation_form_button" // клик по кнопке «Получить консультацию»
   | "click_phone" // клик по телефону
   | "click_email" // клик по электронной почте
   | "click_telegram" // клик по Telegram
   | "click_whatsapp" // клик по WhatsApp
   | "click_send_brief_button" // клик по кнопке «Отправить бриф»
   | "click_menu_about" // клик по пункту меню «О нас»
-  | "click_menu_capabilities" // клик по пункту меню «Возможности»
+  | "click_menu_workflow" // клик по пункту меню «Этапы производства»
   | "click_menu_advantages" // клик по пункту меню «Преимущества»
   | "click_menu_faq" // клик по пункту меню «FAQ»
   | "click_menu_contacts" // клик по пункту меню «Контакты»

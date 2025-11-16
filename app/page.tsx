@@ -1,6 +1,6 @@
 import PlayerComponent from "./components/player";
-import { CheckBadgeIcon } from "@heroicons/react/24/solid";
-import Form from "./components/form";
+import { CheckBadgeIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+import Form from "./components/brief-form";
 import Header from "./components/header";
 import WorkflowCards from "./components/workflow-cards";
 import Metrika from "./components/metrika";
@@ -13,6 +13,8 @@ import {
   WhatsAppButton,
 } from "./components/footer-buttons";
 import { Faq } from "./components/faq";
+import ConsultationForm from "./components/consultation-form";
+import ConsultationButton from "./components/consultation-button";
 
 export default function Home() {
   return (
@@ -23,9 +25,13 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-base-300 relative pt-[clamp(3rem,5rem)]">
+      <section
+        className="bg-base-300 relative pt-[clamp(3rem,5rem)] pb-[clamp(3rem,5rem)]"
+        id="hero-block"
+      >
         <div className="max-w-7xl mx-auto flex flex-col h-full justify-center items-start md:items-center lg:text-center px-[clamp(2rem,3rem)] relative z-10">
-          <header className="mb-8 w-full whitespace-pre-line md:text-center md:items-center mx-auto flex flex-col justify-center gap-4">
+          {/* Hero text */}
+          <header className="mb-8 md:mb-[clamp(3rem,5rem)] w-full whitespace-pre-line md:text-center md:items-center mx-auto flex flex-col justify-center gap-4">
             <h1 className="text-[clamp(var(--text-3xl),var(--text-7xl))] leading-[clamp(2.2rem,5rem)]">
               Производство твоего бренда
             </h1>
@@ -33,44 +39,68 @@ export default function Home() {
               Полный цикл производства косметики под вашим брендом от разработки
               рецептуры до готовой продукции за 7 дней
             </p>
+            <div className="flex gap-4 items-center md:hidden">
+              <ConsultationButton />
+            </div>
           </header>
-          {/* Hero text */}
-          <div className="w-full flex flex-col justify-center items-center gap-4 md:flex-row">
-            <BriefButton />
-          </div>
-          <div className="bg-base-100 rounded-4xl p-4">asdasdasd</div>
-        </div>
-      </section>
 
-      {/* Наши возможности */}
-      <section id="capabilities" className="pt-[clamp(3rem,5rem)]">
-        <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0 flex flex-col gap-4">
-          <h2 className="text-[clamp(var(--text-2xl),var(--text-5xl))] font-semibold md:text-center">
-            Наши возможности
-          </h2>
-          <p className="text-[clamp(var(--text-2xl),var(--text-3xl))] font-thin max-w-4xl mx-auto md:text-center">
-            Изготовим косметику для вашего бренда от&nbsp;7&nbsp;дней
-            с&nbsp;момента обращения, а&nbsp;также выполним индивидуальные
-            разработки продукции с&nbsp;уникальными рецептурами, дизайном
-            и&nbsp;упаковкой &laquo;под&nbsp;ключ&raquo;.
-          </p>
-          <p className="text-[clamp(var(--text-base),var(--text-xl))] font-light max-w-3xl mx-auto md:text-center">
-            Уходовая и&nbsp;профессиональная косметика для лица, тела, волос,
-            кремы, гели, сыворотки, шампуни, масла, бальзамы, патчи, BB,
-            СС&nbsp;и&nbsp;многое другое&nbsp;&mdash; всё зависит
-            от&nbsp;пожеланий заказчика.
-          </p>
-          <p className="text-[clamp(var(--text-base),var(--text-xl))] font-light max-w-3xl mx-auto md:text-center">
-            Сертифицируем, а также присвоим марку честный знак.
-          </p>
-          <p className="text-[clamp(var(--text-base),var(--text-xl))] font-light max-w-3xl mx-auto md:text-center">
-            Работаем с небольшими и крупными партиями, индивидуальный подход к
-            каждому клиенту.
-          </p>
-          <p className="text-[clamp(var(--text-base),var(--text-xl))] font-light max-w-3xl mx-auto md:text-center">
-            Создадим бренд, концепцию, дизайн, упаковку, рецептуры и выпустим
-            продукцию под вашей торговой маркой.
-          </p>
+          {/* Two-column container: Capabilities text and Consultation form */}
+          <div className="w-full grid md:grid-cols-2 gap-8 lg:gap-12 text-left">
+            {/* Left column: Capabilities text */}
+            <div className="flex flex-col gap-4 md:items-start">
+              <h2 className="text-[clamp(var(--text-2xl),var(--text-4xl))] font-medium">
+                Наши возможности
+              </h2>
+              <ul className="space-y-3 text-[clamp(var(--text-base),var(--text-xl))] font-light mb-4 list-none">
+                <li className="flex items-start">
+                  <ChevronRightIcon className="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Изготовление косметики от 7 дней</span>
+                </li>
+                <li className="flex items-start">
+                  <ChevronRightIcon className="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Индивидуальные рецептуры, дизайн и упаковка</span>
+                </li>
+                <li className="flex items-start">
+                  <ChevronRightIcon className="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Уходовая косметика для лица, тела и волос</span>
+                </li>
+                <li className="flex items-start">
+                  <ChevronRightIcon className="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-0.5" />
+                  <span>
+                    Полный спектр: кремы, гели, сыворотки, шампуни, масла,
+                    бальзамы, патчи, BB, CC
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <ChevronRightIcon className="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Сертификация и присвоение марки «Честный знак»</span>
+                </li>
+                <li className="flex items-start">
+                  <ChevronRightIcon className="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-0.5" />
+                  <span>Небольшие и крупные партии</span>
+                </li>
+                <li className="flex items-start">
+                  <ChevronRightIcon className="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-0.5" />
+                  <span>
+                    Создание бренда, концепции, дизайна, упаковки и рецептуры
+                    «под ключ»
+                  </span>
+                </li>
+              </ul>
+              <BriefButton />
+            </div>
+
+            {/* Right column: Consultation form */}
+            <div
+              className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg"
+              id="consultation-form"
+            >
+              <h3 className="text-[clamp(var(--text-xl),var(--text-2xl))] font-medium mb-4 text-neutral-900">
+                Консультация специалиста
+              </h3>
+              <ConsultationForm />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -83,11 +113,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Как мы работаем */}
-      <section className="pt-[clamp(5rem,7rem)]">
+      {/* Этапы производства */}
+      <section className="pt-[clamp(5rem,7rem)]" id="workflow">
         <header className="px-[clamp(2rem,3rem)] mb-[clamp(2rem,3rem)]">
           <h2 className="text-[clamp(var(--text-3xl),var(--text-6xl))] font-semibold md:text-center">
-            Как мы работаем
+            Этапы производства
           </h2>
         </header>
         <div className="max-w-7xl mx-auto px-[clamp(2rem,3rem)] 2xl:px-0">
@@ -232,7 +262,7 @@ export default function Home() {
       </section>
 
       {/* Order brief form */}
-      <section id="order-form" className="pt-10 md:pt-[clamp(2rem,3rem)]">
+      <section className="pt-10 md:pt-[clamp(2rem,3rem)]" id="order-form">
         <div className="max-w-4xl bg-base-300 md:bg-white md:mx-auto xl:rounded-4xl md:shadow-2xl md:shadow-gray-400 flex flex-col gap-2">
           <Form />
         </div>

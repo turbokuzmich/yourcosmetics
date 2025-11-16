@@ -14,9 +14,9 @@ type MenuItem = {
 const menuItems: MenuItem[] = [
   { href: "#about", label: "О нас", metrika: "click_menu_about" },
   {
-    href: "#capabilities",
-    label: "Возможности",
-    metrika: "click_menu_capabilities",
+    href: "#workflow",
+    label: "Этапы производства",
+    metrika: "click_menu_workflow",
   },
   {
     href: "#advantages",

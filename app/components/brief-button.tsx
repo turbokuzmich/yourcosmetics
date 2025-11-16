@@ -6,10 +6,10 @@ export default function BriefButton() {
   return (
     <a
       href="#order-form"
-      className="btn btn-xl btn-secondary w-full md:w-auto"
+      className="btn btn-xl btn-secondary"
       onClick={() => reachGoal("click_brief_form_button")}
     >
-      Оставить заявку
+      Рассчитать стоимость
     </a>
   );
 }

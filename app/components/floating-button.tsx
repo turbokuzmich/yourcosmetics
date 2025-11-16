@@ -7,25 +7,20 @@ export default function FloatingBriefButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const formSection = document.getElementById("order-form");
-    if (!formSection) return;
+    const heroBlock = document.getElementById("hero-block");
+    if (!heroBlock) return;
 
-    // Use IntersectionObserver to efficiently track form visibility
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Show button when form is NOT visible (scrolled past)
-        // entry.isIntersecting === false means form is outside viewport
         setIsVisible(!entry.isIntersecting);
       },
       {
-        // Trigger when any part of the form enters/leaves viewport
         threshold: 0,
-        // Small rootMargin to account for any edge cases
         rootMargin: "0px",
       }
     );
 
-    observer.observe(formSection);
+    observer.observe(heroBlock);
 
     return () => {
       observer.disconnect();
