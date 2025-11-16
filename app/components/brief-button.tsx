@@ -6,7 +6,7 @@ export default function BriefButton() {
   return (
     <a
       href="#order-form"
-      className="btn btn-xl btn-secondary"
+      className="btn btn-lg btn-secondary"
       onClick={() => reachGoal("click_brief_form_button")}
     >
       Рассчитать стоимость

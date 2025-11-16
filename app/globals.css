@@ -68,3 +68,8 @@ body {
 .menu-link:hover::after {
   transform: scaleX(1);
 }
+
+/* Radial gradient for hero section */
+.hero-radial-gradient {
+  background: radial-gradient(ellipse at center, oklch(100% 0 0) 0%, oklch(95% 0 0) 75%, oklch(88% 0 0) 100%);
+}

@@ -293,7 +293,7 @@ export default function ConsultationForm() {
         <button
           type="submit"
           disabled={isSubmitting || !csrfToken}
-          className="btn btn-primary btn-lg w-full"
+          className="btn btn-outline btn-primary btn-lg w-full"
         >
           {isSubmitting ? (
             <>

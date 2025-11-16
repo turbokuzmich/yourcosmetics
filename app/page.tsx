@@ -26,7 +26,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section
-        className="bg-base-300 relative pt-[clamp(3rem,5rem)] pb-[clamp(3rem,5rem)]"
+        className="hero-radial-gradient relative pt-[clamp(3rem,5rem)] pb-[clamp(3rem,5rem)]"
         id="hero-block"
       >
         <div className="max-w-7xl mx-auto flex flex-col h-full justify-center items-start md:items-center lg:text-center px-[clamp(2rem,3rem)] relative z-10">
