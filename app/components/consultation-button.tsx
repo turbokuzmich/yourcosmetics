@@ -6,7 +6,7 @@ export default function ConsultationButton() {
   return (
     <a
       href="#consultation-form"
-      className="btn btn-outline btn-xl btn-secondary"
+      className="btn btn-outline btn-lg w-full btn-secondary"
       onClick={() => reachGoal("click_consultation_form_button")}
     >
       Получить консультацию

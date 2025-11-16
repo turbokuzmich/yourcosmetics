@@ -44,7 +44,7 @@ const Player: FC<Props> = ({ children }) => {
       </div>
       {children}
       <div slot="centered-chrome">
-        <MediaPlayButton className="relative flex flex-none md:h-[96px] md:w-[96px] h-[64px] w-[64px] items-center justify-items-center rounded-[9999px] bg-[rgb(0_0_0_/_0.8)] hover:shadow-[0_0_0_2px_#7596CC]">
+        <MediaPlayButton className="relative flex flex-none md:h-[96px] md:w-[96px] h-[64px] w-[64px] items-center justify-items-center rounded-[9999px] bg-[rgb(0_0_0_/_0.5)]">
           <div slot="play" key="play">
             <svg
               viewBox="0 0 16 16"
@@ -133,7 +133,7 @@ const Player: FC<Props> = ({ children }) => {
       </MediaControlBar>
       <MediaPlayButton className="cursor-pointer bg-transparent botton-0 left-0 w-full group-[[mediahasplayed]]/controller:hidden">
         <div
-          className="text-white text-center text-xl font-normal md:text-2xl py-8 bg-gradient-to-b from-black/0 to-black/80 w-full"
+          className="text-white text-center font-light md:font-normal text-lg md:text-xl py-4 md:py-8 bg-gradient-to-b from-black/0 to-black/80 w-full"
           slot="play"
         >
           Производство вашей косметики

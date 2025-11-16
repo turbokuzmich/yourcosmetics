@@ -61,9 +61,15 @@ export default function Header() {
     >
       <nav className="px-[clamp(2rem,3rem)] 2xl:px-0 my-auto relative z-10 h-[5rem] md:h-[6rem]">
         <div className="flex items-center justify-between max-w-7xl mx-auto h-full">
-          <a href="/" className="block w-[6rem] md:w-[8rem]">
+          <button
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="block w-[6rem] md:w-[8rem] cursor-pointer"
+            aria-label="Наверх"
+          >
             <Logo />
-          </a>
+          </button>
 
           {/* Desktop Menu - Hidden on mobile, visible from md breakpoint */}
           <div className="hidden md:flex w-full items-center justify-end">

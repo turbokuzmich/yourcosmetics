@@ -40,7 +40,7 @@ export default function Home() {
               Полный цикл производства косметики под вашим брендом от разработки
               рецептуры до готовой продукции за 7 дней
             </p>
-            <div className="flex gap-4 items-center md:hidden">
+            <div className="md:hidden">
               <ConsultationButton />
             </div>
           </header>
@@ -88,7 +88,7 @@ export default function Home() {
                   </span>
                 </li>
               </ul>
-              <div className="flex gap-4 items-center">
+              <div className="flex flex-col md:flex-row gap-4 items-stretch">
                 <BriefButton />
                 <AdvantagesButton />
               </div>
