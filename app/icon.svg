@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="172.56772"
+   width="173"
    zoomAndPan="magnify"
-   viewBox="0 0 129.35676 32.503906"
-   height="43.338543"
+   viewBox="0 0 129.6808 129.75"
+   height="173"
    preserveAspectRatio="xMidYMid"
    version="1.0"
    id="svg93"
-   sodipodi:docname="Твоя_косметика_лого_узкий_без_фон_300_x_150_пикс_.svg"
+   sodipodi:docname="icon.svg"
    inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -23,14 +23,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="1.6104616"
-     inkscape:cx="31.046998"
-     inkscape:cy="88.794415"
+     inkscape:cx="31.046999"
+     inkscape:cy="88.794418"
      inkscape:window-width="2056"
      inkscape:window-height="1225"
      inkscape:window-x="0"
      inkscape:window-y="44"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg93" />
+     inkscape:current-layer="svg93"
+     showgrid="false" />
   <defs
      id="defs20">
     <g
@@ -239,7 +240,7 @@
   <g
      clip-path="url(#65bf5cc743)"
      id="g56"
-     transform="translate(-1.106877,-0.585938)">
+     transform="translate(-1.106877,48.037109)">
     <g
        clip-path="url(#653d1bdbbf)"
        id="g55">
@@ -270,7 +271,7 @@
   <g
      clip-path="url(#b275d3b624)"
      id="g62"
-     transform="translate(-1.106877,-0.585938)">
+     transform="translate(-1.106877,48.037109)">
     <g
        clip-path="url(#7bb5ab2a6c)"
        id="g61">
@@ -301,7 +302,7 @@
   <g
      clip-path="url(#e784b34448)"
      id="g68"
-     transform="translate(-1.106877,-0.585938)">
+     transform="translate(-1.106877,48.037109)">
     <g
        clip-path="url(#4d6be849bb)"
        id="g67">

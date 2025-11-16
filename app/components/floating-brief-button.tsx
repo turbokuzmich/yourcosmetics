@@ -33,11 +33,8 @@ export default function FloatingBriefButton() {
   }, []);
 
   const handleClick = () => {
-    reachGoal("click_brief_form_button");
-    const formSection = document.getElementById("order-form");
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    reachGoal("click_up_button");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -48,8 +45,8 @@ export default function FloatingBriefButton() {
           ? "opacity-100 translate-y-0 pointer-events-auto"
           : "opacity-0 translate-y-4 pointer-events-none"
       }`}
-      aria-label="Перейти к форме заявки"
-      title="Оставить заявку"
+      aria-label="Прокрутить наверх"
+      title="Наверх"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
