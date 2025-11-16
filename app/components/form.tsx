@@ -194,6 +194,8 @@ export default function Form() {
   };
 
   const onSubmit = async (data: FormData) => {
+    reachGoal("click_send_brief_button");
+
     // Security pre-checks
     if (!csrfToken) {
       setSubmitMessage({

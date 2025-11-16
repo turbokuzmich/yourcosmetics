@@ -2,6 +2,30 @@
 
 import { useState, useEffect } from "react";
 import Logo from "./logo";
+import type { Goal } from "../helpers/metrika";
+import reachGoal from "../helpers/metrika";
+
+type MenuItem = {
+  href: string;
+  label: string;
+  metrika: Goal;
+};
+
+const menuItems: MenuItem[] = [
+  { href: "#about", label: "О нас", metrika: "click_menu_about" },
+  {
+    href: "#capabilities",
+    label: "Возможности",
+    metrika: "click_menu_capabilities",
+  },
+  {
+    href: "#advantages",
+    label: "Преимущества",
+    metrika: "click_menu_advantages",
+  },
+  { href: "#faq", label: "FAQ", metrika: "click_menu_faq" },
+  { href: "#contacts", label: "Контакты", metrika: "click_menu_contacts" },
+];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,16 +43,8 @@ export default function Header() {
     };
   }, []);
 
-  const menuItems = [
-    { href: "#about", label: "О нас" },
-    { href: "#capabilities", label: "Возможности" },
-    { href: "#advantages", label: "Преимущества" },
-    { href: "#faq", label: "FAQ" },
-    { href: "#contacts", label: "Контакты" },
-  ];
-
-  const handleMobileMenuClick = () => {
-    console.log(document.activeElement as HTMLElement);
+  const handleMobileMenuClick = (goal: Goal) => () => {
+    reachGoal(goal);
     (document.activeElement as HTMLElement)?.blur();
   };
 
@@ -57,6 +73,7 @@ export default function Header() {
                   <a
                     href={item.href}
                     className="menu-link relative px-4 py-2 text-lg font-medium text-base-content hover:text-primary transition-colors duration-200"
+                    onClick={() => reachGoal(item.metrika)}
                   >
                     {item.label}
                   </a>
@@ -98,7 +115,7 @@ export default function Header() {
                     <a
                       href={item.href}
                       className="text-base py-3 px-4 hover:bg-base-100 rounded-lg"
-                      onClick={handleMobileMenuClick}
+                      onClick={handleMobileMenuClick(item.metrika)}
                     >
                       {item.label}
                     </a>
