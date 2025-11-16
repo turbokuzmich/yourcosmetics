@@ -9,7 +9,7 @@ export default function BriefButton() {
       className="btn btn-lg btn-secondary"
       onClick={() => reachGoal("click_brief_form_button")}
     >
-      Рассчитать стоимость
+      Заполнить бриф
     </a>
   );
 }

@@ -335,7 +335,7 @@ export default function Form() {
 
       <div className="px-[clamp(2rem,3rem)] mb-8">
         <h2 className="text-[clamp(var(--text-2xl),var(--text-4xl))] leading-[clamp(2rem,3rem)] font-medium mb-[clamp(1rem,2rem)] text-neutral-900">
-          Заявка на производство
+          Бриф на производство
         </h2>
         <p className="text-[clamp(var(--text-lg),var(--text-xl))] font-light max-w-4xl text-neutral-700">
           Расскажите о вашем проекте, и мы свяжемся с вами для обсуждения
